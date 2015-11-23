@@ -12,13 +12,13 @@ Using the CLI required to connect to the API CF, for the CLI to know where to se
 This is done as follows:
 
 ```
-{{cf api --skip-ssl-validation https://api.xxxxxxxx.com}}
+cf api --skip-ssl-validation https://api.{{cf-get-instance-ip}}.xip.io
 ```
 
 In the case of a successful connection, the following information will be displayed:
 
 ```
-Setting api endpoint to https://api.xxxxxxxx.com ...
+Setting api endpoint to https://api.{{cf-get-instance-ip}}.xip.io ...
 OK
 ```
 
@@ -32,19 +32,19 @@ To create a space, use the `cf create-space` command. Try it and see the help pr
 After creating the space, use the command `cf target` for setting the CLI in the **training** org and the space that you just created.
 
 ```
-{{cf target -o training -s [your_space]}}
+cf target -o training -s [your_space]
 ```
 
 ## Set permissions to space
 
 To accomplish this, you must connect to the CLI as an *admin* user, which is able to manage users and roles.
-We will use, in this case, the non-interactive login CF variant, in this case `admin` user, password `myadminpassword`.
+We will use, in this case, the non-interactive login CF variant, in this case `admin` user, password `admin`.
 
 ```
-{{cf auth admin "myadminpassword"}}
+cf auth admin "admin"
 ```
 
-Now it is possible to give permission:
+Now it is possible to add permission:s
 
 ```
 cf set-space-role [your username] training [your space] SpaceDeveloper
