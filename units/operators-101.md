@@ -67,7 +67,7 @@ For example, if your user is `JoeDoe`, you will use:
 cf-app push JoeDoe-app
 ```
 
-CF will deploy the application and will show the URL to access the application, in this case, something like `http: // joedoe-app.xxxxxxxxx.com/`
+CF will deploy the application and will show the URL to access the application, in this case, something like `http: // joedoe-app.{{cf-get-instance-ip}}.xip.io/`
 
 ## Viewing logs
 
