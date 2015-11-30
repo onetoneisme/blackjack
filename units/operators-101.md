@@ -24,9 +24,28 @@ OK
 
 Now, you need to provide credentials. This is accomplished through interactive command `cf login`. For this training course,  use the `trainee_admin` / `admin` credentials.
 
+## Create your first user
+
+Before doing anything, you need to create a user, so we will not use the `trainee_admin` user after your user has been created.
+
+Creating a user is as simple as:
+
+```
+cf create-user you_username "your_password"
+```
+
+## Create an Organization
+
+Cloud Foundry's organizational structure allows the use of "Organizations" and "Spaces". Each *Org* and *Space*  can have multiple users assigned.
+All applications, services and users will be binded to Orgs and Spaces, so you need to create at lease one Org to move forward:
+
+```
+cf create-org training
+```
+
 ## Create a Space
 
-CF provides an organizational structure prepared to support organizations, spaces and users.
+Spaces are very useful for providing separation of concerns. For example, you can have "Dev", "Test" and "Staging" spaces in a single Cloud Foundry foundation.
 To create a space, use the `cf create-space` command. Try it and see the help provided by the CLI. Create a space with your username in the org **training**.
 
 After creating the space, use the command `cf target` for setting the CLI in the **training** org and the space that you just created.
@@ -37,18 +56,12 @@ cf target -o training -s [your_space]
 
 ## Set permissions to space
 
-To accomplish this, you must connect to the CLI as an *admin* user, which is able to manage users and roles.
-We will use, in this case, the non-interactive login CF variant, in this case `admin` user, password `admin`.
-
-```
-cf auth admin "admin"
-```
-
-Now it is possible to add permission:s
+Now you need to add the necessary permissions for your user to use the Org and Space you have created:
 
 ```
 cf set-space-role [your username] training [your space] SpaceDeveloper
 ```
+
 Now that our user has already permits do deploy an application.
 But first and foremost, autenticate with your credentials, you can be with `cf auth` or `cf login`.
 
