@@ -1,56 +1,88 @@
 # Operating Cloud Foundry
 
-Cloud Foundry provides an API endpoint to perform different operations and interact seamlessly with the whole fondation.
-To operate with Cloud Foundry (hereinafter "CF"), you must install the CLI client that connects to that API.
+###What you are going to learn:
 
-The CLI provides help. Try it by simply executing `cf` in the terminal.
+- Connect to a Cloud Foundry foundation
+- Create users
+- Create Organizations and Spaces
+- Assign permissions
+- Target an Organization and Space
+- Deploy a very simple application
+- Scale up and down an application
 
 ## Connecting to the CF API
 
-Using the CLI required to connect to the API CF, for the CLI to know where to send the commands.
+Cloud Foundry provides an API endpoint to perform different operations and interact seamlessly with the whole foundation.
 
-This is done as follows:
+Using the CLI requires to connect to the API CF, for the CLI to know where to send the commands.
+
+The CLI provides help. Try it by simply executing `cf` in the terminal.
 
 ```
-{{cf api --skip-ssl-validation https://api.xxxxxxxx.com}}
+cf api --skip-ssl-validation https://api.{{cf-get-instance-ip}}.xip.io
 ```
 
 In the case of a successful connection, the following information will be displayed:
 
 ```
-Setting api endpoint to https://api.xxxxxxxx.com ...
+Setting api endpoint to https://api.{{cf-get-instance-ip}}.xip.io ...
 OK
 ```
 
 Now, you need to provide credentials. This is accomplished through interactive command `cf login`. For this training course,  use the `trainee_admin` / `admin` credentials.
 
+## Create your first user
+
+Before doing anything, you need to create a user, so we will not use the `trainee_admin` user after your user has been created.
+
+Creating a user is as simple as:
+
+```
+cf create-user you_username "your_password"
+```
+
+## Create an Organization
+
+Cloud Foundry's organizational structure allows the use of "Organizations" and "Spaces". Each *Org* and *Space*  can have multiple users assigned.
+All applications, services and users will be binded to Orgs and Spaces, so you need to create at lease one Org to move forward:
+
+```
+cf create-org training
+```
+
 ## Create a Space
 
-CF provides an organizational structure prepared to support organizations, spaces and users.
+Spaces are very useful for providing separation of concerns. For example, you can have "Dev", "Test" and "Staging" spaces in a single Cloud Foundry foundation.
 To create a space, use the `cf create-space` command. Try it and see the help provided by the CLI. Create a space with your username in the org **training**.
 
 After creating the space, use the command `cf target` for setting the CLI in the **training** org and the space that you just created.
 
 ```
-{{cf target -o training -s [your_space]}}
+cf target -o training -s [your_space]
 ```
 
 ## Set permissions to space
 
-To accomplish this, you must connect to the CLI as an *admin* user, which is able to manage users and roles.
-We will use, in this case, the non-interactive login CF variant, in this case `admin` user, password `myadminpassword`.
-
-```
-{{cf auth admin "myadminpassword"}}
-```
-
-Now it is possible to give permission:
+Now you need to add the necessary permissions for your user to use the Org and Space you have created:
 
 ```
 cf set-space-role [your username] training [your space] SpaceDeveloper
 ```
+
 Now that our user has already permits do deploy an application.
 But first and foremost, autenticate with your credentials, you can be with `cf auth` or `cf login`.
+
+If you want to know more about Cloud Foundry's permissions and roles, go to the [Cloud Foundry's official documentation](https://docs.cloudfoundry.org/concepts/roles.html#roles).
+
+## Target your Org and Space
+
+Target an Org and a Space means that all operations you will be doing will be performed in that Org and Space.
+
+This is done by using the `cf target` command.
+
+```
+cf target -o training -s [your space]
+```
 
 ## Deploy an application
 
@@ -67,7 +99,7 @@ For example, if your user is `JoeDoe`, you will use:
 cf-app push JoeDoe-app
 ```
 
-CF will deploy the application and will show the URL to access the application, in this case, something like `http: // joedoe-app.xxxxxxxxx.com/`
+CF will deploy the application and will show the URL to access the application, in this case, something like `http: // joedoe-app.{{cf-get-instance-ip}}.xip.io/`
 
 ## Viewing logs
 
