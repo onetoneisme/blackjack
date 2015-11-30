@@ -1,15 +1,22 @@
 # Operating Cloud Foundry
 
-Cloud Foundry provides an API endpoint to perform different operations and interact seamlessly with the whole fondation.
-To operate with Cloud Foundry (hereinafter "CF"), you must install the CLI client that connects to that API.
+###What you are going to learn:
 
-The CLI provides help. Try it by simply executing `cf` in the terminal.
+- Connect to a Cloud Foundry foundation
+- Create users
+- Create Organizations and Spaces
+- Assign permissions
+- Target an Organization and Space
+- Deploy a very simple application
+- Scale up and down an application
 
 ## Connecting to the CF API
 
-Using the CLI required to connect to the API CF, for the CLI to know where to send the commands.
+Cloud Foundry provides an API endpoint to perform different operations and interact seamlessly with the whole foundation.
 
-This is done as follows:
+Using the CLI requires to connect to the API CF, for the CLI to know where to send the commands.
+
+The CLI provides help. Try it by simply executing `cf` in the terminal.
 
 ```
 cf api --skip-ssl-validation https://api.{{cf-get-instance-ip}}.xip.io
@@ -64,6 +71,18 @@ cf set-space-role [your username] training [your space] SpaceDeveloper
 
 Now that our user has already permits do deploy an application.
 But first and foremost, autenticate with your credentials, you can be with `cf auth` or `cf login`.
+
+If you want to know more about Cloud Foundry's permissions and roles, go to the [Cloud Foundry's official documentation](https://docs.cloudfoundry.org/concepts/roles.html#roles).
+
+## Target your Org and Space
+
+Target an Org and a Space means that all operations you will be doing will be performed in that Org and Space.
+
+This is done by using the `cf target` command.
+
+```
+cf target -o training -s [your space]
+```
 
 ## Deploy an application
 
