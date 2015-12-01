@@ -30,5 +30,3 @@ Third, Cloud Foundry's list of users is impressive: EMC, Pivotal, IBM, SAP, HP, 
 
 A very good read on Cloud Foundry's architecture and components can be found [here](http://docs.cloudfoundry.org/concepts/architecture/). We strongly suggest that you read that document before proceeding to the next step.
 
-### Cloud Foundry CLI's installation
-
