@@ -12,10 +12,9 @@ Then you will move to install Cloud Foundry's CLI tool as well as some basic con
 2. Why is Cloud Foundry a major player in the PaaS world?
 3. Cloud Foundry architecture
 4. Cloud Foundry's CLI installation
-5. CLI's enviromental variables
-6. Getting help
+5. Getting help
 
-## What Is Cloud Foundry?
+### What is Cloud Foundry?
 
 [Cloud Foundry](https://www.cloudfoundry.org/) is a PaaS, a Platform as a Service. This means that we can define Cloud Foundry as a series of components that are deployed in an Infrastructure as a Service (such as Amazon's AWS, OpenStack, vCloud, vSphere) that will allow developers to deploy applications extremely fast without worrying about the underlying infrastructure, and will allow DevOps to provide a secure, predictable, resilient and flexible platform to be used by the stakeholders.
 
@@ -69,4 +68,38 @@ cf version 6.14.0+2654a47-2015-11-18
 
 Be aware that the version number can vary.
 
-### CLI's enviromental variables
+### Getting help
+
+Cloud Foundry's CLI has a very good inline help.
+Try executing the `cf` command without options. You will get a lot of commands and options with their descriptions.
+This is fundamental to know, as it will help a lot to navigate through CF's CLI commands.
+As an example, let's say that you want to view all the commands related to `spaces`. It is possible to tunnel the CLI help through Linux's `grep` command:
+
+```sh
+cf | grep space
+```
+
+Now, suppose you want to get specific help on how to create a space with `create-space`.
+Simply use the `--help` modifier:
+
+```sh
+cf create-space --help
+```
+
+This will show you something like:
+
+```sh
+$ cf create-space --help
+NAME:
+   create-space - Create a space
+
+USAGE:
+   cf create-space SPACE [-o ORG] [-q SPACE-QUOTA]
+
+OPTIONS:
+   -o       Organization
+   -q       Quota to assign to the newly created space (excluding this option results in assignment of default quota)
+
+```
+
+It is very easy to get help with Cloud Foundry's CLI and perform operations on your Cloud Foundry foundation.
