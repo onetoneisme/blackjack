@@ -26,7 +26,47 @@ First, it's development is guided by the [Cloud Foundry foundation](https://www.
 Second, market leaders like EMC, VMWare, Pivotal, IBM, Intel, SAP and HP are helping build Cloud Foundry by contributing in many ways.
 Third, Cloud Foundry's list of users is impressive: EMC, Pivotal, IBM, SAP, HP, Intel, Hospira, Huawai, Baidu, GE Aviation, AllState are some of the companies using Cloud Foundry in production, with more joining this exciting community every day.
 
+If you want to read some inspiring quotes about CF and it's community, here are three links that will really inspire you.
+
+* [CF Summit 2014 quotes](http://blog.altoros.com/top-quotes-from-the-cloud-foundry-summit-2014.html)
+* [CF Summit 2015 quotes](http://blog.altoros.com/top-qoutes-from-the-cloud-foundry-summit-2015.html)
+* [CF Summit Berlin 2015 quotes](http://www.altoros.com/cflive/top-quotes-from-cloud-foundry-summit-berlin-2015/)
+
+
 ### Cloud Foundry's architecture
 
 A very good read on Cloud Foundry's architecture and components can be found [here](http://docs.cloudfoundry.org/concepts/architecture/). We strongly suggest that you read that document before proceeding to the next step.
 
+### Cloud Foundry's CLI installation
+
+Since Cloud Foundry works in a server-side deployment, you will need a way to communicate with the foundation (a Cloud Foundry foundation is a whole Cloud Foundry deployment) and perform day to day operations.
+The community developed a very convenient CLI tool that allows performing most of the operations required to operate CF.
+
+As we are using an Ubuntu jumpbox, you are going to download and install the Debian-based package, but it is important for you to know that the CLI is available for [other operating systems](https://github.com/cloudfoundry/cli#downloads) as well.
+
+To download the .deb package, use cURL:
+
+```sh
+curl -o cf_cli.deb -J -L 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+```
+
+This will download the latest CLI version for Debian 64 bits distributions.
+
+To install it, simply run: 
+
+```sh
+sudo dpkg -i cf_cli.deb
+```
+
+Try it by simply typing `cf --version`.
+
+You should see something like:
+
+```sh
+$ cf --version
+cf version 6.14.0+2654a47-2015-11-18
+```
+
+Be aware that the version number can vary.
+
+### CLI's enviromental variables
