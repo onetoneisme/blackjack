@@ -1,13 +1,14 @@
-# Quota Management in Cloud Foundry
+Quota Management in Cloud Foundry
+=================================
 
 ### ToC
 
-1. Introduction
-2. Listing quotas
-3. Getting quota info
-4. Creating and managing quotas
-5. Assigning quotas
-6. Space quotas
+1.	Introduction
+2.	Listing quotas
+3.	Getting quota info
+4.	Creating and managing quotas
+5.	Assigning quotas
+6.	Space quotas
 
 ### Introduction
 
@@ -15,17 +16,16 @@
 
 That is a very common question that have a very good answer.
 
-Cloud Foundry offers a very convenient way of managing available resources such as disk, memory and even paid services.
-This is done through **Quotas**, or namesets that are easy way to remember a configuration for an specific resource management plan.
+Cloud Foundry offers a very convenient way of managing available resources such as disk, memory and even paid services. This is done through **Quotas**, or namesets that are easy way to remember a configuration for an specific resource management plan.
 
 A quota structure is comprised of:
 
-* **name**: a name you will use to identify the plan. Should be easy to remember.
-* **instance memory limit**: the maximum amount of memory that an instance can use. Examples: `256M`, `2G`.
-* **memory limit**: the maximum amount of memory usage allowed in the plan. Examples: `512M`, `1G`.
-* **total routes**: the maximum amount of routes allowed for the plan.
-* **total services**: the maximum amount of services allowed in the plan.
-* **non basic services allowed**: setting this value to `true` will allow users to provision non-free service plans.
+-	**name**: a name you will use to identify the plan. Should be easy to remember.
+-	**instance memory limit**: the maximum amount of memory that an instance can use. Examples: `256M`, `2G`.
+-	**memory limit**: the maximum amount of memory usage allowed in the plan. Examples: `512M`, `1G`.
+-	**total routes**: the maximum amount of routes allowed for the plan.
+-	**total services**: the maximum amount of services allowed in the plan.
+-	**non basic services allowed**: setting this value to `true` will allow users to provision non-free service plans.
 
 ### Listing quotas
 
@@ -42,8 +42,8 @@ $ cf quotas
 Getting quotas as admin...
 OK
 
-name      total memory limit   instance memory limit   routes   service instances   paid service plans   
-default   10G                  unlimited               1000     100                 allowed   
+name      total memory limit   instance memory limit   routes   service instances   paid service plans
+default   10G                  unlimited               1000     100                 allowed
 ```
 
 As you can see, there is only one quota right now, which is the `default` quota.
@@ -63,10 +63,10 @@ $ cf quota default
 Getting quota default info as admin...
 OK
 
-Total Memory         10G   
-Instance Memory      unlimited   
-Routes               1000   
-Services             100   
+Total Memory         10G
+Instance Memory      unlimited
+Routes               1000
+Services             100
 Paid service plans   allowed
 ```
 
@@ -121,8 +121,8 @@ $ cf quotas
 Getting quotas as admin...
 OK
 
-name          total memory limit   instance memory limit   routes   service instances   paid service plans   
-default       10G                  unlimited               1000     100                 allowed   
+name          total memory limit   instance memory limit   routes   service instances   paid service plans
+default       10G                  unlimited               1000     100                 allowed
 small-quota   2G                   512M                    10       5                   disallowed
 ```
 
@@ -146,7 +146,7 @@ Listing the quotas again will show that `large-quota` has been created and is av
 
 It is very likely that at some point, you are going to realize that your quota has one or many parameters that have fallen short for the needed use, or that you need to limit a quota even more due to over usage.
 
-Modifying - or *updating* -  a quota is very simple in Cloud Foundry. The format is almost the same of the `create-quota` command, with minor differences.
+Modifying - or *updating* - a quota is very simple in Cloud Foundry. The format is almost the same of the `create-quota` command, with minor differences.
 
 As the first modification, lets disallow the use of paid plans in our `large-quota`:
 
@@ -224,14 +224,106 @@ cf org my-org
 
 Output should be:
 
-```sh
+```
 $ cf org my-org
-Getting info for org my-org as admin...
+Getting info for my-org as admin...
 OK
 
-my-org:                      
-          domains:        {{cf-get-instance-ip}}.xip.io   
-          quota:          large-quota (10240M memory limit, 2048M instance memory limit, 100 routes, 20 services, paid services disallowed)   
-          spaces:         my-first-space   
-          space quotas:      
+my-org:
+          domains:        {{cf-get-instance-ip}}.xip.io
+          quota:          large-quota (10240M memory limit, 2048M instance memory limit, 100 routes, 20 services, paid services disallowed)
+          spaces:         my-first-space
+          space quotas:
 ```
+
+> **Caveat**: It is not possible to remove a quota from an Org once it has been assigned.
+
+### Space quotas
+
+Space quotas are the same as regular quotas, but they can be assigned to specific spaces instead of Orgs. The only difference is that you can remove a quota from a space.
+
+Creating (`create-space-quota`), updating (`update-space-quota`) and deleting (`delete-space-quota`) work exactly as their "regular" quota counterparts. Setting and unsetting the space quota to an space have minor differences:
+
+Create a space quota:
+
+```
+cf create-space-quota small-space-quota -i 512M -m 2048M -r 10 -s 5
+```
+
+Output should be:
+
+```
+$ cf create-space-quota small-space-quota -i 512M -m 2048M -r 10 -s 5
+Creating space quota small-space-quota for org my-org as admin...
+OK
+```
+
+Now modify it:
+
+```
+cf update-space-quota small-space-quota -i 128M
+```
+
+Output should be:
+
+```
+$ cf update-space-quota small-space-quota -i 128M
+Updating space quota small-space-quota as admin...
+OK
+```
+
+Assign the quota to your space:
+
+```
+cf set-space-quota my-first-space small-space-quota
+```
+
+Output should be:
+
+```
+$ cf set-space-quota my-first-space small-space-quota
+Assigning space quota small-space-quota to space my-first-space as admin...
+OK
+```
+
+Now, get the information for your space:
+
+```
+cf space my-first-space
+```
+
+Output should be:
+
+```
+$ cf space my-first-space
+Getting info for space my-first-space in org my-org as admin...
+OK
+
+my-first-space                         
+                 Org:               my-org   
+                 Apps:                 
+                 Domains:           {{cf-get-instance-ip}}.xip.io   
+                 Services:             
+                 Security Groups:   public_networks, dns, services, load_balancer, user_bosh_deployments   
+                 Space Quota:       small-space-quota (2G memory limit, 128M instance memory limit, 10 routes, 5 services, paid services disallowed)   
+```
+
+As you can see, the space quota now shows in the space information, confirming that it was added.
+
+The biggest difference between a Space quota and a Org quota is that a Space quota can be unassigned:
+
+```
+cf unset-space-quota my-first-space small-space-quota
+```
+
+Output should be:
+
+```
+$ cf unset-space-quota my-first-space small-space-quota
+Unassigning space quota small-space-quota from space my-first-space as admin...
+OK
+```
+
+Also, you can list all the space quotas or get information about an specific one by using `space-quotas` and `space-quota` commands.
+
+Try them!
