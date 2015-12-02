@@ -2,8 +2,6 @@
 
 ### Objectives
 
-In this lesson, you will learn about Cloud Foundry's organizational structure, RBAC system, how to manage orgs, spaces and assign permissions to users.
-
 ### ToC
 
 1. Introduction
@@ -33,6 +31,8 @@ Organization(s)
 In short, Cloud Foundry has one or many organizations, which in turn have one or many spaces that have one or many users that have permissions, and the users deploy or target applications in the spaces assigned.
 
 This simple, yet flexible organizational structure will allow you to adapt Cloud Foundry to your company needs.
+
+For now, we will focus on Organizations and Spaces, and later on we will work with users and permissions.
 
 ### Managing Organizations
 
@@ -152,7 +152,7 @@ Output should be:
 
 ```sh
 $ cf target -o my-org
-                   
+
 API endpoint:   https://api.{{cf-get-instance-ip}}.xip.io (API version: 2.43.0)   
 User:           admin   
 Org:            my-org   
