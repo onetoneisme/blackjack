@@ -9,7 +9,6 @@ In this lesson, you will learn about Cloud Foundry's organizational structure, R
 1. Introduction
 2. Managing Organizations
 3. Managing Spaces
-4. Assigning permissions to users
 
 ### Introduction
 
@@ -132,5 +131,137 @@ OK
 
 ### Managing spaces
 
+Spaces are a very convenient way of separating concerns and environments inside an Org. Managing Spaces is no different from managing Orgs.
 
+Since we deleted the Org in the previous step, we are going to need to create a new one:
 
+```sh
+cf create-org my-org
+```
+
+#### Targeting organizations
+
+Let's try by listing all spaces in that Org. The first step is to *target* the Org you want to get the spaces from.
+This will set a default Org for the CLI to work with.
+
+```sh
+cf target -o my-org
+```
+
+Output should be:
+
+```sh
+$ cf target -o my-org
+                   
+API endpoint:   https://api.{{cf-get-instance-ip}}.xip.io (API version: 2.43.0)   
+User:           admin   
+Org:            my-org   
+Space:          No space targeted, use 'cf target -s SPACE'
+```
+
+Now that the CLI knows which Org to work by default, we can do:
+
+```sh
+cf spaces
+```
+
+Which will return a list of the existing spaces in the Org:
+
+```sh
+$ cf spaces
+Getting spaces in org my-org as admin...
+
+name   
+No spaces found
+```
+
+#### Creating spaces
+
+To create an space, it is as simple as:
+
+```sh
+cf create-space my-first-space
+```
+
+The CLI will offer detailed information about the space created:
+
+```sh
+$ cf create-space my-first-space
+Creating space my-first-space in org my-org as admin...
+OK
+Assigning role SpaceManager to user admin in org my-org / space my-first-space as admin...
+OK
+Assigning role SpaceDeveloper to user admin in org my-org / space my-first-space as admin...
+OK
+
+TIP: Use 'cf target -o my-org -s my-first-space' to target new space
+```
+
+> **Tip:** Notice that the CLI offers you help in many commands on what to do next, such as how to target the space you just created.
+>
+
+Now, try listing all the spaces again with the `cf spaces` command.
+
+#### Getting info about spaces
+
+Getting info about an space is as simple as:
+
+```sh
+cf space my-first-space
+```
+This will offer a good deal of info about the space we are enquiring.
+Don't worry about what does that information means, we'll get to it later on.
+
+```sh
+$ cf space my-first-space
+Getting info for space my-first-space in org my-org as admin...
+OK
+
+my-first-space                         
+                 Org:               my-org   
+                 Apps:                 
+                 Domains:           {{cf-get-intance-ip}}.xip.io   
+                 Services:             
+                 Security Groups:   public_networks, dns, services, load_balancer, user_bosh_deployments   
+                 Space Quota:          
+
+```
+
+#### Modifying and deleting spaces
+
+Let's create a new space:
+
+```sh
+ $ cf create-space my-second-space
+Creating space my-second-space in org my-org as admin...
+OK
+Assigning role SpaceManager to user admin in org my-org / space my-second-space as admin...
+OK
+Assigning role SpaceDeveloper to user admin in org my-org / space my-second-space as admin...
+OK
+
+TIP: Use 'cf target -o my-org -s my-second-space' to target new space
+```
+
+Now, in case we need to rename the space, its very easy to do that:
+
+```sh
+$ cf rename-space my-second-space my-trash-space
+Renaming space my-second-space to my-trash-space in org my-org as admin...
+OK
+```
+
+Again, you don't need to worry about changing the name, since the internal reference is maintained without alteration.
+
+Deleting an space is really easy as well:
+
+```sh
+$ cf delete-space my-trash-space
+
+Really delete the space my-trash-space?> yes
+Deleting space my-trash-space in org my-org as admin...
+OK
+```
+
+> **Tip:** you can use the `-f` modifier in some commands that ask for confirmation to force the "yes" without having to type it interactively. It is dangerous, but very useful when scripting commands. In this case, it should be `cf delete-space my-trash-space -f`
+>
