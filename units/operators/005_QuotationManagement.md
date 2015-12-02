@@ -6,7 +6,8 @@
 2. Listing quotas
 3. Getting quota info
 4. Creating and managing quotas
-5. Assigning quotas to Orgs and Spaces
+5. Assigning quotas
+6. Space quotas
 
 ### Introduction
 
@@ -199,4 +200,38 @@ OK
 
 > **Reminder:** you can always use the `-f` modifier to force the command without confirmation
 
-### Assigning quotas to Orgs and Spaces
+### Assigning quotas
+
+Now that we have a quota created, we can apply it to an Org:
+
+```sh
+cf set-quota my-org large-quota
+```
+
+Output should be:
+
+```sh
+$ cf set-quota my-org large-quota
+Setting quota large-quota to org my-org as admin...
+OK
+```
+
+If you query `my-org` details, you will see that the quota has been assigned:
+
+```sh
+cf org my-org
+```
+
+Output should be:
+
+```sh
+$ cf org my-org
+Getting info for org my-org as admin...
+OK
+
+my-org:                      
+          domains:        {{cf-get-instance-ip}}.xip.io   
+          quota:          large-quota (10240M memory limit, 2048M instance memory limit, 100 routes, 20 services, paid services disallowed)   
+          spaces:         my-first-space   
+          space quotas:      
+```
