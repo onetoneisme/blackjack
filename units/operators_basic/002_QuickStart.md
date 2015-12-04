@@ -29,7 +29,7 @@ Setting api endpoint to https://api.{{cf-get-instance-ip}}.xip.io ...
 OK
 ```
 
-> 
+>
 **Important**: we are using `--skip-ssl-validation` since the Cloud Foundry deployment we are using for this course doesn't have a SSL certificate installed, but as a good practice for development and testing, and mandatory for production, a SSL cert should always be present.
 >
 
@@ -93,8 +93,8 @@ cf target -o training -s [your space]
 First, clone this GitHub repository in your work directory:
 
 ```
-git clone https://github.com/eljuanchosf/cf-sinatra-example
-cd cf-sinatra-example
+git clone https://github.com/Altoros/cf-example-sinatra
+cd cf-example-sinatra
 ```
 
 Deploying an application in CF involves using the `cf push` command. In this case, we will use the following format `cf push [your username]-app`
