@@ -51,7 +51,7 @@ curl -o cf_cli.deb -J -L 'https://cli.run.pivotal.io/stable?release=debian64&sou
 
 This will download the latest CLI version for Debian 64 bits distributions.
 
-To install it, simply run: 
+To install it, simply run:
 
 ```sh
 sudo dpkg -i cf_cli.deb
@@ -80,16 +80,16 @@ cf | grep space
 ```
 
 Now, suppose you want to get specific help on how to create a space with `create-space`.
-Simply use the `--help` modifier:
+Simply use the `help` command and specify which action do you want help with:
 
 ```sh
-cf create-space --help
+cf help create-space
 ```
 
 This will show you something like:
 
 ```sh
-$ cf create-space --help
+$ cf help create-space
 NAME:
    create-space - Create a space
 
