@@ -1,5 +1,5 @@
-Application Management in Cloud Foundry
-=======================================
+Application Management in Cloud Foundry - Part 1
+================================================
 
 ### ToC
 
@@ -33,11 +33,12 @@ git clone https://github.com/Altoros/cf-example-sinatra
 cd cf-example-sinatra
 ```
 
-Deploying the source code of this applications is really easy, but first we need to login to our Cloud Foundry foundation with the user you created previously:
+Deploying the source code of this applications is really easy, but first we need to login to our Cloud Foundry foundation with the user you created previously, and target your Org and Space:
 
 ```
 cf api --skip-ssl-validation https://api.{{cf-get-instance-ip}}.xip.io
 cf auth my-user "my-password"
+cf target -o my-org -s my-first-space
 ```
 
 ### Pushing applications
@@ -159,10 +160,12 @@ applications:
   domain: {{cf-get-instance-ip}}.xip.io
 ```
 
+### Creating application manifests
+
 Now, let's reduce the instance memory again, since our application is very small and can run without any issue with 128M. With your favorite text editor, open the file and change the `memory:` value to `128M`. Save it and push the application again, this time specifying the manifest file:
 
 ```
-cf push -f my-sinatra-app_manifest
+cf push -f my-sinatra-app_manifest.yml
 ```
 
 Output should be:
@@ -188,3 +191,67 @@ last uploaded: [output timestamp]
      state     since                    cpu    memory          disk        details   
 #0   running   [output timestamp]       0.0%   46.4M of 128M   0 of 128M      
 ```
+
+As you can see, is much more convenient for you to use an application manifest. One more trick for make the code pushing even more easy: rename the `my-sinatra-app_manifest.yml` file to `manifest.yml`.
+
+Then, if you do `cf push`, with no parameter at all, the CLI will pick the `manifest.yml` file automatically.
+
+Go ahead and try it!
+
+### Application management
+
+Cloud Foundry's CLI provides a myriad of options to manage your applications.
+
+#### Listing applications
+
+In the same way that Orgs, Users and Spaces can be listed, there is an option to list our deployed apps:
+
+```
+cf apps
+```
+
+You will see your application listed there.
+
+> **Tip:** `cf apps` will only list applications that were pushed into the *target* (the Org and Space we sat before). If you want to list applications in another org/space, you need to set the target again with the `cf target` command.
+
+Also, getting detailed information about the application is as easy as:
+
+```
+cf app my-sinatra-app
+```
+
+#### Modifying applications
+
+One of the possible scenarios you may run into is that you will need to rename your application. Again, this is VERY simple:
+
+```
+cf rename my-sinatra-app my-app
+```
+
+Output should be:
+
+```
+$ cf rename my-sinatra-app my-app
+Renaming app my-sinatra-app to my-app in org my-org / space my-first-space as my-user...
+OK
+```
+
+Now, if you get the information with `cf app my-app` you will find that the application has been renamed. This, however, will not update your `manifest.yml` or the route (URL) to access your app. What Cloud Foundry has done is to modify the internal name so you can use that name for your CLIs commands.
+
+Now, another command you will find useful is the `delete` command. This action will effectively delete an application from Cloud Foundry.
+
+```
+cf delete my-app
+```
+
+Output should be:
+
+```
+$ cf delete my-app
+
+Really delete the app my-app?> yes
+Deleting app my-app in org my-org / space my-first-space as my-user...
+OK
+```
+
+> **Tip:** you can always skip confirmation by using the -f flag: `cf delete my-app -f`
