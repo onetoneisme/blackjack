@@ -47,7 +47,7 @@ Before doing anything, you need to create a user to perform day to day operation
 Creating a user is as simple as:
 
 ```
-cf create-user you_username "your_password"
+cf create-user test-user "test-password"
 ```
 
 \{[regex=`/Creating user (.*) as admin\.{3}\nOK/gm`]}
@@ -66,7 +66,11 @@ cf create-org training
 Create a Space
 --------------
 
-Spaces are very useful for providing separation of concerns. For example, you can have "Dev", "Test" and "Staging" spaces in a single Cloud Foundry foundation. To create a space, use the `cf create-space` command. Try it and see the help provided by the CLI. Create a space with your username in the org **training**.
+Spaces are very useful for providing separation of concerns. For example, you can have "Dev", "Test" and "Staging" spaces in a single Cloud Foundry foundation. To create a space, use the `cf create-space` command. Try it and see the help provided by the CLI. Create a space with your username in the org **training**, called `test-space`
+
+```
+cf create-space test-space -o training
+```
 
 \{[regex=`/Creating space (.*) in org (.*) as admin\.{3}\nOK/gm`]}
 
@@ -76,7 +80,7 @@ Set permissions to space
 Now you need to add the necessary permissions for your user to use the Org and Space you have created:
 
 ```
-cf set-space-role [your username] training [your space] SpaceDeveloper
+cf set-space-role test-user training test-space SpaceDeveloper
 ```
 
 \{[regex=`/Assigning role SpaceDeveloper to user (.*) in org (.*) \/ space (.*) as admin\.{3}\nOK/gm`]}
@@ -95,7 +99,7 @@ This is done by using the `cf target` command.
 Use `cf target` for setting the CLI in the **training** org and the space that you just created and assigned permissions to.
 
 ```
-cf target -o training -s [your_space]
+cf target -o training -s test-space
 ```
 
 \{[regex=`/^Org:\s+(.*)\s+\nSpace:\s+(.*)\s+$/gm`]}
