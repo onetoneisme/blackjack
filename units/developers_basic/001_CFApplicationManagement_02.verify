@@ -1,0 +1,2 @@
+>cf target -o my-org -s my-first-space
+cf apps|my-sinatra-example.*started.*1/1.*|"my-sinatra-example" application not found or not running.

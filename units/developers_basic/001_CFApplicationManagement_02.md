@@ -61,3 +61,7 @@ cf restage my-app
 ```
 
 As you can see, there is fundamental difference with restarting applications: a simple `restart` will keep the droplet, whilst `restage` will erase the current droplet and create a new one with the code previously pushed.
+
+### Scaling up and down
+
+Scaling up and down
