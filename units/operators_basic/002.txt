@@ -1,3 +1,4 @@
+>cf auth admin admin
 cf orgs|.*training.*|Org "training" not found
 >cf target -o training
 cf spaces|.*test-space.*|Space "test-space" not found
