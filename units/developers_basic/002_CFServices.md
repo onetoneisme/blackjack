@@ -1,12 +1,12 @@
-Application Management in Cloud Foundry - Part 3
-================================================
+Cloud Foundry Services
+======================
 
 ### ToC
 
-1.	Introduction
-2.	Viewing events
-3.	Monitoring logs
-4.	Application files
+1.  Introduction
+2.  Listing, creating, deleting, updating services and service keys
+3.  Binding and unbinding services
+4.  User provided services
 
 ### Introduction
 
