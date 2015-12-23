@@ -1,2 +1,5 @@
 >cf target -o my-org -s my-first-space
-cf apps|my-sinatra-example.*started.*1/1.*|"my-sinatra-example" application not found or not running.
+cf apps|my-app.*started|"my-app" application not found or not running.
+cf apps|my-app.*2/2|Number of instances of "my-app" incorrect.
+cf apps|my-app.*64M|Memroy limit of "my-app" incorrect.
+cf env my-app|MYVAR: myvalue|User defined variable "MYVAR" not found.
