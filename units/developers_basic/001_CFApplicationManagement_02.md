@@ -253,7 +253,7 @@ OK
 TIP: Use 'cf restage' to ensure your env variable changes take effect
 ```
 
-If you want your application to start reading this variable, you should **restage** it. However, since it is not necessary, you can skip that step.
+Although this variable will be imeediately availabe to all you application instances, if you want your application to start reading the variable you should **restage** it. However, since it is not necessary, you can skip that step.
 
 If you run again `cf env my-app`, you will see that `MYVAR` and it's value appears under the `User-Provided` section.
 Now, define a second variable:
