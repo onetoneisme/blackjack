@@ -299,13 +299,13 @@ $ cf space my-first-space
 Getting info for space my-first-space in org my-org as admin...
 OK
 
-my-first-space                         
-                 Org:               my-org   
-                 Apps:                 
-                 Domains:           {{cf-get-instance-ip}}.xip.io   
-                 Services:             
-                 Security Groups:   public_networks, dns, services, load_balancer, user_bosh_deployments   
-                 Space Quota:       small-space-quota (2G memory limit, 128M instance memory limit, 10 routes, 5 services, paid services disallowed)   
+my-first-space
+                 Org:               my-org
+                 Apps:
+                 Domains:           {{cf-get-instance-ip}}.xip.io
+                 Services:
+                 Security Groups:   public_networks, dns, services, load_balancer, user_bosh_deployments
+                 Space Quota:       small-space-quota (2G memory limit, 128M instance memory limit, 10 routes, 5 services, paid services disallowed)
 ```
 
 As you can see, the space quota now shows in the space information, confirming that it was added.
@@ -323,6 +323,8 @@ $ cf unset-space-quota my-first-space small-space-quota
 Unassigning space quota small-space-quota from space my-first-space as admin...
 OK
 ```
+
+Before ending, re set the previously unset space quota to the `my-first-space`.
 
 Also, you can list all the space quotas or get information about an specific one by using `space-quotas` and `space-quota` commands.
 

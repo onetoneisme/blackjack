@@ -1,0 +1,6 @@
+cf orgs|.*training.*|Org "training" not found
+>cf target -o training
+cf spaces|.*test-space.*|Space "test-space" not found
+>cf target -o training -s test-space
+cf space-users training test-space|SPACE DEVELOPER.*[a-zA-Z].*test-user|User "test-user" not found.
+cf apps|.*Sinatra-Example-app.*started.*1/1.*|App "Sinatra-Example-app" not found, not started or instances are not set to 1

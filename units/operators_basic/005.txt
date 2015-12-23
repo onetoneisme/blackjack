@@ -1,0 +1,6 @@
+>cf target -o my-org -s my-first-space
+#cf quotas|!!.*small-quota.*|Quota "small-quota" still exists.
+#cf quotas|.*large-quota.*10G|Quota "large-quota" not found.
+#cf org my-org|quota:.*large-quota|Quota "large-quota" not assigned to Org "my-org"
+cf space-quotas|small-space-quota.*2G.*128M.*|Space quota "small-space-quota" doesn't exists or instance memory limit not set to 128M
+cf space my-first-space|Quota:.*small-space-quota|Space quota "small-space-quota" not assigned to Space "my-first-space"

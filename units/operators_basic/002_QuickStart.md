@@ -26,8 +26,6 @@ cf api --skip-ssl-validation https://api.{{cf-get-instance-ip}}.xip.io
 
 In the case of a successful connection, the following information will be displayed:
 
-\{[regex=`/API endpoint:\s*htt(p|ps)://api.{{cf-get-instance-ip}}.xip.io/gm`]}
-
 ```
 Setting api endpoint to https://api.{{cf-get-instance-ip}}.xip.io ...
 OK
@@ -36,8 +34,6 @@ OK
 > **Important**: we are using `--skip-ssl-validation` since the Cloud Foundry deployment we are using for this course doesn't have a SSL certificate installed, but as a good practice for development and testing, and mandatory for production, a SSL cert should always be present.
 
 Now, you need to provide credentials. This is accomplished through interactive command `cf login`. For this training course, use the `admin` / `admin` credentials.
-
-\{[regex=`/^Authenticating\.{3}\nOK$/gm`]}
 
 Create your first user
 ----------------------
@@ -50,8 +46,6 @@ Creating a user is as simple as:
 cf create-user test-user "test-password"
 ```
 
-\{[regex=`/Creating user (.*) as admin\.{3}\nOK/gm`]}
-
 Create an Organization
 ----------------------
 
@@ -60,8 +54,6 @@ Cloud Foundry's organizational structure allows the use of "Organizations" and "
 ```
 cf create-org training
 ```
-
-\{[regex=`/Creating org (.*) as admin\.{3}\nOK/gm`]}
 
 Create a Space
 --------------
@@ -72,8 +64,6 @@ Spaces are very useful for providing separation of concerns. For example, you ca
 cf create-space test-space -o training
 ```
 
-\{[regex=`/Creating space (.*) in org (.*) as admin\.{3}\nOK/gm`]}
-
 Set permissions to space
 ------------------------
 
@@ -82,8 +72,6 @@ Now you need to add the necessary permissions for your user to use the Org and S
 ```
 cf set-space-role test-user training test-space SpaceDeveloper
 ```
-
-\{[regex=`/Assigning role SpaceDeveloper to user (.*) in org (.*) \/ space (.*) as admin\.{3}\nOK/gm`]}
 
 Now your user has permissions to deploy an application. But first and foremost, autenticate with your credentials, you can be with `cf auth` or `cf login`.
 
@@ -102,8 +90,6 @@ Use `cf target` for setting the CLI in the **training** org and the space that y
 cf target -o training -s test-space
 ```
 
-\{[regex=`/^Org:\s+(.*)\s+\nSpace:\s+(.*)\s+$/gm`]}
-
 Deploy an application
 ---------------------
 
@@ -114,15 +100,13 @@ git clone https://github.com/Altoros/cf-example-sinatra
 cd cf-example-sinatra
 ```
 
-Deploying an application in CF involves using the `cf push` command. In this case, we will use the following format `cf push [your username]-app` For example, if your user is `JoeDoe`, you will use:
+Deploying an application in CF involves using the `cf push` command. In this case, we will use the following format `cf push application-name` For example, we will use `Sinatra-Example-app`:
 
 ```
-cf-app push JoeDoe-app
+cf-app push Sinatra-Example-app
 ```
 
-\{[regex=`/App started\n+OK/gm`]}
-
-CF will deploy the application and will show the URL to access the application, in this case, something like `http: // joedoe-app.{{cf-get-instance-ip}}.xip.io/`
+CF will deploy the application and will show the URL to access the application, in this case, something like `http: // sinatra-example-app.{{cf-get-instance-ip}}.xip.io/`
 
 Viewing logs
 ------------

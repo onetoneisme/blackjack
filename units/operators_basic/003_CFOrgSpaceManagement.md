@@ -79,16 +79,16 @@ cf org my-org
 
 The result will be something like:
 
-```sh
+```
 $ cf org my-org
 Getting info for org my-org as admin...
 OK
 
-my-org:                      
-          domains:        {{cf-get-instance-ip}}.xip.io   
-          quota:          default (10240M memory limit, Unlimited instance memory limit, 1000 routes, 100 services, paid services allowed)   
-          spaces:            
-          space quotas:      
+my-org:
+          domains:        {{cf-get-instance-ip}}.xip.io
+          quota:          default (10240M memory limit, Unlimited instance memory limit, 1000 routes, 100 services, paid services allowed)
+          spaces:
+          space quotas:
 
 ```
 
@@ -99,13 +99,13 @@ my-org:
 
 One situation that might happen, is that you need to rename one of the Orgs you created. Do not worry about this situation, since Cloud Foundry maintains an internal reference for the Org, decoupling the name from the internal structure:
 
-```sh
+```
 cf rename-org my-org my-renamed-org
 ```
 
 Output should be:
 
-```sh
+```
 $ cf rename-org my-org my-renamed-org
 Renaming org my-org to my-renamed-org as admin...
 OK
@@ -113,7 +113,7 @@ OK
 
 Also, at some point is probable that we are going to need to delete an organization.
 
-```sh
+```
 cf delete-org my-renamed-org
 ```
 
@@ -153,9 +153,9 @@ Output should be:
 ```sh
 $ cf target -o my-org
 
-API endpoint:   https://api.{{cf-get-instance-ip}}.xip.io (API version: 2.43.0)   
-User:           admin   
-Org:            my-org   
+API endpoint:   https://api.{{cf-get-instance-ip}}.xip.io (API version: 2.43.0)
+User:           admin
+Org:            my-org
 Space:          No space targeted, use 'cf target -s SPACE'
 ```
 
@@ -171,7 +171,7 @@ Which will return a list of the existing spaces in the Org:
 $ cf spaces
 Getting spaces in org my-org as admin...
 
-name   
+name
 No spaces found
 ```
 
@@ -212,18 +212,18 @@ cf space my-first-space
 This will offer a good deal of info about the space we are enquiring.
 Don't worry about what does that information means, we'll get to it later on.
 
-```sh
+```
 $ cf space my-first-space
 Getting info for space my-first-space in org my-org as admin...
 OK
 
-my-first-space                         
-                 Org:               my-org   
-                 Apps:                 
-                 Domains:           {{cf-get-intance-ip}}.xip.io   
-                 Services:             
-                 Security Groups:   public_networks, dns, services, load_balancer, user_bosh_deployments   
-                 Space Quota:          
+my-first-space
+                 Org:               my-org
+                 Apps:
+                 Domains:           {{cf-get-intance-ip}}.xip.io
+                 Services:
+                 Security Groups:   public_networks, dns, services, load_balancer, user_bosh_deployments
+                 Space Quota:
 
 ```
 
@@ -231,7 +231,7 @@ my-first-space
 
 Let's create a new space:
 
-```sh
+```
  $ cf create-space my-second-space
 Creating space my-second-space in org my-org as admin...
 OK

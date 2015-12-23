@@ -1,0 +1,5 @@
+#Lines starting with a hash (#) are ignored from evaluation
+cf orgs|.*my-org.*|Org "my-org" not found
+cf target -o my-org|Org:\\s*my-org.*|Cannot set TARGET to Org "my-org"
+cf spaces|.*my-first-space.*|Space "my-first-space" not found
+cf target -o my-org -s my-first-space|Space:.*my-first-space.*|Cannot set TARGET to Org "my-org" and space "my-first-space"
