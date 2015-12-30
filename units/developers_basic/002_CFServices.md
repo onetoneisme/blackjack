@@ -4,132 +4,125 @@ Cloud Foundry Services
 ### ToC
 
 1.  Introduction
-2.  Listing, creating, deleting, updating services and service keys
-3.  Binding and unbinding services
-4.  User provided services
+2.  The Service Marketplace
+3.  Creating services
+4.  Binding and unbinding services
+5.  Managing services
+6.  User provided services
 
 ### Introduction
 
-Ok, now we have an application deployed, and two instances of that application running side by side, load balanced by the Cloud Foundry Router.
-However, how do I see what is going on with the application?
-How do I see the logs?
-The Cloud Foundry CLI provides a couple of commands to satisfy these needs.
+No application is an island. Every piece of code out there in the cloud will use, at some point in time, an external software. A database, a message queue, a mailing server... choose your flavor.
+Cloud Foundry makes extremely easy to use any external piece of software. In the Cloud Foundry lingo, they are called *services*.
 
-### Viewing events
+### The Service Marketplace
 
-An *event* is something that happens to your application at deployment level. Is different from an internal application log. All actions suffered by the application are recorded and can later be audited:
-
-```
-cf events my-app
-```
-
-Output should be similar to:
+Getting information about the available services is vital for you to get information about which ones are available for consumption.
+Cloud Foundry provides a catalog of services that you can explore and review, called the *Service Marketplace*.
+To access it, simply do:
 
 ```
-$ cf events my-app
-Getting events for app my-app in org my-org / space my-first-space as my-user...
-
-time                          event                 actor     description
-2015-12-23T14:24:02.00-0300   audit.app.update      my-user   environment_json: PRIVATE DATA HIDDEN
-2015-12-23T14:23:29.00-0300   audit.app.update      my-user   environment_json: PRIVATE DATA HIDDEN
-2015-12-23T14:19:28.00-0300   audit.app.update      my-user   environment_json: PRIVATE DATA HIDDEN
-2015-12-23T13:41:23.00-0300   app.crash             my-app    index: 1, reason: CRASHED, exit_description: failed to start, exit_status: -1
-2015-12-23T13:41:18.00-0300   audit.app.update      my-user   state: STARTED
-2015-12-23T13:41:16.00-0300   audit.app.update      my-user   state: STOPPED
-2015-12-23T13:41:16.00-0300   audit.app.update      my-user   memory: 64
-2015-12-23T13:37:37.00-0300   audit.app.update      my-user   instances: 2
-2015-12-23T13:33:03.00-0300   audit.app.update      my-user   state: STARTED
-2015-12-23T13:32:58.00-0300   audit.app.update      my-user   state: STOPPED
-2015-12-23T13:32:56.00-0300   audit.app.update      my-user   memory: 512
-2015-12-23T13:28:00.00-0300   audit.app.update      my-user   state: STARTED
-2015-12-23T13:27:54.00-0300   audit.app.update      my-user
-2015-12-23T13:27:54.00-0300   audit.app.map-route   my-user
-2015-12-23T13:27:49.00-0300   audit.app.create      my-user   instances: 1, state: STOPPED, environment_json: PRIVATE DATA HIDDEN
+cf marketplace
 ```
 
-As you can see, these events are related to all the operations done by Cloud Foundry instead of what is going on INSIDE the application.
-
-### Viewing logs
-
-Logs are very easy to view:
+Output should be:
 
 ```
-cf logs my-app
-```
-
-While you are tailing the logs with the previous command, go to your browser and navigate to [your app](http://my-app.{{cf-get-instance-ip}}.xip.io/) and reload the page a couple of times.
-
-Output should similar to:
-
-```
-$ cf logs my-app
-Connected, tailing logs for app my-app in org my-org / space my-first-space as my-user...
-
-2015-12-23T15:06:29.12-0300 [App/0]      ERR 181.29.164.209, 10.244.0.21 - - [23/Dec/2015 18:06:29] "GET / HTTP/1.1" 200 906 0.0246
-2015-12-23T15:06:29.13-0300 [RTR/0]      OUT my-app.{{cf-get-instance-ip}}.xip.io - [23/12/2015:18:06:29 +0000] "GET / HTTP/1.1" 200 0 906 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36" 10.244.0.21:50393 x_forwarded_for:"181.29.164.209, 10.244.0.21" x_forwarded_proto:"http" vcap_request_id:83ed06f6-a183-43bf-4459-356c34108c83 response_time:0.101611411 app_id:6d6911ed-ec44-40ca-92fa-14d14798686b
-2015-12-23T15:06:29.36-0300 [App/1]      ERR 181.29.164.209, 10.244.0.21 - - [23/Dec/2015 18:06:29] "GET /style.css HTTP/1.1" 200 857 0.0043
-2015-12-23T15:06:29.37-0300 [RTR/0]      OUT my-app.{{cf-get-instance-ip}}.xip.io - [23/12/2015:18:06:29 +0000] "GET /style.css HTTP/1.1" 200 0 857 "http://my-app.{{cf-get-instance-ip}}.xip.io/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36" 10.244.0.21:50393 x_forwarded_for:"181.29.164.209, 10.244.0.21" x_forwarded_proto:"http" vcap_request_id:fb6c3f03-6473-4894-74e4-345bd5842ea5 response_time:0.016813959 app_id:6d6911ed-ec44-40ca-92fa-14d14798686b
-2015-12-23T15:06:33.07-0300 [App/0]      ERR 181.29.164.209, 10.244.0.21 - - [23/Dec/2015 18:06:33] "GET /favicon.ico HTTP/1.1" 404 18 0.0004
-2015-12-23T15:06:33.07-0300 [RTR/0]      OUT my-app.{{cf-get-instance-ip}}.xip.io - [23/12/2015:18:06:33 +0000] "GET /favicon.ico HTTP/1.1" 404 0 18 "http://my-app.{{cf-get-instance-ip}}.xip.io/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36" 10.244.0.21:50393 x_forwarded_for:"181.29.164.209, 10.244.0.21" x_forwarded_proto:"http" vcap_request_id:806c5b61-3f99-4577-50a9-5bde5f499395 response_time:0.004557008 app_id:6d6911ed-ec44-40ca-92fa-14d14798686b
-```
-> **Notice**: Don't worry about the ERR messages. We'll fix that later as part of the course.
-
-You can also dump the logs to a file instead of tailing, using the `--recent` flag.
-
-```
-cf logs my-app --recent > my-logs.txt
-```
-
-### Application files
-
-Cloud Foundry's CLI also provides a way to view the files in each instance of your deployed applications, as well as the content of a file.
-
-To view the files of an application, simply do:
-
-```
-cf files my-app
-```
-
-Output should be similar to:
-
-```
-$ cf files my-app
-Getting files for app my-app in org my-org / space my-first-space as my-user...
+$ cf marketplace
+Getting services from marketplace in org my-org / space my-first-space as my-user...
 OK
 
-.bash_logout                              220B
-.bashrc                                   3.6K
-.profile                                  675B
-app/                                         -
-logs/                                        -
-run.pid                                     3B
-staging_info.yml                          334B
-tmp/                                         -
+service   plans        description
+p-mysql   100mb, 1gb   MySQL databases on demand
+
+TIP:  Use 'cf marketplace -s SERVICE' to view descriptions of individual plans of a given service.
 ```
 
-As you can see, you are in the root of the application deployment directory structure. If you want to go inside of one of the directories, specify it in the command line:
+The output will show the name of the service, the available plans and a description of what the service do.
+A *service plan* is a set of limits and rules that the service states. It can be a disk size limit for a database, a memory limit for a queue management system, or whatever set of limits to uniquely identify a subset of a service.
+In this example, the plans for the **p-mysql** (a MySQL database) service are:
+* 100 MB disk size limit database
+* 1 GB disk size limit database
+
+Although useful, this information will not show if the service is free or paid. There is a way to view the details of a service:
 
 ```
-cf files my-app app/
+cf marketplace -s p-mysql
 ```
 
-Or
+Output should be:
 
 ```
-cf files my-app app/public
+$ cf marketplace -s p-mysql
+Getting service plan information for service p-mysql as my-user...
+OK
+
+service plan   description           free or paid
+100mb          Shared MySQL Server   free
+1gb            Shared MySQL Server   free
 ```
 
-Viewing the content of a file is as easy as getting the files in a directory:
+### Creating services
+
+To use a service plan and *instantiate* it, you need to create a *service*. A *service* is an instance of a *service plan* that you can use in your application.
+Let's create a database for our application:
 
 ```
-cf files my-app app/README.md
+cf create-service p-mysql 100mb my-app-db
 ```
 
-Also, it is possible to run the `cf files` command for an specific instance:
+Output should be:
 
 ```
-cf files my-app -i 1
+$ cf create-service p-mysql 100mb my-app-db
+Creating service my-app-db in org my-org / space my-first-space as my-user...
+OK
 ```
 
-That command will show the files for the 2nd instance of `my-app`.
-> **Tip**: Remember that instances start at index 0.
+The parameters of the **create-service** command are: the name of the software service, the plan identifier and the name of the *your* service. This name is very important, since it is the one you are going to use for your application.
+
+You can explore which services are instantiated by doing:
+
+```
+cf services
+```
+
+Output should be:
+
+```
+$ cf services
+Getting services in org my-org / space my-first-space as my-user...
+OK
+
+name        service   plan    bound apps   last operation
+my-app-db   p-mysql   100mb                create succeeded
+```
+
+Also, getting detailed information for a service is very easy:
+
+```
+cf service my-app-db
+```
+
+Output should be:
+
+```
+$ cf service my-app-db
+
+Service instance: my-app-db
+Service: p-mysql
+Plan: 100mb
+Description: MySQL databases on demand
+Documentation url:
+Dashboard: https://p-mysql.bosh-lite.com/manage/instances/c353ea5a-6720-4db4-9207-235cb9032dee
+
+Last Operation
+Status: create succeeded
+Message:
+```
+
+### Binding and unbinding services
+
+
+
+### Managing services

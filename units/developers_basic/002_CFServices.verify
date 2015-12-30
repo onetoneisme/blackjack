@@ -1,0 +1,2 @@
+>cf target -o my-org -s my-first-space
+cf services|my-app-db.*|"my-app-db" service not found.
