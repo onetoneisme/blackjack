@@ -1,2 +1,6 @@
 >cf target -o my-org -s my-first-space
 cf services|my-app-db.*|"my-app-db" service not found.
+cf services|my-app-db.*100mb|Service "my-app-db" is of a wrong plan.
+cf services|my-app-db.*100mb.*my-app|Service "my-app-db" not bound to "my-app"
+cf services|my-fictional-service.*|"my-fictional-service" service not found.
+cf services|my-fictional-service.*my-app|Service "my-fictional-service" not bound to "my-app"
