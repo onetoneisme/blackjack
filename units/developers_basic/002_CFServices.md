@@ -114,7 +114,7 @@ Service: p-mysql
 Plan: 100mb
 Description: MySQL databases on demand
 Documentation url:
-Dashboard: https://p-mysql.bosh-lite.com/manage/instances/c353ea5a-6720-4db4-9207-235cb9032dee
+Dashboard: https://p-mysql.{{cf-get-instance-ip}}.xip.io/manage/instances/c353ea5a-6720-4db4-9207-235cb9032dee
 
 Last Operation
 Status: create succeeded
