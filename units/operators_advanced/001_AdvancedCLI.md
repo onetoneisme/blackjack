@@ -4,7 +4,7 @@
 
 1. CF_TRACE
 2. CLI's plugins
-3. Using `cf curl` to send commands to Cloud Foundry.
+3. Using `cf curl`
 4. Configure CLI's default values
 
 ### CF_TRACE
@@ -171,7 +171,7 @@ cf install-plugin CLI-Recorder -r CF-Community
 In the first command, you added the `http://plugins.cloudfoundry.org/` repository to the CLI's plugin repository list, and named it `CF-Community`.
 In the second command, you installed the plugin `CLI-Recorded` and, with `-r` flag, you specified that the binary is in the `CF-Community` repo.
 
-> **Warning**: Don't worry if you get a `FAILED` message when adding the `CF-Community` repo. The CLI might had it already.
+> **Warning**: Don't worry if you get a `FAILED` message when adding the `CF-Community` repo. The CLI might have it already.
 
 >**Tip**: If you want to try the installed plugin, the list of commands is [here](https://github.com/simonleung8/cli-plugin-recorder#full-command-list)
 
@@ -187,4 +187,6 @@ In the second command, you installed the plugin `CLI-Recorded` and, with `-r` fl
 Plugin names and commands must be unique. If you install a plugin that has a command the collides with another command, the CLI will displays an error message.
 
 Solving this issue involves uninstalling the existing plugin to install the new one.
+
+### Using `cf curl`
 
