@@ -1,0 +1,12 @@
+questions:
+- id: "1"
+  formulation: "What is BOSH?"
+  type: checkbox
+  options:
+  - id: "1"
+    value: "Baby don't hurt me! Don't hurt me! No more!"
+  - id: "2"
+    value: "An open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems."
+  - id: "3"
+    value: "A versioned Operating System image wrapped with IaaS specific packaging."
+  answer: "2"
