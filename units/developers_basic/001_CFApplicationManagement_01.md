@@ -169,7 +169,7 @@ applications:
   domain: {{cf-get-instance-ip}}.xip.io
 ```
 
-### Creating application manifests
+### Pushing application with manifest
 
 Now, let's reduce the instance memory again, since our application is very small and can run without any issue with 128M. With your favorite text editor, open the file and change the `memory:` value to `128M`. Save it and push the application again, this time specifying the manifest file:
 
@@ -246,6 +246,8 @@ OK
 ```
 
 Now, if you get the information with `cf app my-app` you will find that the application has been renamed. This, however, will not update your `manifest.yml` or the route (URL) to access your app. What Cloud Foundry has done is to modify the internal name so you can use that name for your CLIs commands.
+
+#### Deleting applications
 
 Now, another command you will find useful is the `delete` command. This action will effectively delete an application from Cloud Foundry.
 
