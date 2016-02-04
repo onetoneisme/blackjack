@@ -1,0 +1,33 @@
+### Viewing events
+
+An *event* is something that happens to your application at deployment level. Is different from an internal application log. All actions suffered by the application are recorded and can later be audited:
+
+```
+cf events my-app
+```
+
+Output should be similar to:
+
+```
+$ cf events my-app
+Getting events for app my-app in org my-org / space my-first-space as my-user...
+
+time                          event                 actor     description
+2015-12-23T14:24:02.00-0300   audit.app.update      my-user   environment_json: PRIVATE DATA HIDDEN
+2015-12-23T14:23:29.00-0300   audit.app.update      my-user   environment_json: PRIVATE DATA HIDDEN
+2015-12-23T14:19:28.00-0300   audit.app.update      my-user   environment_json: PRIVATE DATA HIDDEN
+2015-12-23T13:41:23.00-0300   app.crash             my-app    index: 1, reason: CRASHED, exit_description: failed to start, exit_status: -1
+2015-12-23T13:41:18.00-0300   audit.app.update      my-user   state: STARTED
+2015-12-23T13:41:16.00-0300   audit.app.update      my-user   state: STOPPED
+2015-12-23T13:41:16.00-0300   audit.app.update      my-user   memory: 64
+2015-12-23T13:37:37.00-0300   audit.app.update      my-user   instances: 2
+2015-12-23T13:33:03.00-0300   audit.app.update      my-user   state: STARTED
+2015-12-23T13:32:58.00-0300   audit.app.update      my-user   state: STOPPED
+2015-12-23T13:32:56.00-0300   audit.app.update      my-user   memory: 512
+2015-12-23T13:28:00.00-0300   audit.app.update      my-user   state: STARTED
+2015-12-23T13:27:54.00-0300   audit.app.update      my-user
+2015-12-23T13:27:54.00-0300   audit.app.map-route   my-user
+2015-12-23T13:27:49.00-0300   audit.app.create      my-user   instances: 1, state: STOPPED, environment_json: PRIVATE DATA HIDDEN
+```
+
+As you can see, these events are related to all the operations done by Cloud Foundry instead of what is going on INSIDE the application.
