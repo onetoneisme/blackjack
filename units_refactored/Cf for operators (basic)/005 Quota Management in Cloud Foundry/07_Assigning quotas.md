@@ -28,7 +28,7 @@ Getting info for my-org as admin...
 OK
 
 my-org:
-          domains:        {{cf-get-instance-ip}}.xip.io
+          domains:        {{echo $CF_DOMAIN}}
           quota:          large-quota (10240M memory limit, 2048M instance memory limit, 100 routes, 20 services, paid services disallowed)
           spaces:         my-first-space
           space quotas:

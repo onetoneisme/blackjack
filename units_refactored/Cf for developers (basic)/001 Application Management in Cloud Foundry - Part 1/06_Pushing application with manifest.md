@@ -15,7 +15,7 @@ Using manifest file my-sinatra-app_manifest.yml
 Updating app my-sinatra-app in org my-org / space my-first-space as my-user...
 OK
 
-Using route my-sinatra-app.127.0.0.1.xip.io
+Using route my-sinatra-app.{{echo $CF_DOMAIN}}
 Uploading my-sinatra-app...
 .
 . [lots of output]
@@ -23,7 +23,7 @@ Uploading my-sinatra-app...
 requested state: started
 instances: 1/1
 usage: 128M x 1 instances
-urls: my-sinatra-app.127.0.0.1.xip.io
+urls: my-sinatra-app.{{echo $CF_DOMAIN}}
 last uploaded: [output timestamp]
 
      state     since                    cpu    memory          disk        details

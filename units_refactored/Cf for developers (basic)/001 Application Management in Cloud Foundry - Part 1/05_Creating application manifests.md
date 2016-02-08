@@ -27,5 +27,5 @@ applications:
   memory: 256M
   instances: 1
   host: my-sinatra-app
-  domain: 127.0.0.1.xip.io
+  domain: {{echo $CF_DOMAIN}}
 ```

@@ -14,4 +14,4 @@ Deploying an application in CF involves using the `cf push` command. In this cas
 cf-app push Sinatra-Example-app
 ```
 
-CF will deploy the application and will show the URL to access the application, in this case, something like `http: // sinatra-example-app.{{cf-get-instance-ip}}.xip.io/`
+CF will deploy the application and will show the URL to access the application, in this case, something like `http: // sinatra-example-app.{{echo $CF_DOMAIN}}/`

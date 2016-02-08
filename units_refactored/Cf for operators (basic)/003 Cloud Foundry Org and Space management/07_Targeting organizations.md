@@ -12,7 +12,7 @@ Output should be:
 ```sh
 $ cf target -o my-org
 
-API endpoint:   https://api.{{cf-get-instance-ip}}.xip.io (API version: 2.43.0)
+API endpoint:   https://api.{{echo $CF_DOMAIN}} (API version: 2.43.0)
 User:           admin
 Org:            my-org
 Space:          No space targeted, use 'cf target -s SPACE'
