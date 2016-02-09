@@ -26,9 +26,9 @@ Change **StockResource** class with the next code:
 Execute
 ```
 $ mvn clean install
-$ cf push workshop-12f-stock -p target/project-name-1.0-SNAPSHOT.jar
+$ cf push workshop-12f-stock -p target/{project-name}-1.0-SNAPSHOT.jar
 ```
-Now if you access **http://workshop-12f-stock.cfapps.io/stock/ping** you see "Ping null" as the output. It is because we haven't set environmrnt variable value yet. Let do it.
+Now if you access **http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping** you see "Ping null" as the output. It is because we haven't set environmrnt variable value yet. Let do it.
 ```
 $ cf set-env workshop-12f-stock environment.variable some_value
 ```
@@ -37,4 +37,4 @@ Now you should restart your app
 cf restart workshop-12f-stock
 ```
 
-Access **http://workshop-12f-stock.cfapps.io/stock/ping** and make sure that output is "Ping some_value".
+Access **http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping** and make sure that output is "Ping some_value".

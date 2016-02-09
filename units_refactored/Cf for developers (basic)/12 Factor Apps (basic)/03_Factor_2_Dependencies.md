@@ -110,7 +110,7 @@ $ java -jar target/project-name-1.0-SNAPSHOT.jar
 In your browser try to access **http://localhost:8080/stock/ping**. You should see **"Ping"** as response.
 As you have working application you can push it to CF. From the root of your project execute
 ```
-$ cf push workshop-12f-stock -p target/project-name-1.0-SNAPSHOT.jar
+$ cf push workshop-12f-stock -p target/{project-name}-1.0-SNAPSHOT.jar
 ```
 If all is OK you should see similar output:
 ```
@@ -127,4 +127,4 @@ buildpack: java-buildpack=v3.5.1-http://github.com/pivotal-cf/pcf-java-buildpack
 
 D:\temp\asd;lfka's;dflk\project-name>
 ```
-Try to access your app from CF **http://workshop-12f-stock.cfapps.io/stock/ping**
+Try to access your app from CF **http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping**

@@ -203,13 +203,13 @@ cf push
 ```
 Since we provide **manifest.yml** file we just to execute **cf push** command witout any information about jar file location.
 
-Try to access your application **http://workshop-12f-stock.cfapps.io/stock/ping**. Via some rest client POST new StockItem
+Try to access your application **http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping**. Via some rest client POST new StockItem
 ```
-POST http://workshop-12f-stock.cfapps.io/stock
+POST http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock
 Content-Type: application/json
 {"type":"CD","title":"Adele","description":"Hello"}
 ```
 and try to GET it
 ```
-GET http://workshop-12f-stock.cfapps.io/stock
+GET http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock
 ```
