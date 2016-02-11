@@ -104,7 +104,7 @@ If all is OK you should see something like the next
 ```
 Then launch Spring Boot application
 ```
-$ java -jar target/project-name-1.0-SNAPSHOT.jar
+$ java -jar target/{project-name}-1.0-SNAPSHOT.jar
 ```
 
 In your browser try to access **http://localhost:8080/stock/ping**. You should see **"Ping"** as response.

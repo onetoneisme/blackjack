@@ -178,7 +178,7 @@ The last step is to create CF configuration file **manifest.yml** to provide bas
 ---
 applications:
   - name: workshop-12f-stock
-    path: target/project-name-1.0-SNAPSHOT.jar
+    path: target/{project-name}-1.0-SNAPSHOT.jar
     buildpack: https://github.com/cloudfoundry/java-buildpack.git
     memory: 512M
     services:

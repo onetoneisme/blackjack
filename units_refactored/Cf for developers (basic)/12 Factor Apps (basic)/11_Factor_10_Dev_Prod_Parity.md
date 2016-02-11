@@ -13,7 +13,7 @@ Historically, there have been substantial gaps between development (a developer 
 * Make the personnel gap small: developers who wrote code are closely involved in deploying it and watching its behavior in production.
 * Make the tools gap small: keep development and production as similar as possible.
 
-For now we has worked in **development** space. Check it
+For now we has been working in **development** space. Check it
 ```sh
 $ cf target
 ```
@@ -24,13 +24,13 @@ User:           user_name
 Org:            your-org
 Space:          development
 ```
-Lets create **production** space (environment).
+Lets create **production_test** space (environment).
 ```sh
-$ cf create-space production
+$ cf create-space production_test
 ```
 and switch our CF client to work with that space
 ```sh
-$ cf target -s production
+$ cf target -s production_test
 ```
 To run our application we need MySQl and Redis services.
 ```sh
@@ -38,8 +38,8 @@ $ cf create-service cleardb spark mysql
 $ cf create-service rediscloud 30mb redis
 ```
 
-Now we are able to push our application to **production**
+Now we are able to push our application to **production_test**
 ```sh
-$ cf push -n workshop-12f-stock-production
+$ cf push -n workshop-12f-stock-production_test
 ```
-Try to access your production deployment http://workshop-12f-stock-production.cfapps.io/stock/ping and make sure that it is work properly.
+Try to access your production_test deployment http://workshop-12f-stock-production_test.{{echo $CF_DOMAIN}}/stock/ping and make sure that it is work properly.
