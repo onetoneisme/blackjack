@@ -1,29 +1,27 @@
 questions:
 - id: "1"
-  formulation: "What is BOSH?"
+  formulation: "What do you need to connect to a CF API?"
+  type: chcheckbox_multiple
+  options:
+  - id: "1"
+    value: "A GUI application."
+  - id: "2"
+    value: "The CF CLI installed."
+  - id: "3"
+    value: "A Cloud Foundry deployment URL."
+  answer: "2, 3"
+- id: "2"
+  formulation: "How do you target an organization and a space?"
   type: checkbox
   options:
   - id: "1"
-    value: "Baby don't hurt me! Don't hurt me! No more!"
+    value: "cf target organization space"
   - id: "2"
-    value: "An open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems."
+    value: "cf target -o organization -s space"
   - id: "3"
-    value: "A versioned Operating System image wrapped with IaaS specific packaging."
-  answer: "2"
-- id: "2"
-  formulation: "Which of the following is a CF component (there may be more than one)?"
-  type: checkbox_multiple
-  options:
-  - id: "1"
-    value: "Cloud Controller"
-  - id: "2"
-    value: "Loggregator"
-  - id: "3"
-    value: "NATS"
-  - id: "4"
-    value: "Docker Compose"
-  answer: "1,2,3"
+    value: "cf target -org organization -space space"
+  answer: "1"
 - id: "3"
-  formulation: "Please, write down the year of the initial Cloud Foundry release."
+  formulation: "Please type the command to deploy the application 'my-app' to Cloud Foundry"
   type: input
-  answer: "2011"
+  answer: "cf push my-app"
