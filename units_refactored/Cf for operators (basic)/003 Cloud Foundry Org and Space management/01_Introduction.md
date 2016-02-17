@@ -14,8 +14,6 @@ To understand a little bit more about Orgs, Spaces and Roles, the [official docu
 
 At an overview, the structure can be defined as:
 
-**TODO**: Make a pretty graphic.
-
 ```
 Organization(s)
 |
