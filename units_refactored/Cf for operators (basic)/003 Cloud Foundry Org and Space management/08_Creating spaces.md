@@ -1,5 +1,7 @@
 #### Creating spaces
 
+Spaces are a very convenient way of separating concerns and environments inside an Org. Managing Spaces is no different from managing Orgs.
+
 To create an space, it is as simple as:
 
 ```sh

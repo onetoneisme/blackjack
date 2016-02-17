@@ -1,6 +1,12 @@
 #### Targeting organizations
 
-Let's try by listing all spaces in that Org. The first step is to *target* the Org you want to get the spaces from.
+Since we deleted the Org in the previous step, we are going to need to create a new one:
+
+```sh
+cf create-org my-org
+```
+
+Let's try first listing all spaces in that Org. The first step is to *target* the Org you want to get the spaces from.
 This will set a default Org for the CLI to work with.
 
 ```sh
