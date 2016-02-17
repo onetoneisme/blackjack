@@ -5,20 +5,20 @@ Try executing the `cf` command without options. You will get a lot of commands a
 This is fundamental to know, as it will help a lot to navigate through CF's CLI commands.
 As an example, let's say that you want to view all the commands related to `spaces`. It is possible to tunnel the CLI help through Linux's `grep` command:
 
-```sh
+```
 cf | grep space
 ```
 
 Now, suppose you want to get specific help on how to create a space with `create-space`.
 Simply use the `help` command and specify which action do you want help with:
 
-```sh
+```
 cf help create-space
 ```
 
 This will show you something like:
 
-```sh
+```
 $ cf help create-space
 NAME:
    create-space - Create a space

@@ -7,6 +7,6 @@ This is done by using the `cf target` command.
 
 Use `cf target` for setting the CLI in the **training** org and the space that you just created and assigned permissions to.
 
-```
+```sh
 cf target -o training -s test-space
 ```
