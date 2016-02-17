@@ -7,7 +7,7 @@ Using the CLI requires to connect to the API CF, for the CLI to know where to se
 
 To connect to Cloud Foundry's API, you need to use the `cf api` command.
 
-```
+```sh
 cf api --skip-ssl-validation https://api.{{echo $CF_DOMAIN}}
 ```
 
