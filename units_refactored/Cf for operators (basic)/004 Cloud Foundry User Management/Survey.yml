@@ -1,12 +1,31 @@
 questions:
 - id: "1"
-  formulation: "What is BOSH?"
+  formulation: "How do you create the user 'i-am-batman' with password 'check-my-batcave'?"
+  type: input
+  answer: 'cf create-user i-am-batman "check-my-batcave"'
+- id: "2"
+  formulation: "Which of these are default Cloud Foundry's default organization roles?"
+  type: checkbox_multiple
+  options:
+  - id: "1"
+    value: "OrgCEO"
+  - id: "2"
+    value: "OrgManager"
+  - id: "3"
+    value: "OrgAuditor"
+  - id: "4"
+    value: "OrgTester"
+  - id: "5"
+    value: "OrgDeveloper"
+  answer: "(2,3)"
+- id: "3"
+  formulation: "Which role do you need if you want to add users to spaces?"
   type: checkbox
   options:
   - id: "1"
-    value: "Baby don't hurt me! Don't hurt me! No more!"
+    value: "SpaceDeveloper"
   - id: "2"
-    value: "An open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems."
+    value: "SpaceAuditor"
   - id: "3"
-    value: "A versioned Operating System image wrapped with IaaS specific packaging."
-  answer: "2"
+    value: "SpaceManager"
+  answer: "3"

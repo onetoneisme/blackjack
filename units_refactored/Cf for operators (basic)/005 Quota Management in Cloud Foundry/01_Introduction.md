@@ -11,7 +11,7 @@
 
 *How do you manage resources in Cloud Foundry?*
 
-That is a very common question that have a very good answer.
+That is a very common question that has a very good answer.
 
 Cloud Foundry offers a very convenient way of managing available resources such as disk, memory and even paid services. This is done through **Quotas**, or namesets that are easy way to remember a configuration for an specific resource management plan.
 

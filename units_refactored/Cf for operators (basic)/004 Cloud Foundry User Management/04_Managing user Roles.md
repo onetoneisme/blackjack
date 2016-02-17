@@ -1,6 +1,6 @@
 ### Managing user Roles
 
-Cloud Foundry has a built in RBAC (Role Based Access Control) system that will allow you to control what a user can or cannot do inside an Organization or an Space.
+Cloud Foundry has a built in RBAC (Role Based Access Control) system that allows you to control what a user can or cannot do inside an Organization or an Space.
 
 The basic provided roles are perfectly described in the official documentation:
 
