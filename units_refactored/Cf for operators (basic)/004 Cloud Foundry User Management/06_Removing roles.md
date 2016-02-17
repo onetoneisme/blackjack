@@ -12,7 +12,7 @@ cf unset-space-role admin my-org my-first-space SpaceDeveloper
 
 Output should be:
 
-```sh
+```
 $ cf unset-space-role admin my-org my-first-space SpaceDeveloper
 Removing role SpaceDeveloper from user admin in org my-org / space my-first-space as admin...
 OK
@@ -20,7 +20,7 @@ OK
 
 If you run the `cf space-users` command again, you should get:
 
-```sh
+```
 $ cf space-users my-org my-first-space
 Getting users in org my-org / space my-first-space as admin
 

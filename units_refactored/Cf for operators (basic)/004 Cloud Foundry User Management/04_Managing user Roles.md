@@ -19,7 +19,7 @@ cf set-org-role my-user my-org OrgAuditor
 
 Output should be:
 
-```sh
+```
 $ cf set-org-role my-user my-org OrgAuditor
 Assigning role OrgAuditor to user my-user in org my-org as admin...
 OK
@@ -35,7 +35,7 @@ cf set-space-role my-user my-org my-first-space SpaceDeveloper
 
 Output should be:
 
-```sh
+```
 $ cf set-space-role my-user my-org my-first-space SpaceDeveloper
 Assigning role SpaceDeveloper to user my-user in org my-org / space my-first-space as admin...
 OK

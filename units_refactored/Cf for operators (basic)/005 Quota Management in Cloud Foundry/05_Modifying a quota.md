@@ -12,7 +12,7 @@ cf update-quota large-quota --disallow-paid-service-plans
 
 Output should be:
 
-```sh
+```
 $ cf update-quota large-quota --disallow-paid-service-plans
 Updating quota large-quota as admin...
 OK
@@ -28,7 +28,7 @@ cf update-quota small-quota -i 256M -s 2
 
 Output should be:
 
-```sh
+```
 $ cf update-quota small-quota -i 256M -s 2
 Updating quota small-quota as admin...
 OK

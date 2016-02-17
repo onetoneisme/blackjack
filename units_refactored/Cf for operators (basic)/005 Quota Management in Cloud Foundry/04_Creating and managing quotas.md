@@ -8,7 +8,7 @@ cf help create-quota
 
 Output should be:
 
-```sh
+```
 $ cf help create-quota
 NAME:
    create-quota - Define a new resource quota

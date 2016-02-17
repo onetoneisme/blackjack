@@ -8,7 +8,7 @@ cf set-quota my-org large-quota
 
 Output should be:
 
-```sh
+```
 $ cf set-quota my-org large-quota
 Setting quota large-quota to org my-org as admin...
 OK

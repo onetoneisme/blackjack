@@ -12,7 +12,7 @@ cf org-users my-org
 
 Output should be:
 
-```sh
+```
 $ cf org-users my-org
 Getting users in org my-org as admin...
 
@@ -33,7 +33,7 @@ cf space-users my-org my-first-space
 
 Output should be:
 
-```sh
+```
 $ cf space-users my-org my-first-space
 Getting users in org my-org / space my-first-space as admin
 

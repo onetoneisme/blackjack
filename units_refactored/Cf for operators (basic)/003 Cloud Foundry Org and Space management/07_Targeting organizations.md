@@ -15,7 +15,7 @@ cf target -o my-org
 
 Output should be:
 
-```sh
+```
 $ cf target -o my-org
 
 API endpoint:   https://api.{{echo $CF_DOMAIN}} (API version: 2.43.0)
@@ -32,7 +32,7 @@ cf spaces
 
 Which will return a list of the existing spaces in the Org:
 
-```sh
+```
 $ cf spaces
 Getting spaces in org my-org as admin...
 

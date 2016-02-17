@@ -6,7 +6,7 @@ Creating (`create-space-quota`), updating (`update-space-quota`) and deleting (`
 
 Create a space quota:
 
-```
+```sh
 cf create-space-quota small-space-quota -i 512M -m 2048M -r 10 -s 5
 ```
 
@@ -20,7 +20,7 @@ OK
 
 Now modify it:
 
-```
+```sh
 cf update-space-quota small-space-quota -i 128M
 ```
 
@@ -34,7 +34,7 @@ OK
 
 Assign the quota to your space:
 
-```
+```sh
 cf set-space-quota my-first-space small-space-quota
 ```
 
@@ -48,7 +48,7 @@ OK
 
 Now, get the information for your space:
 
-```
+```sh
 cf space my-first-space
 ```
 
@@ -72,7 +72,7 @@ As you can see, the space quota now shows in the space information, confirming t
 
 The biggest difference between a Space quota and a Org quota is that a Space quota can be unassigned:
 
-```
+```sh
 cf unset-space-quota my-first-space small-space-quota
 ```
 

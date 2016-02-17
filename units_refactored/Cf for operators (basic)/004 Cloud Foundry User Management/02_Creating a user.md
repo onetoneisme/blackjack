@@ -7,7 +7,7 @@ cf create-user my-user "my-password"
 
 Cloud Foundry then will create the user, and show the result:
 
-```sh
+```
 $ cf create-user my-user "my-password"
 Creating user my-user as admin...
 OK

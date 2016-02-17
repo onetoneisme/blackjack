@@ -8,7 +8,7 @@ cf delete-quota small-quota
 
 Output should be:
 
-```sh
+```
 $ cf delete-quota small-quota
 
 Really delete the quota small-quota?> yes
