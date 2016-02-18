@@ -21,7 +21,7 @@ System-Provided:
   "application_id": "6d6911ed-ec44-40ca-92fa-14d14798686b",
   "application_name": "my-app",
   "application_uris": [
-   "my-app.{{echo $CF_DOMAIN}}"
+   "my-app.{{cf-get-instance-ip}}.xip.io"
   ],
   "application_version": "a372ae9a-c3ec-4201-a1bb-30ea45b0ad26",
   "limits": {
@@ -33,7 +33,7 @@ System-Provided:
   "space_id": "67622917-e943-47fb-8c06-f12ae5694327",
   "space_name": "my-first-space",
   "uris": [
-   "my-app.{{echo $CF_DOMAIN}}"
+   "my-app.{{cf-get-instance-ip}}.xip.io"
   ],
   "users": null,
   "version": "a372ae9a-c3ec-4201-a1bb-30ea45b0ad26"

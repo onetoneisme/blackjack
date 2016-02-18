@@ -34,7 +34,7 @@ cf create-quota small-quota -i 512M -m 2048M -r 10 -s 5
 
 Output should be:
 
-```sh
+```
 $ cf create-quota small-quota -i 512M -m 2048M -r 10 -s 5
 Creating quota small-quota as admin...
 OK
@@ -44,7 +44,7 @@ This command created a quota with a max instance memory use (`-i`) of 512M, a ma
 
 If you list the quotas again, you'll see that your newly created quota is there.
 
-```sh
+```
 $ cf quotas
 Getting quotas as admin...
 OK
@@ -62,7 +62,7 @@ cf create-quota large-quota -i 2048M -m 10G -r 100 -s 20 --allow-paid-service-pl
 
 Output should be:
 
-```sh
+```
 $ cf create-quota large-quota -i 2048M -m 10G -r 100 -s 20 --allow-paid-service-plans
 Creating quota large-quota as admin...
 OK
