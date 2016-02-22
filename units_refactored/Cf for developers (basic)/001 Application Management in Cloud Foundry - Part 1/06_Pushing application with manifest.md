@@ -2,7 +2,7 @@
 
 Now, let's reduce the instance memory again, since our application is very small and can run without any issue with 128M. Open the file and change the `memory:` value to `512M`. Save it and push the application again, this time specifying the manifest file:
 
-```
+```sh
 cf push -f my-sinatra-app_manifest.yml
 ```
 

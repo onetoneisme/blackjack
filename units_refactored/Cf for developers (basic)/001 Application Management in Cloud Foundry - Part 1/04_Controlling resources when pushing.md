@@ -2,7 +2,7 @@
 
 As you can see, pushing the application uses some default values such as the disk size and memory limits. To specify custom values, the CLI offers a series of modifiers:
 
-```
+```sh
 cf push my-sinatra-app -k 128M -m 256M
 ```
 

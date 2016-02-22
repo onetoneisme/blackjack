@@ -2,7 +2,7 @@
 
 Now, another command you will find useful is the `delete` command. This action will effectively delete an application from Cloud Foundry.
 
-```
+```sh
 cf delete my-app
 ```
 
@@ -20,6 +20,6 @@ OK
 
 Try now deleting the `my-sinatra-example` application, forcing the confirmation:
 
-```
+```sh
 cf delete my-sinatra-example -f
 ```
