@@ -4,7 +4,7 @@ There are several ways of restarting an application, each one with some differen
 
 Try:
 
-```
+```sh
 cf stop my-app
 ```
 
@@ -18,7 +18,7 @@ OK
 
 Check that the application is halted successfully with `cf app my-app`. This will simply stop the application, leaving all the source code there, ready to be started again:
 
-```
+```sh
 cf start my-app
 ```
 
@@ -26,6 +26,6 @@ Output will show that the application has been started again.
 
 Those two steps can be summed combined:
 
-```
+```sh
 cf restart my-app
 ```
