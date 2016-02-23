@@ -5,7 +5,7 @@ To restart it and have it working again, you can use the `cf restart-app-instanc
 
 Let's say that the instance number **2** of your application stopped somehow. Restart it by doing:
 
-```
+```sh
 cf restart-app-instance my-app 2
 ```
 

@@ -2,7 +2,7 @@
 
 To view the available environmental variables available for your application, use:
 
-```
+```sh
 cf env my-app
 ```
 
