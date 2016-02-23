@@ -1,6 +1,6 @@
 # Advanced Cloud Foundry CLI usage
 
-###What you are going to learn:
+### What you are going to learn:
 
 1. CF_TRACE
 2. CLI's plugins
@@ -140,8 +140,8 @@ X-Vcap-Request-Id: 27a5c3f0-06ad-4ef9-4c97-53cee23e487d::68147af0-1f31-40df-98d4
     }
   ]
 }
-name   
-my-org 
+name
+my-org
 ```
 
 This "ultra verbose mode" is useful to diagnose issues with any command you might send to Cloud Foundry.
@@ -219,6 +219,3 @@ echo My App name is: $APP_NAME
 ```
 
 ### Configure CLI's default values
-
-
-
