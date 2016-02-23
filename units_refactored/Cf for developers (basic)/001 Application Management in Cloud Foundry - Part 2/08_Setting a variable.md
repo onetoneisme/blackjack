@@ -2,7 +2,7 @@
 
 Suposse that you need to set a variable to provide a value to your application. Just do:
 
-```
+```sh
 cf set-env my-app MYVAR myvalue
 ```
 
@@ -20,13 +20,13 @@ Although this variable will be imeediately availabe to all you application insta
 If you run again `cf env my-app`, you will see that `MYVAR` and it's value appears under the `User-Provided` section.
 Now, define a second variable:
 
-```
+```sh
 cf set-env my-app MY_OTHER_VAR myothervalue
 ```
 
-Check again the variables. To unset (remove) a variable from the environment, you simply do:
+Check again the variables. To unset (remove) a variable from the environment do:
 
-```
+```sh
 cf unset-env my-app MY_OTHER_VAR
 ```
 

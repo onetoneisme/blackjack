@@ -11,7 +11,7 @@
 
 Since we have deleted the application, lets deploy it again. But before, edit the `manifest.yml` file and change **only** the `name` attribute value to `my-app`. Save the file and push the application:
 
-```
+```sh
 cf push
 ```
 

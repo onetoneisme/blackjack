@@ -3,14 +3,14 @@ Deploy an application
 
 First, clone this GitHub repository in your work directory:
 
-```
+```sh
 git clone https://github.com/Altoros/cf-example-sinatra
 cd cf-example-sinatra
 ```
 
 Deploying an application in CF involves using the `cf push` command. In this case, we will use the following format `cf push application-name` For example, we will use `Sinatra-Example-app`:
 
-```
+```sh
 cf-app push Sinatra-Example-app
 ```
 

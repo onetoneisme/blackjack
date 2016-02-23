@@ -6,7 +6,7 @@ Cloud Foundry's CLI provides a myriad of options to manage your applications.
 
 In the same way that Orgs, Users and Spaces can be listed, there is an option to list our deployed apps:
 
-```
+```sh
 cf apps
 ```
 

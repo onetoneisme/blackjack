@@ -1,12 +1,27 @@
 questions:
 - id: "1"
-  formulation: "What is BOSH?"
+  formulation: "Please, scale up the 'my-batmobile-app' up to 3 instances."
+  type: input
+  answer: 'cf push my-batmobile-app -i 3'
+- id: "2"
+  formulation: "What is the difference between restarting and restaging an application?"
   type: checkbox
   options:
   - id: "1"
-    value: "Baby don't hurt me! Don't hurt me! No more!"
+    value: "None. It is the same."
   - id: "2"
-    value: "An open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems."
+    value: "'restage' will upload the code again"
   - id: "3"
-    value: "A versioned Operating System image wrapped with IaaS specific packaging."
+    value: "'restage' deletes the droplet and recreates it"
   answer: "2"
+- id: "3"
+  formulation: "Why is an enviornment variable important in Cloud Foundry?"
+  type: checkbox_multiple
+  options:
+  - id: "1"
+    value: "Because it is a way for developers not to worry about credentials and URIs and just focus on the business logic"
+  - id: "2"
+    value: "Because it allows Cloud Foundry deployed apps to safely get credentials about services"
+  - id: "3"
+    value: "Because it allows Cloud Foundry to communicate with a deployed application about its environment"
+  answer: "(1,2,3)"

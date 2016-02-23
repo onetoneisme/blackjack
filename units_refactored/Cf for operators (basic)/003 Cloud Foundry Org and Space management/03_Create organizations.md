@@ -8,7 +8,7 @@ cf create-org my-org
 
 You will see something like:
 
-```sh
+```
 $ cf create-org my-org
 Creating org my-org as admin...
 OK

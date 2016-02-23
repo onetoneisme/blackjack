@@ -1,12 +1,31 @@
 questions:
 - id: "1"
-  formulation: "What is BOSH?"
+  formulation: "What is a CF quota?"
   type: checkbox
   options:
   - id: "1"
-    value: "Baby don't hurt me! Don't hurt me! No more!"
+    value: "A way to use Cloud Foundry's logging facilities"
   - id: "2"
-    value: "An open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems."
+    value: "Not a clue"
   - id: "3"
-    value: "A versioned Operating System image wrapped with IaaS specific packaging."
-  answer: "2"
+    value: "The proportion of the funds of a parish contributed to the diocese"
+  - id: "4"
+    value: "A configuration for an specific resource management plan"
+  - id: "5"
+    value: "A resource to configure apps"
+  answer: "4"
+- id: "2"
+  formulation: "How do you list quotas?"
+  type: input
+  answer: 'cf quotas'
+- id: "3"
+  formulation: "What is an space quota?"
+  type: checkbox
+  options:
+  - id: "1"
+    value: "A quota that was launched by NASA to study cosmic radiation"
+  - id: "2"
+    value: "A way to set permissions for users in a Space"
+  - id: "3"
+    value: "A quota that can be applied to Spaces instead of Organizations"
+  answer: "3"

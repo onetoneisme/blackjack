@@ -2,8 +2,12 @@
 
 Let's create a new space:
 
+```sh
+cf create-space my-second-space
 ```
- $ cf create-space my-second-space
+
+```
+$ cf create-space my-second-space
 Creating space my-second-space in org my-org as admin...
 OK
 Assigning role SpaceManager to user admin in org my-org / space my-second-space as admin...
@@ -17,6 +21,10 @@ TIP: Use 'cf target -o my-org -s my-second-space' to target new space
 Now, in case we need to rename the space, its very easy to do that:
 
 ```sh
+cf rename-space my-second-space my-trash-space
+```
+
+```
 $ cf rename-space my-second-space my-trash-space
 Renaming space my-second-space to my-trash-space in org my-org as admin...
 OK
@@ -27,6 +35,10 @@ Again, you don't need to worry about changing the name, since the internal refer
 Deleting an space is really easy as well:
 
 ```sh
+cf delete-space my-trash-space
+```
+
+```
 $ cf delete-space my-trash-space
 
 Really delete the space my-trash-space?> yes

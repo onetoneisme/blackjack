@@ -2,7 +2,7 @@
 
 A service update will upgrade or downgrade the service instance plan.
 
-```
+```sh
 cf update-service my-sinatra-app-db -p 1gb
 ```
 

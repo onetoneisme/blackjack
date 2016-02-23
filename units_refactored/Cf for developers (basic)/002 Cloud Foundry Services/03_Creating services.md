@@ -3,7 +3,7 @@
 To use a service plan and *instantiate* it, you need to create a *service*. A *service* is an instance of a *service plan* that you can use in your application.
 Let's create a database for our application:
 
-```
+```sh
 cf create-service p-mysql 100mb my-app-db
 ```
 
@@ -19,7 +19,7 @@ The parameters of the **create-service** command are: the name of the software s
 
 You can explore which services are instantiated by doing:
 
-```
+```sh
 cf services
 ```
 
@@ -36,7 +36,7 @@ my-app-db   p-mysql   100mb                create succeeded
 
 Also, getting detailed information for a service is very easy:
 
-```
+```sh
 cf service my-app-db
 ```
 
@@ -50,7 +50,7 @@ Service: p-mysql
 Plan: 100mb
 Description: MySQL databases on demand
 Documentation url:
-Dashboard: https://p-mysql.{{echo $CF_DOMAIN}}/manage/instances/c353ea5a-6720-4db4-9207-235cb9032dee
+Dashboard: https://p-mysql.{{echo $CF_DOMAIN}}manage/instances/c353ea5a-6720-4db4-9207-235cb9032dee
 
 Last Operation
 Status: create succeeded

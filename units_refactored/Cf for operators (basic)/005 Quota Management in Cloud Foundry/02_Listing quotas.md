@@ -8,7 +8,7 @@ cf quotas
 
 Output should be:
 
-```sh
+```
 $ cf quotas
 Getting quotas as admin...
 OK

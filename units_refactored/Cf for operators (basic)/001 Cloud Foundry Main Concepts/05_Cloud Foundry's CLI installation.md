@@ -23,7 +23,7 @@ Try it by simply typing `cf --version`.
 
 You should see something like:
 
-```sh
+```
 $ cf --version
 cf version 6.14.0+2654a47-2015-11-18
 ```

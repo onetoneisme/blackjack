@@ -4,7 +4,7 @@ So, how do you use this service you just created in your application?
 To do this, you need to *bind* your service to your application.
 Binding will allow your app to get the necessary information to use the service: connection URI, username, password, connection parameters, etc.
 
-```
+```sh
 cf bind-service my-app my-app-db
 ```
 
@@ -49,7 +49,7 @@ Now, let's try it in our application.
 First, you need to have some code in place to use the service.
 Go to the `cf-example-sinatra` application that you cloned before, and do:
 
-```
+```sh
 git checkout with-service
 ```
 

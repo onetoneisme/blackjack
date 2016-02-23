@@ -8,7 +8,7 @@ cf quota default
 
 Output should be:
 
-```sh
+```
 $ cf quota default
 Getting quota default info as admin...
 OK

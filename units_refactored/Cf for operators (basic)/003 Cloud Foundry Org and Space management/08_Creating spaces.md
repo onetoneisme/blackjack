@@ -10,7 +10,7 @@ cf create-space my-first-space
 
 The CLI will offer detailed information about the space created:
 
-```sh
+```
 $ cf create-space my-first-space
 Creating space my-first-space in org my-org as admin...
 OK
