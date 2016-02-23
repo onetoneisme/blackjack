@@ -3,7 +3,7 @@
 To use a service plan and *instantiate* it, you need to create a *service*. A *service* is an instance of a *service plan* that you can use in your application.
 Let's create a database for our application:
 
-```
+```sh
 cf create-service p-mysql 100mb my-app-db
 ```
 
@@ -19,7 +19,7 @@ The parameters of the **create-service** command are: the name of the software s
 
 You can explore which services are instantiated by doing:
 
-```
+```sh
 cf services
 ```
 
@@ -36,7 +36,7 @@ my-app-db   p-mysql   100mb                create succeeded
 
 Also, getting detailed information for a service is very easy:
 
-```
+```sh
 cf service my-app-db
 ```
 

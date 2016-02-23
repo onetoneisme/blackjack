@@ -1,8 +1,8 @@
 #### Renaming services
 
-If you want to change the name of your service, simply do:
+If you want to change the name of your service:
 
-```
+```sh
 cf rename-service my-app-db my-sinatra-app-db
 ```
 

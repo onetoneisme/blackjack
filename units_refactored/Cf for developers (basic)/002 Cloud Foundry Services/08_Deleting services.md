@@ -2,7 +2,7 @@
 
 To delete a service, simply use the `delete-service` command:
 
-```
+```sh
 cf delete-service my-sinatra-app-db
 ```
 

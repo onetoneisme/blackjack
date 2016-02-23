@@ -2,9 +2,9 @@
 
 Getting information about the available services is vital for you to get information about which ones are available for consumption.
 Cloud Foundry provides a catalog of services that you can explore and review, called the *Service Marketplace*.
-To access it, simply do:
+To access it, just do:
 
-```
+```sh
 cf marketplace
 ```
 
@@ -29,7 +29,7 @@ In this example, the plans for the **p-mysql** (a MySQL database) service are:
 
 Although useful, this information will not show if the service is free or paid. There is a way to view the details of a service:
 
-```
+```sh
 cf marketplace -s p-mysql
 ```
 

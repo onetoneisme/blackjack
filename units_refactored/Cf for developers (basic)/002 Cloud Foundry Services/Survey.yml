@@ -1,12 +1,27 @@
 questions:
 - id: "1"
-  formulation: "What is BOSH?"
+  formulation: "What is a service in the Cloud Foundry context?"
   type: checkbox
   options:
   - id: "1"
-    value: "Baby don't hurt me! Don't hurt me! No more!"
+    value: "A SOAP or REST web app that exposes an API"
   - id: "2"
-    value: "An open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems."
+    value: "Not a clue"
   - id: "3"
-    value: "A versioned Operating System image wrapped with IaaS specific packaging."
-  answer: "2"
+    value: "Any external piece of software that can be used by Cloud Foundry"
+  answer: "3"
+- id: "2"
+  formulation: "How do you list the available services?"
+  type: input
+  answer: 'cf marketplace'
+- id: "3"
+  formulation: "What happens if you try to delete a service that is still bound to applications?"
+  type: checkbox
+  options:
+  - id: "1"
+    value: "Nothing. Cloud Foundry will not allow it."
+  - id: "2"
+    value: "All data will be lost"
+  - id: "3"
+    value: "Cloud Foundry will automatically unbind the service from the applications and delete the service"
+  answer: "1"
