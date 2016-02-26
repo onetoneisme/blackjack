@@ -3,8 +3,6 @@
 To configure your AWS accout you have to do the following steps
 
 1. Create a Virtual Private Cloud (VPC)
-VPC should be created using following parameters:
-IP CIDR block: 10.0.0.0/16
 ```
 vpc_id=$(aws ec2 create-vpc --cidr-block '10.0.0.0/16'  --query 'Vpc.VpcId' --output text)
 aws ec2 create-tags --resources $vpc_id --tags Key=Name,Value=training_vpc
