@@ -14,15 +14,15 @@ cf_subnet_id=$(aws ec2 create-subnet --vpc-id $vpc_id --cidr-block 10.0.16.0/24 
 aws ec2 create-tags --resources $cf_subnet_id --tags Key=Name,Value=training_cf_subnet
 ```
 
-3. Create Elastic IP
+3. Create Elastic IP for NAT
 ```
-cf_eip_id=$(aws ec2 allocate-address --domain vpc --query 'AllocationId' --output text)
-cf_eip=$(aws ec2 describe-addresses --allocation-ids $cf_eip_id --query 'Addresses[].PublicIp' --output text)
+nat_eip_id=$(aws ec2 allocate-address --domain vpc --query 'AllocationId' --output text)
+nat_eip=$(aws ec2 describe-addresses --allocation-ids $nat_eip_id --query 'Addresses[].PublicIp' --output text)
 ```
 
 4. Create NAT gateway
 ```
-nat_gateway_id=$(aws ec2 create-nat-gateway --subnet-id $cf_subnet_id --allocation-id $cf_eip_id --query 'NatGateway.NatGatewayId' --output text)
+nat_gateway_id=$(aws ec2 create-nat-gateway --subnet-id $cf_subnet_id --allocation-id $nat_eip_id --query 'NatGateway.NatGatewayId' --output text)
 ```
 
 5. Create Route Table
@@ -56,12 +56,20 @@ Allow loggregator trafic
 aws ec2 authorize-security-group-ingress --group-id $cf_sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 4443, "ToPort": 4443, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
 ```
 
-9. Store all variables in a file for later ussage
+9. Create Elastic IP
+```
+cf_eip_id=$(aws ec2 allocate-address --domain vpc --query 'AllocationId' --output text)
+cf_eip=$(aws ec2 describe-addresses --allocation-ids $cf_eip_id --query 'Addresses[].PublicIp' --output text)
+```
+
+10. Store all variables in a file for later ussage
 ```
 cat >> deployment/vars <<EOF
 export cf_subnet_id=$cf_subnet_id
 export cf_eip_id=$cf_eip_id
 export cf_eip=$cf_eip
+export nat_eip_id=$nat_eip_id
+export nat_eip=$nat_eip
 export nat_gateway_id=$nat_gateway_id
 export cf_route_table_id=$cf_route_table_id
 export cf_sg_id=$cf_sg_id
