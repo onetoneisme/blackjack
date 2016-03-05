@@ -22,7 +22,7 @@ nat_eip=$(aws ec2 describe-addresses --allocation-ids $nat_eip_id --query 'Addre
 
 4. Create NAT gateway
 ```
-nat_gateway_id=$(aws ec2 create-nat-gateway --subnet-id $cf_subnet_id --allocation-id $nat_eip_id --query 'NatGateway.NatGatewayId' --output text)
+nat_gateway_id=$(aws ec2 create-nat-gateway --subnet-id $subnet_id --allocation-id $nat_eip_id --query 'NatGateway.NatGatewayId' --output text)
 ```
 
 5. Create Route Table
