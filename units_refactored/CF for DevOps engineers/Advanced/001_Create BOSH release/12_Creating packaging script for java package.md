@@ -1,0 +1,13 @@
+## Creating packaging script for java package
+
+
+Edit the following file `packages/java/packaging` and add the following content to it
+
+```
+# abort script on any command that exit with a non zero value
+set -e
+
+tar -xvf java/jre-7u25-linux-x64.tar.gz
+
+cp -a jre1.7.0_25/. $BOSH_INSTALL_TARGET
+```
