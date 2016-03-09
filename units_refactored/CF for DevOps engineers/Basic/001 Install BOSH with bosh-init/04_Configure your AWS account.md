@@ -1,6 +1,6 @@
 ## Configure your AWS account
 
-To configure your AWS accout you have to do the following steps
+To configure your AWS account you have to do the following steps
 
 1. Create a Virtual Private Cloud (VPC)
 ```
