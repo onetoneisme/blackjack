@@ -25,7 +25,7 @@ sudo apt-get install -y build-essential zlibc zlib1g-dev ruby ruby-dev openssl l
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s latest --ruby
 source .profile
-``` 
+```
 
 5. Verify Ruby 2+ is installed and in your $PATH
 ```
