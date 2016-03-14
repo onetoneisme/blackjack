@@ -1,4 +1,4 @@
-## Adding package sources
+## Add package sources
 
 ```
 cd ~/elasticsearch/src

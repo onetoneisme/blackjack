@@ -1,6 +1,6 @@
-## Updating monit startup file
+## Add the monit config
 
-Edit the following file `jobs/elasticsearch/monit` and add the following content to it
+Edit the file `jobs/elasticsearch/monit` and add the following content:
 
 ```
 check process elasticsearch

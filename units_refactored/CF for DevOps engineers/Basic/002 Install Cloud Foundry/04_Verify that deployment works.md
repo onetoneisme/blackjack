@@ -1,18 +1,18 @@
-## Verify that deployemnt work
+## Verify the deployment works
 
-1. Install cf cli
+1. Install the cf cli
 ```
 curl -o cf_cli.deb -J -L 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
 sudo dpkg -i cf_cli.deb
 ```
 
-2.  Connect to cf
+2.  Connect to CF
 ```
 cf api --skip-ssl-validation api.{{source ~/deployment/vars &&  echo $cf_eip}}.xip.io
 ```
 
-3. Prepare manifest to run CATS
-Add the following job to the manifest
+3. Prepare the manifest to run CATS
+Add the following job to the manifest:
 
 ```
 - instances: 1
@@ -26,19 +26,19 @@ Add the following job to the manifest
     release: cf
 ```
 
-Also add the following to the `properties` section of the manifest
+Also add the following to the `properties` section of the manifest:
 
 ```
   acceptance_tests:
-    api: api.{{source ~/deployment/vars && echo $cf_eip}}.xip.io 
+    api: api.{{source ~/deployment/vars && echo $cf_eip}}.xip.io
     apps_domain: {{source ~/deployment/vars && echo $cf_eip}}.xip.io
     admin_user: admin
-    admin_password: PASSWORD 
+    admin_password: PASSWORD
     skip_ssl_validation: true
     system_domain: {{source ~/deployment/vars && echo $cf_eip}}.xip.io
 ```
 
-And finally add the following templates to api job
+And finally add the following templates to the api job:
 ```
   - {name: go-buildpack, release: cf}
   - {name: binary-buildpack, release: cf}
@@ -53,7 +53,7 @@ And finally add the following templates to api job
 bosh deploy
 ```
 
-5. Run CATS 
+5. Run CATS
 ```
-bosh run errand  acceptance_tests --download-logs
+bosh run errand acceptance_tests --download-logs
 ```

@@ -22,6 +22,6 @@ questions:
     value: "cf target -org organization -space space"
   answer: "1"
 - id: "3"
-  formulation: "Please type the command to deploy the application 'my-app' to Cloud Foundry"
+  formulation: "Enter the command to deploy the application 'my-app' to Cloud Foundry"
   type: input
   answer: "cf push my-app"

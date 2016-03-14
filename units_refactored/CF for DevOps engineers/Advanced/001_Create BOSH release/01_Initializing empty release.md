@@ -1,11 +1,11 @@
-## Initializing empty release 
+## Initialize an empty release
 
 ```
 bosh init release elasticsearch
 cd ~/elasticsearch
 ```
 
-After executing this command file system tree should look like the following:
+After executing this command, the filesystem tree should look like the following:
 
 ```
 ○ → tree

@@ -1,4 +1,4 @@
-## Creating release
+## Create the release
 
 ```
 cd ~/elasticsearch

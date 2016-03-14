@@ -1,10 +1,10 @@
-## Creating java package
+## Create the java package
 
 ```
 bosh generate package java
 ```
 
-After executing this command file system tree should look like the following:
+After executing this command, the filesystem tree should look like the following:
 
 ```
 ○ → tree

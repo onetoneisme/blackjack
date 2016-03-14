@@ -1,10 +1,10 @@
-## Creating packaging script for elasticsearch package
+## Create the packaging script for the elasticsearch package
 
 
-Edit the following file `packages/elasticsearch/packaging` and add the following content to it
+Edit the file `packages/elasticsearch/packaging` and add the following content:
 
 ```
-# abort script on any command that exit with a non zero value
+# abort this script on any command that exits with a non-zero value
 set -e
 
 VERSION=0.90.2

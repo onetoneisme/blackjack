@@ -11,7 +11,7 @@ questions:
     value: "A versioned Operating System image wrapped with IaaS specific packaging."
   answer: "2"
 - id: "2"
-  formulation: "Which of the following is a CF component (there may be more than one)?"
+  formulation: "Which of the following is a CF component? (There may be more than one)"
   type: checkbox_multiple
   options:
   - id: "1"
@@ -24,6 +24,6 @@ questions:
     value: "Docker Compose"
   answer: "1,2,3"
 - id: "3"
-  formulation: "Please, write down the year of the initial Cloud Foundry release."
+  formulation: "What year was the initial Cloud Foundry release?"
   type: input
   answer: "2011"
