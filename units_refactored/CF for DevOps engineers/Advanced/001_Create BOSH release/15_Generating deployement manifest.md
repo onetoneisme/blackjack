@@ -5,7 +5,7 @@ Save the following file as `~/deployment/elasticsearch.yml`
 ```
 ---
 name: elasticsearch
-director_uuid: {{source ~/.profile && bosh status --uuid}} 
+director_uuid: {{source ~/.profile && bosh status --uuid 2>/dev/null}} 
 
 release:
   name: elasticsearch
