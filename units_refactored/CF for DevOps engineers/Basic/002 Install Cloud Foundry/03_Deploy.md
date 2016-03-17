@@ -16,6 +16,8 @@ bosh deployment ~/deployment/minimal-aws.yml
 ```
 
 4. Deploy
+
+    Note: This step may take 15+ minutes to complete.
 ```
 bosh deploy
 ```

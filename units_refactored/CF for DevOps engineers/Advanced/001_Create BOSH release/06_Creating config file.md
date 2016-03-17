@@ -1,6 +1,6 @@
 ## Create a config template
 
-Edit the file `jobs/elasticsearch/templates/elasticsearch.yml.erb` and add the following content:
+Create the file `jobs/elasticsearch/templates/elasticsearch.yml.erb` and add the following content:
 
 ```
 ---

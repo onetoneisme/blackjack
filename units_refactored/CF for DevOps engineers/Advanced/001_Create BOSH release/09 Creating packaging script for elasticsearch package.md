@@ -1,7 +1,7 @@
 ## Create the packaging script for the elasticsearch package
 
 
-Edit the file `packages/elasticsearch/packaging` and add the following content:
+Edit the file `packages/elasticsearch/packaging` and replace the existing content with the following:
 
 ```
 # abort this script on any command that exits with a non-zero value

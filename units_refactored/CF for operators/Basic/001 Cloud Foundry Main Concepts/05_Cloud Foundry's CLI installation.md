@@ -3,7 +3,7 @@
 Since Cloud Foundry works in a server-side deployment, you will need a way to communicate with the deployment (a Cloud Foundry foundation is a whole Cloud Foundry deployment) and perform day to day operations.
 The community developed a very convenient CLI tool that allows performing most of the operations required to operate CF.
 
-As we are using an Ubuntu jumpbox, you are going to download and install the Debian-based package, but it is important for you to know that the CLI is available for [other operating systems](https://github.com/cloudfoundry/cli#downloads) as well.
+As we are using an Ubuntu jumpbox, you are going to download and install the Debian-based package, but it is important for you to know that the CLI is available for <a href="https://github.com/cloudfoundry/cli#downloads" target="_blank">other operating systems</a> as well.
 
 To download the .deb package, use cURL:
 

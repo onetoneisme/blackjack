@@ -1,7 +1,7 @@
 ## Create the spec for the elasticsearch package
 
 
-Edit the file `packages/elasticsearch/spec` and add the following content:
+Edit the file `packages/elasticsearch/spec` and replace the existing content with the following:
 
 ```
 ---

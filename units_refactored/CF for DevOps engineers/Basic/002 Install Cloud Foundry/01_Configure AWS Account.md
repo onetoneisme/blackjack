@@ -43,15 +43,16 @@ aws ec2 create-tags --resources $cf_sg_id --tags Key=Name,Value=cf_training_sg
 ```
 
 8. Add Security Group rules
-Allow HTTP traffic
+
+    Allow HTTP traffic
 ```
 aws ec2 authorize-security-group-ingress --group-id $cf_sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 80, "ToPort": 80, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
 ```
-Allow HTTPS traffic
+    Allow HTTPS traffic
 ```
 aws ec2 authorize-security-group-ingress --group-id $cf_sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 443, "ToPort": 443, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
 ```
-Allow loggregator traffic
+    Allow loggregator traffic
 ```
 aws ec2 authorize-security-group-ingress --group-id $cf_sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 4443, "ToPort": 4443, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
 ```

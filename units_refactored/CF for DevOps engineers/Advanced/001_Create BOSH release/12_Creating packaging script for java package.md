@@ -1,7 +1,7 @@
 ## Create the packaging script for the java package
 
 
-Edit the file `packages/java/packaging` and add the following content:
+Edit the file `packages/java/packaging` and replace the existing content with the following:
 
 ```
 # abort script on any command that exit with a non zero value

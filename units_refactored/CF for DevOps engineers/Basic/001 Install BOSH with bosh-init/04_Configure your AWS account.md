@@ -32,48 +32,49 @@ aws ec2 associate-route-table --route-table-id $route_table_id --subnet-id $subn
 aws ec2 create-route --gateway-id $gateway_id --route-table-id $route_table_id  --destination-cidr-block 0.0.0.0/0
 ```
 
-5.  Create a Security Group
+6. Create a Security Group
 ```
 sg_id=$(aws ec2 create-security-group --vpc-id $vpc_id --group-name training_sg --description "Security Group bog BOSH deployment" --query 'GroupId' --output text)
 aws ec2 create-tags --resources $sg_id --tags Key=Name,Value=training_sg
 ```
 
-6. Add Rules to the Security Group
-Allow ICMP traffic
+7. Add Security Group rules
+
+    Allow ICMP traffic
 ```
 aws ec2 authorize-security-group-ingress --group-id $sg_id --ip-permissions '[{"IpProtocol": "icmp", "FromPort": -1, "ToPort": -1, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
 ```
-Allow SSH access
+    Allow SSH access
 ```
 aws ec2 authorize-security-group-ingress --group-id $sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 22, "ToPort": 22, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
 ```
-Allow bosh-init to access the bosh agent
+    Allow bosh-init to access bosh agent.
 ```
 aws ec2 authorize-security-group-ingress --group-id $sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 6868, "ToPort": 6868, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
 ```
-Allow the bosh cli to access the bosh director
+    Allow the bosh cli to access bosh director
 ```
 aws ec2 authorize-security-group-ingress --group-id $sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 25555, "ToPort": 25555, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
 ```
-Allow all TCP and UDP trafic inside the security group
+    Allow all TCP and UDP traffic inside the security group
 ```
 aws ec2 authorize-security-group-ingress --group-id $sg_id --protocol '-1' --port -1 --source-group $sg_id
 ```
 
-7. Create an Elastic IP
+8. Create an Elastic IP
 ```
 eip_id=$(aws ec2 allocate-address --domain vpc --query 'AllocationId' --output text)
 eip=$(aws ec2 describe-addresses --allocation-ids $eip_id --query 'Addresses[].PublicIp' --output text)
 ```
 
-8. Create a Key Pair
+9. Create a Key Pair
 ```
 mkdir deployment
-aws ec2 create-key-pair --key-name training_key --query 'KeyMaterial' --output text > deployment/bosh.pem
-chmod 600 deployment/bosh.pem
+aws ec2 create-key-pair --key-name $(hostname)-training_key --query 'KeyMaterial' --output text > deployment/bosh.pem
+chmod 400 deployment/bosh.pem
 ```
 
-9. Store all variables in a file for later use
+10. Store all variables in a file for later use
 ```
 cat > ~/deployment/vars <<EOF
 export vpc_id=$vpc_id
