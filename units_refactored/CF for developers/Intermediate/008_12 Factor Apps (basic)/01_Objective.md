@@ -1,9 +1,9 @@
 ## Objective
 
-In this lesson you will learn how to implement 12 Factors(http://12factor.net/) in CloudFoundry using Spring.
-Also you will take a look at some new CF cli commands.
+In this lesson you will learn how to implement 12 Factors(http://12factor.net/) in Cloud Foundry using Spring.
+Also, you will take a look at some new CF cli commands.
 
-To successfully complete this lesson you need Git, Java 8, Maven, CF cli already installed on your machine.
+To successfully complete this lesson you need Git, Java 8, Maven, and the CF cli already installed on your machine.
 
 Please check
 ```sh

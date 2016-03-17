@@ -1,6 +1,6 @@
 #### Changing passwords
 
-First, we need to corroborate that the admin user has enough permissions to change anohter user password.
+First, we need to confirm the admin user has enough permissions to change another user's password.
 
 ```sh
 uaac context | grep scope

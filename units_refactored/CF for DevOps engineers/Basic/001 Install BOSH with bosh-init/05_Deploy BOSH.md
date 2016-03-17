@@ -1,6 +1,6 @@
 ## Prepare deployment manifest
 
-1. Save the following file as `deployment/bosh.yml` 
+1. Save the following file as `deployment/bosh.yml`
 
 ```
 ---
@@ -146,14 +146,14 @@ cloud_provider:
     ntp: *ntp
 ```
 
-2. Navigae to `deployment` directory and execute the following command
+2. Navigate to the `deployment` directory and execute the following command
 ```
 cd $HOME/deployment
 bosh-init deploy bosh.yml
 ```
 
-3. Connect to BOSH Director 
+3. Connect to the BOSH Director
 ```
 bosh target {{source deployment/vars && echo $eip}}
 ```
-Creadentials are: `admin / admin` 
+Credentials are: `admin / admin`

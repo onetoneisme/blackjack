@@ -1,6 +1,6 @@
 ### Getting help
 
-Cloud Foundry's CLI has a very good inline help.
+Cloud Foundry's CLI has very good inline help.
 Try executing the `cf` command without options. You will get a lot of commands and options with their descriptions.
 This is fundamental to know, as it will help a lot to navigate through CF's CLI commands.
 As an example, let's say that you want to view all the commands related to `spaces`. It is possible to tunnel the CLI help through Linux's `grep` command:
@@ -32,4 +32,4 @@ OPTIONS:
 
 ```
 
-It is very easy to get help with Cloud Foundry's CLI and perform operations on your Cloud Foundry foundation.
+It is very easy to get help with Cloud Foundry's CLI and perform operations on your Cloud Foundry deployment.

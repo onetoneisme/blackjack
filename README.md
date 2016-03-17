@@ -9,7 +9,7 @@ Run it:
 ./verify.sh script_file
 ```
 
-If you want to verify that the lesson `002_QuickStart.md` in the `operators_basic` course has been completed, use:
+For example, if you want to verify that the lesson `002_QuickStart.md` in the `operators_basic` course has been completed, use:
 
 ```
 ./verify.sh operators_basic/002_QuickStart.verify
