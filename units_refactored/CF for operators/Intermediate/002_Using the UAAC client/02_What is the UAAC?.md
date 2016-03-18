@@ -11,4 +11,4 @@ The UAAC allows much more complex operations, such as general and specific user 
 
 #### More info
 
-If you want to go deep after the lessons, you can explore the [UAAC GitHub repository](https://github.com/cloudfoundry/cf-uaac), which contains lots of resources and information.
+If you want to go deep after the lessons, you can explore the <a href="https://github.com/cloudfoundry/cf-uaac" target="_blank">UAAC GitHub repository</a>, which contains lots of resources and information.

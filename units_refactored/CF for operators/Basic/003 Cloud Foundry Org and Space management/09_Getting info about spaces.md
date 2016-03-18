@@ -16,7 +16,7 @@ OK
 my-first-space
                  Org:               my-org
                  Apps:
-                 Domains:           {{cf-get-instance-ip}}.xip.io
+                 Domains:           {{echo $CF_DOMAIN}}.xip.io
                  Services:
                  Security Groups:   public_networks, dns, services, load_balancer, user_bosh_deployments
                  Space Quota:

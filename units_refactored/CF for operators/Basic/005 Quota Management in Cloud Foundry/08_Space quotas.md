@@ -84,7 +84,7 @@ Unassigning space quota small-space-quota from space my-first-space as admin...
 OK
 ```
 
-Before ending, re set the previously unset space quota to the `my-first-space`.
+Before ending, again set the previously unset space quota to the `my-first-space`.
 
 Also, you can list all the space quotas or get information about an specific one by using `space-quotas` and `space-quota` commands.
 

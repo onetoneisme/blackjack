@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-check 'cf spaces' 'my-trash-space' true #> Space 'my-trash-space' wasn't deleted
+check 'cf spaces' 'my-trash-space' false #> Space 'my-trash-space' was not deleted
