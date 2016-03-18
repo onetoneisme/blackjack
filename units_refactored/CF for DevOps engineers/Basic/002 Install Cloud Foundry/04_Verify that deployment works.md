@@ -1,15 +1,13 @@
 ## Verify the deployment works
 
 1. Install the cf cli
-```
-curl -o cf_cli.deb -J -L https://cli.run.pivotal.io/stable?release=debian64&source=github'
-sudo dpkg -i cf_cli.deb
-```
+
+        curl -o cf_cli.deb -J -L https://cli.run.pivotal.io/stable?release=debian64&source=github'
+        sudo dpkg -i cf_cli.deb
 
 2.  Connect to CF
-```
-cf api --skip-ssl-validation api.{{source ~/deployment/vars &&  echo $cf_eip}}.xip.io
-```
+
+        cf api --skip-ssl-validation api.{{source ~/deployment/vars &&  echo $cf_eip}}.xip.io
 
 3. Prepare the manifest to run CATS
 
@@ -36,11 +34,9 @@ cf api --skip-ssl-validation api.{{source ~/deployment/vars &&  echo $cf_eip}}.x
             system_domain: {{source ~/deployment/vars && echo $cf_eip}}.xip.io
 
 4. Redeploy
-```
-bosh deploy
-```
+
+        bosh deploy
 
 5. Run CATS
-```
-bosh run errand acceptance_tests --download-logs
-```
+
+        bosh run errand acceptance_tests --download-logs
