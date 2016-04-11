@@ -36,7 +36,7 @@ cd cf-example-sinatra
 Deploying the source code of this applications is really easy, but first we need to login to our Cloud Foundry foundation with the user you created previously, and target your Org and Space:
 
 ```
-cf api --skip-ssl-validation https://api.{{cf-get-instance-ip}}.xip.io
+cf api --skip-ssl-validation https://api.{{echo $CF_DOMAIN}}.xip.io
 cf auth my-user "my-password"
 cf target -o my-org -s my-first-space
 ```
@@ -66,10 +66,10 @@ Output should be:
 Creating app my-sinatra-app in org my-org / space my-first-space as my-user...
 OK
 
-Creating route my-sinatra-app.{{cf-get-instance-ip}}.xip.io...
+Creating route my-sinatra-app.{{echo $CF_DOMAIN}}.xip.io...
 OK
 
-Binding my-sinatra-app.{{cf-get-instance-ip}}.xip.io to my-sinatra-app...
+Binding my-sinatra-app.{{echo $CF_DOMAIN}}.xip.io to my-sinatra-app...
 OK
 
 Uploading my-sinatra-app...
@@ -79,7 +79,7 @@ Uploading my-sinatra-app...
 requested state: started
 instances: 1/1
 usage: 256M x 1 instances
-urls: my-sinatra-app.{{cf-get-instance-ip}}xip.io
+urls: my-sinatra-app.{{echo $CF_DOMAIN}}xip.io
 last uploaded: [push timestamp]
 
      state     since                    cpu    memory          disk      details
@@ -166,7 +166,7 @@ applications:
   memory: 256M
   instances: 1
   host: my-sinatra-app
-  domain: {{cf-get-instance-ip}}.xip.io
+  domain: {{echo $CF_DOMAIN}}.xip.io
 ```
 
 ### Pushing application with manifest
@@ -186,7 +186,7 @@ Using manifest file my-sinatra-app_manifest.yml
 Updating app my-sinatra-app in org my-org / space my-first-space as my-user...
 OK
 
-Using route my-sinatra-app.{{cf-get-instance-ip}}.xip.io
+Using route my-sinatra-app.{{echo $CF_DOMAIN}}.xip.io
 Uploading my-sinatra-app...
 .
 . [lots of output]
@@ -194,7 +194,7 @@ Uploading my-sinatra-app...
 requested state: started
 instances: 1/1
 usage: 128M x 1 instances
-urls: my-sinatra-app.{{cf-get-instance-ip}}.xip.io
+urls: my-sinatra-app.{{echo $CF_DOMAIN}}.xip.io
 last uploaded: [output timestamp]
 
      state     since                    cpu    memory          disk        details

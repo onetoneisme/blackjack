@@ -85,7 +85,7 @@ Getting info for org my-org as admin...
 OK
 
 my-org:
-          domains:        {{cf-get-instance-ip}}.xip.io
+          domains:        {{echo $CF_DOMAIN}}.xip.io
           quota:          default (10240M memory limit, Unlimited instance memory limit, 1000 routes, 100 services, paid services allowed)
           spaces:
           space quotas:
@@ -153,7 +153,7 @@ Output should be:
 ```sh
 $ cf target -o my-org
 
-API endpoint:   https://api.{{cf-get-instance-ip}}.xip.io (API version: 2.43.0)
+API endpoint:   https://api.{{echo $CF_DOMAIN}}.xip.io (API version: 2.43.0)
 User:           admin
 Org:            my-org
 Space:          No space targeted, use 'cf target -s SPACE'

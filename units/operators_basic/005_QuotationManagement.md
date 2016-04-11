@@ -230,7 +230,7 @@ Getting info for my-org as admin...
 OK
 
 my-org:
-          domains:        {{cf-get-instance-ip}}.xip.io
+          domains:        {{echo $CF_DOMAIN}}.xip.io
           quota:          large-quota (10240M memory limit, 2048M instance memory limit, 100 routes, 20 services, paid services disallowed)
           spaces:         my-first-space
           space quotas:
@@ -302,7 +302,7 @@ OK
 my-first-space
                  Org:               my-org
                  Apps:
-                 Domains:           {{cf-get-instance-ip}}.xip.io
+                 Domains:           {{echo $CF_DOMAIN}}.xip.io
                  Services:
                  Security Groups:   public_networks, dns, services, load_balancer, user_bosh_deployments
                  Space Quota:       small-space-quota (2G memory limit, 128M instance memory limit, 10 routes, 5 services, paid services disallowed)

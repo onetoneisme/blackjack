@@ -21,13 +21,13 @@ Using the CLI requires to connect to the API CF, for the CLI to know where to se
 To connect to Cloud Foundry's API, you need to use the `cf api` command.
 
 ```
-cf api --skip-ssl-validation https://api.{{cf-get-instance-ip}}.xip.io
+cf api --skip-ssl-validation https://api.{{echo $CF_DOMAIN}}.xip.io
 ```
 
 In the case of a successful connection, the following information will be displayed:
 
 ```
-Setting api endpoint to https://api.{{cf-get-instance-ip}}.xip.io ...
+Setting api endpoint to https://api.{{echo $CF_DOMAIN}}.xip.io ...
 OK
 ```
 
@@ -106,7 +106,7 @@ Deploying an application in CF involves using the `cf push` command. In this cas
 cf-app push Sinatra-Example-app
 ```
 
-CF will deploy the application and will show the URL to access the application, in this case, something like `http: // sinatra-example-app.{{cf-get-instance-ip}}.xip.io/`
+CF will deploy the application and will show the URL to access the application, in this case, something like `http: // sinatra-example-app.{{echo $CF_DOMAIN}}.xip.io/`
 
 Viewing logs
 ------------
