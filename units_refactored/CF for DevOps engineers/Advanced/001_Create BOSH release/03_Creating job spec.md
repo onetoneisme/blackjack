@@ -1,4 +1,4 @@
-## Create the job spec
+### Create the job spec
 
 Edit the file `jobs/elasticsearch/spec` and replace the existing content with the following:
 

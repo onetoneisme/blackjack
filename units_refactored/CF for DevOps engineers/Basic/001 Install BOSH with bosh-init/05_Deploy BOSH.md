@@ -1,4 +1,4 @@
-## Prepare deployment manifest
+### Prepare deployment manifest
 
 1. Save the following file as `deployment/bosh.yml`
 

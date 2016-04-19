@@ -1,4 +1,4 @@
-## Configure your AWS account
+### Configure your AWS account
 
 To configure your AWS account for BOSH, you must do the following:
 

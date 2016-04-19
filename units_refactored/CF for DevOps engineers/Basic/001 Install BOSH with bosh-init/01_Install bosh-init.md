@@ -1,4 +1,4 @@
-## Install bosh-init
+### Install bosh-init
 
 bosh-init is used to create and update a Director VM (and its persistent disk) in an environment.
 

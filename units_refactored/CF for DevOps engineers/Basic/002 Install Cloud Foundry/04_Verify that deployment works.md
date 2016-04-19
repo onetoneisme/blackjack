@@ -1,4 +1,4 @@
-## Verify the deployment works
+### Verify the deployment works
 
 1. Install the cf cli
 
