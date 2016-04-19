@@ -1,7 +1,7 @@
-## Create the package
+## Create the ruby package
 
 ```
-bosh generate package elasticsearch
+bosh generate package ruby
 ```
 
 After executing this command, the filesystem tree should look like the following:
@@ -14,16 +14,20 @@ After executing this command, the filesystem tree should look like the following
 │   └── blobs.yml
 ├── creating_this_bosh_release.md
 ├── jobs
-│   └── elasticsearch
+│   ├── app
+│   │   ├── monit
+│   │   ├── spec
+│   │   └── templates
+│   │       └── ctl
+│   └── router
 │       ├── monit
 │       ├── spec
 │       └── templates
-│           ├── elasticsearch.yml.erb
-│           └── elasticsearch_ctl
+│           ├── config.json.erb
+│           └── ctl
 ├── packages
-│   └── elasticsearch
+│   └── ruby
 │       ├── packaging
-│       ├── pre_packaging
 │       └── spec
 └── src
 ```

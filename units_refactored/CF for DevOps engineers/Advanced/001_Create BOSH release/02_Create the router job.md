@@ -1,7 +1,7 @@
-## Create a job
+## Create the router job
 
 ```
-bosh generate job elasticsearch
+bosh generate job router
 ```
 
 After executing this command, the filesystem tree should look like the following:
@@ -13,7 +13,7 @@ After executing this command, the filesystem tree should look like the following
   ├── config
   │   └── blobs.yml
   ├── jobs
-  │   └── elasticsearch
+  │   └── router
   │       ├── monit
   │       ├── spec
   │       └── templates

@@ -1,7 +1,7 @@
-## Create the java package
+## Create the greeter package
 
 ```
-bosh generate package java
+bosh generate package greeter
 ```
 
 After executing this command, the filesystem tree should look like the following:
@@ -14,20 +14,23 @@ After executing this command, the filesystem tree should look like the following
 │   └── blobs.yml
 ├── creating_this_bosh_release.md
 ├── jobs
-│   └── elasticsearch
+│   ├── app
+│   │   ├── monit
+│   │   ├── spec
+│   │   └── templates
+│   │       └── ctl
+│   └── router
 │       ├── monit
 │       ├── spec
 │       └── templates
-│           ├── elasticsearch.yml.erb
-│           └── elasticsearch_ctl
+│           ├── config.json.erb
+│           └── ctl
 ├── packages
-│   └── elasticsearch
+│   ├── ruby
+│   │   ├── packaging
+│   │   └── spec
+│   └── greeter
 │       ├── packaging
-│       ├── pre_packaging
-│       └── spec
-│   └── java
-│       ├── packaging
-│       ├── pre_packaging
 │       └── spec
 └── src
 ```
