@@ -1,8 +1,8 @@
-## Create the router startup script
+### Create the router startup script
 
 Edit the following file `jobs/router/templates/ctl` and add the following content to it
 
-```
+```bash
 #!/bin/bash
 
 RUN_DIR=/var/vcap/sys/run/router
@@ -27,7 +27,7 @@ case $1 in
 
     echo $$ > $PIDFILE
 
-    export CONFIG_FILE=/var/vcap/jobs/router/config/config.json
+    export CONFIG_FILE=/var/vcap/jobs/router/config/config.yml
 
     exec chpst -u $RUNAS:$RUNAS \
       bundle exec ruby /var/vcap/packages/greeter/router.rb \

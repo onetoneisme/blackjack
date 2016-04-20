@@ -1,8 +1,8 @@
-## Update the router spec
+### Update the router spec
 
 Edit the following file `jobs/router/spec` and add the following content to it
 
-```
+```yaml
 ---
 name: router
 templates:
@@ -17,7 +17,7 @@ properties:
   port:
     description: "Port on which server is listening"
     default: 8080
-  servers:
-    description: "List of servers to redirect requests"
+  upstreams:
+    description: "List of upstreams to proxy requests"
     default: []
 ```

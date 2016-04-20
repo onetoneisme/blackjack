@@ -1,4 +1,4 @@
-## Update the app monit config
+### Update the app monit config
 
 Edit the following file `jobs/app/monit` and add the following content to it
 

@@ -1,8 +1,8 @@
-## Create the app startup script
+### Create the app startup script
 
 Edit the following file `jobs/app/templates/ctl` and add the following content to it
 
-```
+```bash
 #!/bin/bash
 
 RUN_DIR=/var/vcap/sys/run/app

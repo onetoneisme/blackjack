@@ -1,12 +1,14 @@
-## Configure your AWS account
+### Configure your AWS account
 
-1. Add rule to allow rouret-app trafic
+1. Add rule to allow router-app traffic
 ```
-source ~/deployment/vars
-aws ec2 authorize-security-group-ingress --group-id $sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 8080, "ToPort": 8080, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
+$ source ~/deployment/vars
+$ aws ec2 authorize-security-group-ingress --group-id $sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 8080, "ToPort": 8080, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
 ```
 
-1. Add qutoassign ip property to bosh subnet
+2. Create an Elastic IP for router job
+
 ```
-aws ec2 modify-subnet-attribute --subnet-id {{source ~/deployment/vars && echo $subnet_id}}  --map-public-ip-on-launch
+$ eip_router=$(aws ec2 allocate-address --domain vpc --query 'PublicIp' --output text)
+$ echo "export eip_router=$eip_router" >> ~/deployment/vars
 ```

@@ -1,8 +1,8 @@
-## Update the app spec
+### Update the app spec
 
-Edit the following file `jobs/router/spec` and add the following content to it
+Edit the following file `jobs/app/spec` and add the following content to it
 
-```
+```yaml
 ---
 name: app
 templates:

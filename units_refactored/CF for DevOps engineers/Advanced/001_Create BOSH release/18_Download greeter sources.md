@@ -1,6 +1,6 @@
 ## Download greeter sources
 
-
 ```
-git clone https://TODO src/greeter
+$ sudo apt-get install git
+$ git clone https://github.com/Altoros/greeter.git src/greeter
 ```

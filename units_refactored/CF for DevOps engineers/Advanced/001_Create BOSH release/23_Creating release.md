@@ -1,4 +1,4 @@
-### Create the release
+### Creating release
 
 ```
 $ bosh create release --force
