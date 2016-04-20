@@ -1,4 +1,4 @@
-## Objective
+### Objective
 
 In this lesson you will learn what Cloud Foundry is, why it matters, and basic concepts about its architecture and inner workings.
 

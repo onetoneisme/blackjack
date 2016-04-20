@@ -1,4 +1,4 @@
-## Prepare the deployment manifest
+### Prepare the deployment manifest
 
 1. Install Git
 ```

@@ -1,4 +1,4 @@
-## Deploy Cloud Foundry
+### Deploy Cloud Foundry
 
 1. Upload the new stemcell
 ```
