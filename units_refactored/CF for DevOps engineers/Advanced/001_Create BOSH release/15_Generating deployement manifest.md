@@ -1,11 +1,11 @@
-## Generate deplyment manifest
+## Generate a deployment manifest
 
-Save the following file as `~/deployment/elasticsearch.yml`
+Save the following as `~/deployment/elasticsearch.yml`
 
 ```
 ---
 name: elasticsearch
-director_uuid: {{source ~/.profile && bosh status --uuid 2>/dev/null}} 
+director_uuid: {{source ~/.profile && bosh status --uuid}}
 
 release:
   name: elasticsearch
@@ -37,7 +37,7 @@ networks:
     reserved: [ '10.0.0.2 - 10.0.0.30' ]
     static:   [ '10.0.0.31 - 10.0.0.32' ]
     cloud_properties:
-      subnet: {{source deployment/vars && echo $subnet_id}} 
+      subnet: {{source deployment/vars && echo $subnet_id}}
 
 resource_pools:
 
@@ -57,7 +57,7 @@ jobs:
   template: elasticsearch
   persistent_disk: 2048
   instances: 2
-  resource_pool: infrastructure 
+  resource_pool: infrastructure
   networks:
   - name: default
     static_ips: &ping_hosts
@@ -68,7 +68,7 @@ jobs:
   template: elasticsearch
   persistent_disk: 2048
   instances: 2
-  resource_pool: infrastructure 
+  resource_pool: infrastructure
   networks:
   - name: default
 

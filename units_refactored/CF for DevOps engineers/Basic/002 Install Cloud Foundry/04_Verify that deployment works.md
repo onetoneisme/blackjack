@@ -1,59 +1,42 @@
-## Verify that deployemnt work
+### Verify the deployment works
 
-1. Install cf cli
-```
-curl -o cf_cli.deb -J -L 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
-sudo dpkg -i cf_cli.deb
-```
+1. Install the cf cli
 
-2.  Connect to cf
-```
-cf api --skip-ssl-validation api.{{source ~/deployment/vars &&  echo $cf_eip}}.xip.io
-```
+        curl -o cf_cli.deb -J -L https://cli.run.pivotal.io/stable?release=debian64&source=github'
+        sudo dpkg -i cf_cli.deb
 
-3. Prepare manifest to run CATS
-Add the following job to the manifest
+2.  Connect to CF
 
-```
-- instances: 1
-  lifecycle: errand
-  name: acceptance_tests
-  networks:
-  - name: cf_private
-  resource_pool: small_z1
-  templates:
-  - name: acceptance-tests
-    release: cf
-```
+        cf api --skip-ssl-validation api.{{source ~/deployment/vars &&  echo $cf_eip}}.xip.io
 
-Also add the following to the `properties` section of the manifest
+3. Prepare the manifest to run CATS
 
-```
-  acceptance_tests:
-    api: api.{{source ~/deployment/vars && echo $cf_eip}}.xip.io 
-    apps_domain: {{source ~/deployment/vars && echo $cf_eip}}.xip.io
-    admin_user: admin
-    admin_password: PASSWORD 
-    skip_ssl_validation: true
-    system_domain: {{source ~/deployment/vars && echo $cf_eip}}.xip.io
-```
+    Add the following job to the manifest:
 
-And finally add the following templates to api job
-```
-  - {name: go-buildpack, release: cf}
-  - {name: binary-buildpack, release: cf}
-  - {name: nodejs-buildpack, release: cf}
-  - {name: ruby-buildpack, release: cf}
-  - {name: python-buildpack, release: cf}
-  - {name: staticfile-buildpack, release: cf}
-```
+        - instances: 1
+          lifecycle: errand
+          name: acceptance_tests
+          networks:
+          - name: cf_private
+          resource_pool: small_z1
+          templates:
+          - name: acceptance-tests
+            release: cf
+
+      Also add the following to the `properties` section of the manifest:
+
+          acceptance_tests:
+            api: api.{{source ~/deployment/vars && echo $cf_eip}}.xip.io
+            apps_domain: {{source ~/deployment/vars && echo $cf_eip}}.xip.io
+            admin_user: admin
+            admin_password: PASSWORD
+            skip_ssl_validation: true
+            system_domain: {{source ~/deployment/vars && echo $cf_eip}}.xip.io
 
 4. Redeploy
-```
-bosh deploy
-```
 
-5. Run CATS 
-```
-bosh run errand  acceptance_tests --download-logs
-```
+        bosh deploy
+
+5. Run CATS
+
+        bosh run errand acceptance_tests --download-logs

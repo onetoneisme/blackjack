@@ -1,6 +1,6 @@
-## Creating startup script
+## Create the startup script
 
-Edit the following file `jobs/elasticsearch/templates/elasticsearch_ctl` and add the following content to it
+Create the file `jobs/elasticsearch/templates/elasticsearch_ctl` and add the following content:
 
 ```
 #!/bin/bash

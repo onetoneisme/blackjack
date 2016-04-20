@@ -1,4 +1,4 @@
-## Install AWS CLI
+### Install AWS CLI
 
 The AWS Command Line Interface is a unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts.
 

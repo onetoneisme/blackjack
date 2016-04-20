@@ -1,6 +1,6 @@
-## Creatint job spec
+### Create the job spec
 
-Edit the following file `jobs/elasticsearch/spec` and add the following content to it
+Edit the file `jobs/elasticsearch/spec` and replace the existing content with the following:
 
 ```
 ---

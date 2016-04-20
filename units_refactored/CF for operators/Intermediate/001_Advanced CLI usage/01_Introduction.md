@@ -3,7 +3,7 @@
 In this lesson you will learn:
 
 * How to use CF_TRACE to diagnose deployment issues
-* How to install, use and uninstall usefull CLI plugins
+* How to install, use, and uninstall usefull CLI plugins
 * How to use cURL to retrieve valuable data for scripting
 * How oauth-works
 

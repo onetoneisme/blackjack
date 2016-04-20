@@ -1,0 +1,27 @@
+questions:
+- id: "1"
+  formulation: "What do you need to connect to a CF API?"
+  type: chcheckbox_multiple
+  options:
+  - id: "1"
+    value: "A GUI application."
+  - id: "2"
+    value: "The CF CLI installed."
+  - id: "3"
+    value: "A Cloud Foundry deployment URL."
+  answer: "2, 3"
+- id: "2"
+  formulation: "How do you target an organization and a space?"
+  type: checkbox
+  options:
+  - id: "1"
+    value: "cf target organization space"
+  - id: "2"
+    value: "cf target -o organization -s space"
+  - id: "3"
+    value: "cf target -org organization -space space"
+  answer: "1"
+- id: "3"
+  formulation: "Enter the command to deploy the application 'my-app' to Cloud Foundry"
+  type: input
+  answer: "cf push my-app"
