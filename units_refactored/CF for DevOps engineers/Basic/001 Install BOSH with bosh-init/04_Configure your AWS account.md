@@ -69,8 +69,9 @@ eip=$(aws ec2 describe-addresses --allocation-ids $eip_id --query 'Addresses[].P
 
 9. Create a Key Pair
 ```
+key_name=$(hostname)-training_key
 mkdir deployment
-aws ec2 create-key-pair --key-name $(hostname)-training_key --query 'KeyMaterial' --output text > deployment/bosh.pem
+aws ec2 create-key-pair --key-name $key_name --query 'KeyMaterial' --output text > deployment/bosh.pem
 chmod 400 deployment/bosh.pem
 ```
 
@@ -85,6 +86,7 @@ export sg_id=$sg_id
 export eip_id=$eip_id
 export eip=$eip
 export avz=$avz
+export key_name=$key_name
 EOF
 chmod +x deployment/vars
 ```
