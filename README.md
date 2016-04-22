@@ -37,4 +37,3 @@ Example output:
 ```
 cf orgs | .*trainig.* | Org "training" not found
 ```
-
