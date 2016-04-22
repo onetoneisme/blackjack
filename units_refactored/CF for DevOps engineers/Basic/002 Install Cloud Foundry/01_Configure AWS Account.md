@@ -10,7 +10,7 @@ aws ec2 authorize-security-group-ingress --group-id $sg_id --ip-permissions '[{"
 
 2. Create a new Subnet for the Cloud Foundry deployment
 ```
-cf_subnet_id=$(aws ec2 create-subnet --vpc-id $vpc_id --cidr-block 10.0.16.0/24 --availability-zone $avz  --query 'Subnet.SubnetId'  --output text)
+cf_subnet_id=$(aws ec2 create-subnet --vpc-id $vpc_id --cidr-block 10.0.16.0/24 --availability-zone $avz --query 'Subnet.SubnetId' --output text)
 aws ec2 create-tags --resources $cf_subnet_id --tags Key=Name,Value=training_cf_subnet
 ```
 
@@ -33,12 +33,12 @@ aws ec2 associate-route-table --route-table-id $cf_route_table_id --subnet-id $c
 
 6. Create a Route
 ```
-aws ec2 create-route --nat-gateway-id $nat_gateway_id --route-table-id $cf_route_table_id  --destination-cidr-block 0.0.0.0/0
+aws ec2 create-route --nat-gateway-id $nat_gateway_id --route-table-id $cf_route_table_id --destination-cidr-block 0.0.0.0/0
 ```
 
 7. Create a Security Group
 ```
-cf_sg_id=$(aws ec2 create-security-group --vpc-id $vpc_id --group-name cf_training_sg --description "Security Group bog CF deployment" --query 'GroupId' --output text)
+cf_sg_id=$(aws ec2 create-security-group --vpc-id $vpc_id --group-name cf_training_sg --description "Security Group for CF deployment" --query 'GroupId' --output text)
 aws ec2 create-tags --resources $cf_sg_id --tags Key=Name,Value=cf_training_sg
 ```
 
