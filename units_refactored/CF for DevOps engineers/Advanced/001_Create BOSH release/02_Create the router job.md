@@ -1,19 +1,22 @@
-## Initialize an empty release
+### Create the router job
 
 ```
-bosh init release elasticsearch
-cd ~/elasticsearch
+$ bosh generate job router
 ```
 
 After executing this command, the filesystem tree should look like the following:
 
 ```
-○ → tree
- .
+$ tree
+.
 ├── blobs
 ├── config
 │   └── blobs.yml
 ├── jobs
+│   └── router
+│       ├── monit
+│       ├── spec
+│       └── templates
 ├── packages
 └── src
 ```

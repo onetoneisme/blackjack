@@ -9,5 +9,5 @@ sudo apt-get install -y build-essential ruby ruby-dev libxml2-dev libsqlite3-dev
 
 2. Then, install the bosh_cli gem.
 ```
- gem install bosh_cli --no-ri --no-rdoc
+sudo gem install bosh_cli --no-ri --no-rdoc --no-user-install
 ```
