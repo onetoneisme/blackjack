@@ -25,7 +25,8 @@ sudo apt-get install -y build-essential zlibc zlib1g-dev ruby ruby-dev openssl l
 sudo apt-get install software-properties-common -y
 sudo apt-add-repository ppa:brightbox/ruby-ng -y
 sudo apt-get update
-sudo apt-get install ruby -y
+sudo apt-get remove ruby* -y
+sudo apt-get install ruby2.1 -y
 ```
 
 5. Verify Ruby 2+ is installed and in your $PATH
