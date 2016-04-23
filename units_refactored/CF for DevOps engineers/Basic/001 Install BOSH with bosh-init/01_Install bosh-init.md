@@ -31,3 +31,4 @@ sudo apt-get install ruby -y
 5. Verify Ruby 2+ is installed and in your $PATH
 ```
 ruby --version
+```
