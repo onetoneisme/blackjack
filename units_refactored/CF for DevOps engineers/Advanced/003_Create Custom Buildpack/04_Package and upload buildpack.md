@@ -7,7 +7,7 @@ sudo apt-get install zip
 
 2. Add executable permissions
 ```
-chmod +x  ~/custom_buildpack/bin/*
+chmod +x ~/custom_buildpack/bin/*
 ```
 
 3. Package buildpack
@@ -19,4 +19,9 @@ zip -r custom_buildpack.zip custom_buildpack/
 4. Upload buildpack
 ```
 cf create-buildpack custom_buildpack custom_buildpack.zip 1
+```
+
+5. See available buildpacks
+```
+cf buildpacks
 ```
