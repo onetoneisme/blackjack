@@ -31,7 +31,7 @@ cf api --skip-ssl-validation api.{{source ~/deployment/vars &&  echo $cf_eip}}.x
     api: api.{{source ~/deployment/vars && echo $cf_eip}}.xip.io
     apps_domain: {{source ~/deployment/vars && echo $cf_eip}}.xip.io
     admin_user: admin
-    admin_password: PASSWORD
+    admin_password: admin
     skip_ssl_validation: true
     system_domain: {{source ~/deployment/vars && echo $cf_eip}}.xip.io
 ```
