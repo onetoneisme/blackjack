@@ -25,7 +25,13 @@ sed -i "s/REPLACE_WITH_PUBLIC_SECURITY_GROUP/cf_training_sg/g" ~/deployment/mini
 sed -i "s/REPLACE_WITH_SYSTEM_DOMAIN/$(echo ${cf_eip}.xip.io)/g" ~/deployment/minimal-aws.yml
 ```
 
-4. Generate a Certificate
+4. Set admin password
+Optionally you can edit deployment manifest and modify admin password. If you want your installation to be compatible with Operators and Develoers cources the password should be changed to `admin`. To change admin password execute the following command
+```
+sed -i "s/admin|PASSWORD|/$admin|admin|/g" ~/deployment/minimal-aws.yml
+```
+
+5. Generate a Certificate
 ```
 openssl genrsa -out cf.key 1024
 openssl req -new -key cf.key -out cf.csr
@@ -38,7 +44,7 @@ cert_data=$(echo "$cert_data" | tr '\n' '|' | sed 's/|/\\n        /g')
 sed -i 's#REPLACE_WITH_SSL_CERT_AND_KEY#'"$cert_data"'#g' ~/deployment/minimal-aws.yml
 ```
 
-5. Replace the stemcell version
+6. Replace the stemcell version
 ```
 sed -i "s/REPLACE_WITH_BOSH_STEMCELL_VERSION/3202/g" ~/deployment/minimal-aws.yml
 ```
