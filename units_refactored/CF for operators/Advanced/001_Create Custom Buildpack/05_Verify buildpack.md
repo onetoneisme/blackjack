@@ -11,11 +11,7 @@ git clone https://github.com/s-matyukevich/iot-dashboard
 cd ~/iot-dashboard
 touch Staticfile
 ```
-3. Log in to CloudFoundry (default user/password in manifest was admin/admin)
-```
-cf login
-```
-4. Deploy our application
+3. Deploy our application
 ```
 cf push static
 ```

@@ -16,12 +16,17 @@ cd ~
 zip -r custom_buildpack.zip custom_buildpack/
 ```
 
-4. Upload buildpack
+4. Log in to CloudFoundry (default user/password in manifest was admin/admin)
+```
+cf login
+```
+
+5. Upload buildpack
 ```
 cf create-buildpack custom_buildpack custom_buildpack.zip 1
 ```
 
-5. See available buildpacks
+6. See available buildpacks
 ```
 cf buildpacks
 ```
