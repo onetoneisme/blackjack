@@ -12,8 +12,8 @@ cf api --skip-ssl-validation api.{{source ~/deployment/vars &&  echo $cf_eip}}.x
 ```
 
 3. Prepare the manifest to run CATS
+Add the following job to the manifest (at the and of global "jobs" section):
 
-    Add the following job to the manifest (at the and of global "jobs" section):
 ```
 - instances: 1
   lifecycle: errand
@@ -25,7 +25,8 @@ cf api --skip-ssl-validation api.{{source ~/deployment/vars &&  echo $cf_eip}}.x
   - name: acceptance-tests
     release: cf
 ```
-      Also add the following to the `properties` section of the manifest (at the and of global "properties" section):
+
+Also add the following to the `properties` section of the manifest (at the and of global "properties" section):
 ```
   acceptance_tests:
     api: api.{{source ~/deployment/vars && echo $cf_eip}}.xip.io
