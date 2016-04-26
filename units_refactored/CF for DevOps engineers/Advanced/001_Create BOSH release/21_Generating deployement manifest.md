@@ -1,6 +1,6 @@
 ### Generate the deployment manifest
 
-Save the following as `~/deployment/elasticsearch.yml`
+Save the following as `~/deployment/greeter.yml`
 
 ```yaml
 ---
@@ -15,7 +15,7 @@ compilation:
   workers: 2
   network: private
   cloud_properties:
-    instance_type: m3.medium
+    instance_type: m3.xlarge
     availability_zone: {{source deployment/vars && echo $avz}}
 
 update:
