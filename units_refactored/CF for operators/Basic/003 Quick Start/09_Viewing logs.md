@@ -13,4 +13,4 @@ Use `cf logs` to view the realtime logs:
 cf logs Sinatra-Example-app
 ```
 
-Generate traffic by browsing to the app URL <a href="http://sinatra-example-app.{{echo $CF_DOMAIN}}/" target="_blank">(http://sinatra-example-app.{{echo $CF_DOMAIN}}/)</a>.  After a brief moment, the application logs will stream into your console.  Use Ctrl-C to stop `cf logs`.
+Generate traffic by browsing to the app URL <a href="http://sinatra-example-app.{{echo $CF_DOMAIN}}" target="_blank">(http://sinatra-example-app.{{echo $CF_DOMAIN}})</a>.  After a brief moment, the application logs will stream into your console.  Use Ctrl-C to stop `cf logs`.
