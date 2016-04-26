@@ -1,7 +1,7 @@
 ### Create the router job
 
 ```
-$ bosh generate job router
+bosh generate job router
 ```
 
 After executing this command, the filesystem tree should look like the following:

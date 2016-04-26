@@ -9,12 +9,12 @@ In your `~/deployment/greeter-release.yml` manifest:
 Deploy once again
 
 ```
-$ bosh -d ~/deployment/greeter-release.yml deploy
+bosh -d ~/deployment/greeter-release.yml deploy
 ```
 
 And if you curl router multiple times, you should see greetings from different upstreams
 
 ```
-$ source ~/deployment/vars
-$ curl "http://${eip_router}:8080"
+source ~/deployment/vars
+curl "http://${eip_router}:8080"
 ```

@@ -1,5 +1,5 @@
 ### Deploy!
 
 ```
-$ bosh -d ~/deployment/greeter-release.yml deploy
+bosh -d ~/deployment/greeter-release.yml deploy
 ```

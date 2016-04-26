@@ -1,7 +1,7 @@
 ### Create the greeter package
 
 ```
-$ bosh generate package greeter
+bosh generate package greeter
 ```
 
 After executing this command, the filesystem tree should look like the following:

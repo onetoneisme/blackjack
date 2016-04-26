@@ -1,7 +1,7 @@
 ### Create the app job
 
 ```
-$ bosh generate job app
+bosh generate job app
 ```
 
 After executing this command file system tree should look like the following:

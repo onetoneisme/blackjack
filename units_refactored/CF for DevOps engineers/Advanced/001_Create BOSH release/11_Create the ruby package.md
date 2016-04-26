@@ -1,7 +1,7 @@
 ### Create the ruby package
 
 ```
-$ bosh generate package ruby
+bosh generate package ruby
 ```
 
 After executing this command, the filesystem tree should look like the following:
