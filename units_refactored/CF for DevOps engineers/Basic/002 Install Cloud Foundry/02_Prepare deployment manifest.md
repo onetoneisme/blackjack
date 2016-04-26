@@ -28,7 +28,7 @@ sed -i "s/REPLACE_WITH_SYSTEM_DOMAIN/$(echo ${cf_eip}.xip.io)/g" ~/deployment/mi
 4. Set admin password
 Optionally you can edit deployment manifest and modify admin password. If you want your installation to be compatible with Operators and Develoers cources the password should be changed to `admin`. To change admin password execute the following command
 ```
-sed -i "s/admin|PASSWORD|/$admin|admin|/g" ~/deployment/minimal-aws.yml
+sed -i "s/admin|PASSWORD|/admin|admin|/g" ~/deployment/minimal-aws.yml
 ```
 
 5. Generate a Certificate
