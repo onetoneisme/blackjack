@@ -10,7 +10,7 @@ cd cf-example-sinatra
 Deploying the source code of this applications is really easy, but first we need to login to our Cloud Foundry foundation with the user you created previously, and target your Org and Space:
 
 ```sh
-cf api api.{{echo $CF_DOMAIN}}
+cf api api.{{echo $CF_DOMAIN}} --skip-ssl-validation
 cf auth my-user "my-password"
 cf target -o my-org -s my-space
 ```

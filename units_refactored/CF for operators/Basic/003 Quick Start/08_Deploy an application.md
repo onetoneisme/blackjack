@@ -1,7 +1,14 @@
 Deploy an application
 ---------------------
 
-First, clone this GitHub repository in your work directory:
+First, if you don't have git installed, install it with the following command:
+
+```
+sudo apt-get update
+sudo apt-get install git -y
+```
+
+Then, clone this GitHub repository in your work directory:
 
 ```sh
 git clone https://github.com/Altoros/cf-example-sinatra

@@ -27,7 +27,7 @@ $ cf api --skip-ssl-validation http://api.{{echo $CF_DOMAIN}}
 ```sh
 $ cf login
 ```
-And enter **admin** and **PASSWORD** as credentials. If all is OK you should see similar output:
+And enter **admin** and **admin** as credentials. If all is OK you should see similar output:
 ```sh
 OK
 

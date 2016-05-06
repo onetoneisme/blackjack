@@ -17,14 +17,15 @@ bosh-init -v
 3. Install prerequisite packages
 ```
 sudo apt-get update
-sudo apt-get install -y build-essential zlibc zlib1g-dev ruby ruby-dev openssl libxslt-dev libxml2-dev libssl-dev libreadline6 libreadline6-dev libyaml-dev libsqlite3-dev sqlite3
+sudo apt-get install -y build-essential zlibc zlib1g-dev ruby-dev openssl libxslt-dev libxslt1-dev libpq-dev libxml2-dev libssl-dev libreadline6 libreadline6-dev libyaml-dev libsqlite3-dev sqlite3 software-properties-common libmysqlclient-dev
 ```
 
-4. Install RVM with ruby
+4. Install ruby
 ```
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -sSL https://get.rvm.io | bash -s latest --ruby
-source .profile
+sudo apt-add-repository ppa:brightbox/ruby-ng -y
+sudo apt-get update
+sudo apt-get remove ruby* -y
+sudo apt-get install ruby2.1 -y
 ```
 
 5. Verify Ruby 2+ is installed and in your $PATH

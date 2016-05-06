@@ -5,7 +5,7 @@ To manage organizations, spaces and assign permissions, you have to be logged in
 To do this, you can use the `cf auth` command as we used it in the previous lesson (Quick Start).
 
 ```sh
-cf auth admin PASSWORD
+cf auth admin admin
 ```
 
 Once you are logged in, lets find out your top-level organizational structure:

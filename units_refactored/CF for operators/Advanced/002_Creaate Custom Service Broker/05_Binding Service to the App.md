@@ -12,7 +12,7 @@ cf create-service myservice shared my-service-instance
 cf bind-service test-app my-service-instance
 ```
 
-3. Resatage the app
+3. Restage the app
 
 ```
 cf restage test-app

@@ -4,13 +4,13 @@ To configure your AWS account for BOSH, you must do the following:
 
 1. Create a Virtual Private Cloud (VPC)
 ```
-vpc_id=$(aws ec2 create-vpc --cidr-block '10.0.0.0/16'  --query 'Vpc.VpcId' --output text)
+vpc_id=$(aws ec2 create-vpc --cidr-block '10.0.0.0/16' --query 'Vpc.VpcId' --output text)
 aws ec2 create-tags --resources $vpc_id --tags Key=Name,Value=training_vpc
 ```
 
 2. Create a Subnet
 ```
-subnet_id=$(aws ec2 create-subnet --vpc-id $vpc_id --cidr-block 10.0.0.0/24 --query 'Subnet.SubnetId'  --output text)
+subnet_id=$(aws ec2 create-subnet --vpc-id $vpc_id --cidr-block 10.0.0.0/24 --query 'Subnet.SubnetId' --output text)
 aws ec2 create-tags --resources $subnet_id --tags Key=Name,Value=training_subnet
 avz=$(aws ec2 describe-subnets --subnet-ids $subnet_id --query 'Subnets[].AvailabilityZone' --output text)
 ```
@@ -18,18 +18,20 @@ avz=$(aws ec2 describe-subnets --subnet-ids $subnet_id --query 'Subnets[].Availa
 3. Create an Internet Gateway and attach it to the VPC
 ```
 gateway_id=$(aws ec2 create-internet-gateway --query 'InternetGateway.InternetGatewayId' --output text)
+aws ec2 create-tags --resources $gateway_id --tags Key=Name,Value=training_gateway
 aws ec2 attach-internet-gateway --internet-gateway-id $gateway_id --vpc-id $vpc_id
 ```
 
 4. Create a Route Table and associate it with Subnet
 ```
 route_table_id=$(aws ec2 create-route-table --vpc-id $vpc_id --query 'RouteTable.RouteTableId' --output text)
+aws ec2 create-tags --resources $route_table_id --tags Key=Name,Value=training_route_table
 aws ec2 associate-route-table --route-table-id $route_table_id --subnet-id $subnet_id
 ```
 
 5. Create a Route
 ```
-aws ec2 create-route --gateway-id $gateway_id --route-table-id $route_table_id  --destination-cidr-block 0.0.0.0/0
+aws ec2 create-route --gateway-id $gateway_id --route-table-id $route_table_id --destination-cidr-block 0.0.0.0/0
 ```
 
 6. Create a Security Group
