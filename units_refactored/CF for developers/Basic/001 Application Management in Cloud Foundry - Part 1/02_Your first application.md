@@ -1,5 +1,12 @@
 ### Your first application
 
+First, if you don't have git, you should install it using the following commands
+
+```sh
+sudo apt-get update
+sudo apt-get install git -y
+```
+
 Before we can deploy anything to Cloud Foundry, we need a source code. Get it like this:
 
 ```sh
