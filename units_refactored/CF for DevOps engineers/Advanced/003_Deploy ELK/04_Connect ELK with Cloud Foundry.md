@@ -27,7 +27,7 @@ jobs:
       firehose_password: admin
       skip_ssl_validation: true
     syslog:
-      host: {{osh vms | grep ingestor | awk '{print $11}'}}
+      host: {{bosh vms | grep ingestor | awk '{print $11}'}}
       port: 5514
 
 - name: parser
