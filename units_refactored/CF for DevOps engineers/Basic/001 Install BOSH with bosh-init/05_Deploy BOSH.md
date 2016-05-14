@@ -8,11 +8,11 @@ name: bosh
 
 releases:
 - name: bosh
-  url: https://bosh.io/d/github.com/cloudfoundry/bosh?v=255.1
-  sha1: 8cc4613413232f2278735de99d2a24d8dafc14db
+  url: https://bosh.io/d/github.com/cloudfoundry/bosh?v=256.2
+  sha1: ff2f4e16e02f66b31c595196052a809100cfd5a8
 - name: bosh-aws-cpi
-  url: https://bosh.io/d/github.com/cloudfoundry-incubator/bosh-aws-cpi-release?v=44
-  sha1: a1fe03071e8b9bf1fa97a4022151081bf144c8bc
+  url: https://bosh.io/d/github.com/cloudfoundry-incubator/bosh-aws-cpi-release?v=52
+  sha1: dc4a0cca3b33dce291e4fbeb9e9948b6a7be3324
 
 resource_pools:
 - name: vms
