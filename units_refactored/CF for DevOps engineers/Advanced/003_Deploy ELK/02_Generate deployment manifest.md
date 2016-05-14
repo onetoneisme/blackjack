@@ -108,9 +108,98 @@ networks:
   type: vip
 ```
 
-5. Generate deplyment manifest
+
+5. Save the following file as `~/deployment/elk-stub.yml` 
+
+```
+meta:
+  stemcell:
+    name: bosh-aws-xen-hvm-ubuntu-trusty-go_agent
+    version: latest
+
+compilation:
+  cloud_properties:
+    availability_zone: {{source ~/deployment/vars && echo $avz}}
+    instance_type: c4.large
+
+resource_pools:
+- name: elasticsearch_master
+  cloud_properties:
+    availability_zone: {{source ~/deployment/vars && echo $avz}}
+    instance_type: t2.micro
+
+- name: elasticsearch_data
+  cloud_properties:
+    availability_zone: {{source ~/deployment/vars && echo $avz}}
+    instance_type: t2.micro
+
+- name: queue
+  cloud_properties:
+    availability_zone: {{source ~/deployment/vars && echo $avz}}
+    instance_type: t2.small
+
+- name: ingestor
+  cloud_properties:
+    availability_zone: {{source ~/deployment/vars && echo $avz}}
+    instance_type: t2.micro
+
+- name: parser
+  cloud_properties:
+    availability_zone: {{source ~/deployment/vars && echo $avz}}
+    instance_type: t2.micro
+
+- name: kibana
+  cloud_properties:
+    availability_zone: {{source ~/deployment/vars && echo $avz}}
+    instance_type: t2.micro
+
+- name: maintenance
+  cloud_properties:
+    availability_zone: {{source ~/deployment/vars && echo $avz}}
+    instance_type: t2.micro
+
+- name: cluster_monitor
+  cloud_properties:
+    availability_zone: {{source ~/deployment/vars && echo $avz}}
+    instance_type: m4.large
+
+- name: haproxy
+  cloud_properties:
+    availability_zone: {{source ~/deployment/vars && echo $avz}}
+    instance_type: t2.micro
+
+- name: errand
+  cloud_properties:
+    availabtily_zone: {{source ~/deployment/vars && echo $avz}}
+    instance_type: t2.micro
+
+disk_pools:
+- name: elasticsearch_master
+  cloud_properties:
+    type: gp2
+
+- name: elasticsearch_data
+  cloud_properties:
+    type: gp2
+
+- name: queue
+  cloud_properties:
+    type: gp2
+
+- name: cluster_monitor
+  cloud_properties:
+    type: gp2
+
+```
+
+6. Generate deplyment manifest
 ```
 cd ~/logsearch-boshrelease
-scripts/generate_deployment_manifest aws ~/deployment/elk-stub.yml > ~/deployment/elk.yml
+spruce merge --prune meta \
+  "templates/logsearch-deployment.yml" \
+  "templates/logsearch-jobs.yml" \
+  "~/deployment/elk-aws.yml" \
+  "~/deployment/elk-stub.yml" \
+> ~/deployment/elk.yml
 ```
 
