@@ -96,7 +96,7 @@ networks:
   - range: 10.0.1.0/24
     gateway: 10.0.1.1
     cloud_properties:
-      subnet: {{source ~/deployment/vars && echo $subnet_id}}
+      subnet: {{source ~/deployment/vars && echo $elk_subnet_id}}
       security_groups: [training_sg]
     dns:
     - 10.10.0.2
