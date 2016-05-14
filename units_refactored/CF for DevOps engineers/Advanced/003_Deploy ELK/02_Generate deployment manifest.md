@@ -22,6 +22,7 @@ git checkout tags/v202.0.0
 ```
 
 4. Save the following file as `~/deployment/elk-stub.yml` 
+
 ```
 meta:
   stemcell:
