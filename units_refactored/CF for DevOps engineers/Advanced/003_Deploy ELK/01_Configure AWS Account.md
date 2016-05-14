@@ -11,6 +11,7 @@ elk_eip=$(aws ec2 describe-addresses --allocation-ids $elk_eip_id --query 'Addre
 ```
 elk_subnet_id=$(aws ec2 create-subnet --vpc-id $vpc_id --cidr-block 10.0.1.0/24 --availability-zone $avz --query 'Subnet.SubnetId' --output text)
 aws ec2 create-tags --resources $elk_subnet_id --tags Key=Name,Value=training_elk_subnet
+aws ec2 modify-subnet-attribute --subnet-id $elk_subnet_id  --map-public-ip-on-launch
 ```
 
 3. Associate subnet with the route table

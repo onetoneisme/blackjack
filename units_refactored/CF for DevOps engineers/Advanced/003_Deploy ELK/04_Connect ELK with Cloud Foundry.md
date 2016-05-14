@@ -46,14 +46,19 @@ cd ~/logsearch-for-cloudfoundry
 scripts/generate_deployment_manifest ~/deployment/elk.yml ~/deployment/cf-elk-stub.yml > ~/deployment/cf-elk.yml
 ```
 
-4 .Upload release to director.
+4  Create release
 ```
 cd ~/logsearch-for-cloudfoundry
+git submodule update --init --recursive
 bosh create release
-bosh upload release
 ``` 
 
-5. Deploy
+5. Upload release to director
+```
+bosh upload release
+```
+
+6. Deploy
 ```
 bosh -d ~/deployment/cf-elk.yml deploy
 ```
