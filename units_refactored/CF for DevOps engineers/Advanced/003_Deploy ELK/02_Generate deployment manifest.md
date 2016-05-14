@@ -109,7 +109,7 @@ networks:
 ```
 
 
-5. Save the following file as `~/deployment/elk-stub.yml` 
+5. Save the following file as `~/deployment/elk-aws.yml` 
 
 ```
 meta:
@@ -198,8 +198,8 @@ cd ~/logsearch-boshrelease
 spruce merge --prune meta \
   "templates/logsearch-deployment.yml" \
   "templates/logsearch-jobs.yml" \
-  "~/deployment/elk-aws.yml" \
-  "~/deployment/elk-stub.yml" \
+  ~/deployment/elk-aws.yml \
+  ~/deployment/elk-stub.yml \
 > ~/deployment/elk.yml
 ```
 
