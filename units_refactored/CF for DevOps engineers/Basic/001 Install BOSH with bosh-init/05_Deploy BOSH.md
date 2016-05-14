@@ -47,7 +47,6 @@ jobs:
 
   templates:
   - {name: nats, release: bosh}
-  - {name: redis, release: bosh}
   - {name: postgres, release: bosh}
   - {name: blobstore, release: bosh}
   - {name: director, release: bosh}
@@ -70,11 +69,6 @@ jobs:
       address: 127.0.0.1
       user: nats
       password: nats-password
-
-    redis:
-      listen_address: 127.0.0.1
-      address: 127.0.0.1
-      password: redis-password
 
     postgres: &db
       listen_address: 127.0.0.1
@@ -120,8 +114,8 @@ jobs:
     aws: &aws
       access_key_id: {{cat .aws/credentials | grep aws_access_key_id | awk '{print $3}'}} # <--- Replace with AWS Access Key ID
       secret_access_key: {{cat .aws/credentials | grep aws_secret_access_key | awk '{print $3}'}} # <--- Replace with AWS Secret Key
-      default_key_name: {{source deployment/vars && echo $key_name}}
-      default_security_groups: [training_sg]
+      default_key_name: bosh
+      default_security_groups: [bosh]
       region: {{cat .aws/config | grep region | awk '{print $3}'}}  # <--- Replace with Region
 
     agent: {mbus: "nats://nats:nats-password@10.0.0.6:4222"}
