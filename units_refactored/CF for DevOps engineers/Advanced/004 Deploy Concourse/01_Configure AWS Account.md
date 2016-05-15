@@ -27,11 +27,6 @@ aws ec2 create-tags --resources $concourse_sg_id --tags Key=Name,Value=training_
 
 5. Add Security Group rules
 
-    Allow ICMP traffic
-```
-aws ec2 authorize-security-group-ingress --group-id $concourse_sg_id --ip-permissions '[{"IpProtocol": "icmp", "FromPort": -1, "ToPort": -1, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
-```
-
     Allow HTTP 
 ```
 aws ec2 authorize-security-group-ingress --group-id $concourse_sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 80, "ToPort": 80, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
@@ -40,11 +35,6 @@ aws ec2 authorize-security-group-ingress --group-id $concourse_sg_id --ip-permis
     Open TSA port 
 ```
 aws ec2 authorize-security-group-ingress --group-id $concourse_sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 2222, "ToPort": 2222, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
-```
-
-    Allow all TCP and UDP traffic inside the security group
-```
-aws ec2 authorize-security-group-ingress --group-id $concourse_sg_id --protocol '-1' --port -1 --source-group $concourse_sg_id
 ```
 
 6. Store all variables in a file for later use
