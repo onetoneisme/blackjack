@@ -35,7 +35,7 @@ networks:
     static: [10.10.0.62]
     dns: [10.10.0.2]
     cloud_properties: {subnet: {{source deployment/vars && echo $subnet_id}} }
-- name: consourse
+- name: concourse
   type: manual
   subnets:
   - range: 10.10.2.0/24
@@ -44,7 +44,7 @@ networks:
     static: [10.10.2.62]
     dns: [10.10.2.2]
     cloud_properties: 
-      subnet: {{source deployment/vars && echo $consource_subnet_id}} 
+      subnet: {{source deployment/vars && echo $concource_subnet_id}} 
       security_groups: [training_sg]
 - name: vip
   type: vip
