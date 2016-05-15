@@ -29,7 +29,7 @@ aws ec2 create-tags --resources $concourse_sg_id --tags Key=Name,Value=training_
 
     Allow HTTP 
 ```
-aws ec2 authorize-security-group-ingress --group-id $concourse_sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 80, "ToPort": 80, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
+aws ec2 authorize-security-group-ingress --group-id $concourse_sg_id --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 8080, "ToPort": 8080, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
 ```
 
     Open TSA port 
