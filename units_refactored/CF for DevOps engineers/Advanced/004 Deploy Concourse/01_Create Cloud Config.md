@@ -45,7 +45,7 @@ networks:
     reserved: [10.0.2.1 - 10.0.2.10]
     cloud_properties: 
       subnet: {{source deployment/vars && echo $concourse_subnet_id}} 
-      security_groups: [training_sg]
+      security_groups: [concourse_sg]
 - name: vip
   type: vip
 

@@ -97,7 +97,7 @@ networks:
     gateway: 10.0.1.1
     cloud_properties:
       subnet: {{source ~/deployment/vars && echo $elk_subnet_id}}
-      security_groups: [training_sg]
+      security_groups: [elk_sg]
     dns:
     - 10.10.0.2
     reserved:
