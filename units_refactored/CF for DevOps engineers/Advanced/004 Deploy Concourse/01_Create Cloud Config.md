@@ -44,7 +44,7 @@ networks:
     static: [10.10.2.62]
     dns: [10.10.2.2]
     cloud_properties: 
-      subnet: {{source deployment/vars && echo $concource_subnet_id}} 
+      subnet: {{source deployment/vars && echo $concourse_subnet_id}} 
       security_groups: [training_sg]
 - name: vip
   type: vip
