@@ -112,8 +112,8 @@ jobs:
       resurrector_enabled: true
 
     aws: &aws
-      access_key_id: {{cat ~/.aws/config | grep aws_access_key_id | awk '{print $3}'}} # <--- Replace with AWS Access Key ID
-      secret_access_key: {{cat ~/.aws/config | grep aws_secret_access_key | awk '{print $3}'}} # <--- Replace with AWS Secret Key
+      access_key_id: {{cat ~/.aws/credentials | grep aws_access_key_id | awk '{print $3}'}} # <--- Replace with AWS Access Key ID
+      secret_access_key: {{cat ~/.aws/credentials | grep aws_secret_access_key | awk '{print $3}'}} # <--- Replace with AWS Secret Key
       default_key_name: {{source deployment/vars && echo $key_name}}
       default_security_groups: [training_sg]
       region: {{cat ~/.aws/config | grep region | awk '{print $3}'}}  # <--- Replace with Region
