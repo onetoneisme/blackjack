@@ -28,6 +28,7 @@ instance_groups:
   azs: [z1]
   networks: 
   - name: concourse
+    default: [dns, gateway]
   - name: vip
     static_ips: [{{source ~/deployment/vars && echo $concourse_eip}}]
   jobs:
@@ -50,7 +51,7 @@ instance_groups:
   instances: 1
   vm_type: medium
   stemcell: trusty
-  persistent_disk_type: database
+  persistent_disk_type: large
   azs: [z1]
   networks: [{name: concourse}]
   jobs:
