@@ -54,7 +54,7 @@ compilation:
   reuse_compilation_vms: true
   az: z1
   vm_type: medium
-  network: private
+  network: bosh
 ```
 
 2.  Update director Cloud Config

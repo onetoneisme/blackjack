@@ -23,7 +23,7 @@ stemcells:
 instance_groups:
 - name: web
   instances: 1
-  vm_type: web
+  vm_type: medium
   stemcell: trusty
   azs: [z1]
   networks: 
@@ -48,7 +48,7 @@ instance_groups:
 
 - name: db
   instances: 1
-  vm_type: database
+  vm_type: medium
   stemcell: trusty
   persistent_disk_type: database
   azs: [z1]
@@ -65,7 +65,7 @@ instance_groups:
 
 - name: worker
   instances: 1
-  vm_type: worker
+  vm_type: medium
   stemcell: trusty
   azs: [z1]
   networks: [{name: concourse}]
@@ -92,9 +92,10 @@ update:
 ```
 
 
-2. Upload release
+2. Upload releases
 ```
 bosh upload release https://bosh.io/d/github.com/concourse/concourse?v=1.2.0
+bosh upload release https://bosh.io/d/github.com/cloudfoundry-incubator/garden-linux-release?v=0.337.0
 ``` 
 
 3. Upload stemcell
