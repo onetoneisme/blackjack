@@ -36,8 +36,7 @@ instance_groups:
     release: concourse
     properties:
       # replace with your CI's externally reachable URL, e.g. https://ci.foo.com
-      external_url: http://{{source ~/deployment/vars && echo $concourse_eip}}.xip.io
-      bind_port: 80
+      external_url: http://{{source ~/deployment/vars && echo $concourse_eip}}.xip.io:8080
 
       # replace with username/password, or configure GitHub auth
       basic_auth_username: admin
