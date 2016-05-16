@@ -508,8 +508,8 @@ properties:
 
   template_only:
     aws:
-      access_key_id: {{ cat .aws/config | grep aws_secret_access_key | awk '{print $3}' }}
-      secret_access_key: {{ cat .aws/config | grep secret_access_key | awk '{print $3}' }}
+      access_key_id: {{ cat ~/.aws/credentials | grep aws_access_key_id | awk '{print $3}' }}
+      secret_access_key: {{ cat ~/.aws/credentials | grep aws_secret_access_key | awk '{print $3}' }}
       availability_zone: {{ source ~/deployment/vars && echo $avz }}
       availability_zone2: null
 

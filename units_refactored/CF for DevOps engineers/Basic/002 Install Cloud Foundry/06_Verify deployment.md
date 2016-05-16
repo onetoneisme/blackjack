@@ -1,6 +1,5 @@
 ## Verify deployment
 
-
 1. Test suite should pass
 ```
 bosh run errand smoke_tests
