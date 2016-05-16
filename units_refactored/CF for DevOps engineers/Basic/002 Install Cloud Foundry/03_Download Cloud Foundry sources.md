@@ -15,13 +15,13 @@ cd ~/deployment/cf-release
 
 Patch the CF templates in order to use a ha_proxy job, decrease number of instances and use only one availability zone instead of two.
 
-Create the `instances.diff` file with the following content:
+Create the `instances.patch` file with the following content:
 
 ```
 diff --git a/templates/cf-infrastructure-aws.yml b/templates/cf-infrastructure-aws.yml
 index e31924f..fb2e501 100644
---- a/templates/cf-infrastructure-aws.myml
-+++ b/templates/cf-infrastructure-aws.yl
+--- a/templates/cf-infrastructure-aws.yml
++++ b/templates/cf-infrastructure-aws.yml
 @@ -161,7 +161,7 @@ jobs:
          static_ips: (( static_ips(1) ))
 
