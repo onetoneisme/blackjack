@@ -19,4 +19,5 @@ bosh-init -v
 sudo apt-add-repository ppa:brightbox/ruby-ng -y
 sudo apt-get update
 sudo apt-get install -y build-essential zlibc zlib1g-dev ruby-dev openssl libxslt-dev libxslt1-dev libpq-dev libxml2-dev libssl-dev libreadline6 libreadline6-dev libyaml-dev libsqlite3-dev sqlite3 software-properties-common libmysqlclient-dev ruby2.1
+sudo update-alternatives --set ruby /usr/bin/ruby2.1
 ```
