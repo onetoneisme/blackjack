@@ -1,16 +1,16 @@
-## Creating App for testing Service Broker
+## Creating an app to test a Service Broker
 
-1. Clone test application
+1. Clone the test application:
 
-```
-cd ~
-git clone https://github.com/s-matyukevich/broker-test 
-```
+	```
+	cd ~
+	git clone https://github.com/s-matyukevich/broker-test 
+	```
 
-2. Push app
+2. Push the application:
 
-```
-cd ~/broker-test
-cf push test-app
-```
+	```
+	cd ~/broker-test
+	cf push test-app
+	```
 

@@ -1,4 +1,6 @@
-## Deploying Service Broker as an application in Cloud Foundry
+## Deploying a service broker as an application in Cloud Foundry
+
+To deploy a service broker as a Cloud Foundry app, run the following commands:
 
 ```
 cf push myservice-broker --no-start -m 128M -k 256M

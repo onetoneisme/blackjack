@@ -4,11 +4,11 @@ questions:
   type: chcheckbox_multiple
   options:
   - id: "1"
-    value: "A GUI application."
+    value: "A GUI application"
   - id: "2"
-    value: "The CF CLI installed."
+    value: "The CF CLI installed"
   - id: "3"
-    value: "A Cloud Foundry deployment URL."
+    value: "A Cloud Foundry deployment URL"
   answer: "2, 3"
 - id: "2"
   formulation: "How do you target an organization and a space?"
@@ -22,6 +22,6 @@ questions:
     value: "cf target -org organization -space space"
   answer: "1"
 - id: "3"
-  formulation: "Enter the command to deploy the application 'my-app' to Cloud Foundry"
+  formulation: "Enter the command to deploy the application 'my-app' to Cloud Foundry."
   type: input
   answer: "cf push my-app"

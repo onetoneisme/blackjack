@@ -2,9 +2,9 @@
 
 Cloud Foundry's CLI has very good inline help.
 
-Try executing the `cf` command without options. Help text is written to stdout and we recommend you pipe the output through `less` with or search by piping through `grep`.  Notice the large number of available commands and their summaries.
+Try executing the `cf` command without options. The help text is written to `stdout` and we recommend that you pipe the output through `less` or search by piping through `grep`. Notice the large number of available commands and their summaries.
 
-This is fundamental to know, as it will help navigating through the CLI's many commands.
+This is fundamental to know as it will help you to navigate through the CLI's many commands.
 
 As an example, let's say that you want to view all the commands related to `spaces`:
 

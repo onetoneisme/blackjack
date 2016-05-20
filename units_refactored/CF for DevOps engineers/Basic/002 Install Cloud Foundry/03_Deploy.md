@@ -1,23 +1,23 @@
 ### Deploy Cloud Foundry
 
-1. Upload the new stemcell
-```
-bosh upload stemcell https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent?v=3202
-```
+1. Upload the new stemcell:
+	```
+	bosh upload stemcell https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent?v=3202
+	```
 
-2. Upload the latest stable version of Cloud Foundry
-```
-bosh upload release https://bosh.io/d/github.com/cloudfoundry/cf-release
-```
+2. Upload the latest stable version of Cloud Foundry:
+	```
+	bosh upload release https://bosh.io/d/github.com/cloudfoundry/cf-release
+	```
 
-3. Set the BOSH deployment
-```
-bosh deployment ~/deployment/minimal-aws.yml
-```
+3. Set the BOSH deployment:
+	```
+	bosh deployment ~/deployment/minimal-aws.yml
+	```
 
-4. Deploy
+4. Deploy:
 
     Note: This step may take 15+ minutes to complete.
-```
-bosh deploy
-```
+	```
+	bosh deploy
+	```
