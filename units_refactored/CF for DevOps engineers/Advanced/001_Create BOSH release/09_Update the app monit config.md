@@ -1,6 +1,6 @@
-### Update the app monit config
+### Update the app Monit config
 
-Edit the following file `jobs/app/monit` and add the following content to it
+Open the file `jobs/app/monit` and add the following lines:
 
 ```
 check process app

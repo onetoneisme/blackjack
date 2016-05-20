@@ -1,12 +1,12 @@
 #### Controlling resources when pushing
 
-As you can see, pushing the application uses some default values such as the disk size and memory limits. To specify custom values, the CLI offers a series of modifiers:
+As you can see, the `cf push` command uses some default values, such as  disk size and memory limits, when pushing applications. To specify custom values, the CLI offers a number of modifiers:
 
 ```sh
 cf push my-sinatra-app -k 128M -m 256M
 ```
 
-This command will push your application again, but this time setting a disk size (`-k`) of 128M and a memory limit (`-m`) of 256M. You can get help on all the modifiers available to the `push` command by doing executing `cf help push`.
+This command will push your application again, setting a disk size (`-k`) of 128M and a memory limit (`-m`) of 256M. Run `cf help push` to get help on all the modifiers available for the `push` command.
 
 ```
 $ cf help push

@@ -1,6 +1,6 @@
 questions:
 - id: "1"
-  formulation: "Please, scale up the 'my-batmobile-app' up to 3 instances."
+  formulation: "Please, scale 'my-batmobile-app' up to 3 instances."
   type: input
   answer: 'cf push my-batmobile-app -i 3'
 - id: "2"
@@ -12,16 +12,16 @@ questions:
   - id: "2"
     value: "'restage' will upload the code again"
   - id: "3"
-    value: "'restage' deletes the droplet and recreates it"
+    value: "'restage' deletes the droplet and then recreates it"
   answer: "2"
 - id: "3"
-  formulation: "Why is an enviornment variable important in Cloud Foundry?"
+  formulation: "Why are enviornment variables so important in Cloud Foundry?"
   type: checkbox_multiple
   options:
   - id: "1"
-    value: "Because it is a way for developers not to worry about credentials and URIs and just focus on the business logic"
+    value: "Thanks to environment variables, developers do not have to worry about credentials and URIs and can focus on the business logic."
   - id: "2"
-    value: "Because it allows Cloud Foundry deployed apps to safely get credentials about services"
+    value: "Environment variables allow apps deployed in Cloud Foundry to safely get credentials for various services."
   - id: "3"
-    value: "Because it allows Cloud Foundry to communicate with a deployed application about its environment"
+    value: "Environment variables enable Cloud Foundry to communicate with deployed applications and receive data about their environments."
   answer: "(1,2,3)"

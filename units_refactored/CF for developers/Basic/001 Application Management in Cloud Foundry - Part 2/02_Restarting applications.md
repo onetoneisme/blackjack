@@ -1,6 +1,6 @@
 ### Restarting applications
 
-There are several ways of restarting an application, each one with some differences that makes them very useful.
+There are several ways to restart an application, each one with some differences that makes them very useful.
 
 Try:
 
@@ -8,7 +8,7 @@ Try:
 cf stop my-app
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf stop my-app
@@ -16,15 +16,15 @@ Stopping app my-app in org my-org / space my-first-space as my-user...
 OK
 ```
 
-Check that the application is halted successfully with `cf app my-app`. This will simply stop the application, leaving all the source code there, ready to be started again:
+Check that the application has been halted successfully with `cf app my-app`. This will simply stop the application, leaving all the source code there, ready to be started again:
 
 ```sh
 cf start my-app
 ```
 
-Output will show that the application has been started again.
+The output will show that the application has been restarted.
 
-Those two steps can be summed combined:
+These two steps can also be combined, like so:
 
 ```sh
 cf restart my-app

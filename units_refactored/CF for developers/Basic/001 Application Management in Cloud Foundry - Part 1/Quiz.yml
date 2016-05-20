@@ -23,7 +23,7 @@ questions:
   type: checkbox
   options:
   - id: "1"
-    value: "The list of dependencies of an application"
+    value: "A list of dependencies for an application"
   - id: "2"
     value: "A YAML file with a list of properties that helps to deploy applications to CF"
   - id: "3"

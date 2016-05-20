@@ -1,6 +1,6 @@
-### Create the ruby spec
+### Create the Ruby spec
 
-Edit the following file `packages/ruby/spec` and add the following content to it
+Open the file `packages/ruby/spec` in a text editor and add the following lines to it:
 
 ```yaml
 ---

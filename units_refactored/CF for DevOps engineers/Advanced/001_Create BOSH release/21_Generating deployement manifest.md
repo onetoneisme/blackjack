@@ -1,6 +1,6 @@
 ### Generate the deployment manifest
 
-Save the following as `~/deployment/greeter.yml`
+Save the following as `~/deployment/greeter.yml`:
 
 ```yaml
 ---

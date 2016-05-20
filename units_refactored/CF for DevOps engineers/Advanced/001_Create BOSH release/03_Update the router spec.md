@@ -1,6 +1,6 @@
 ### Update the router spec
 
-Edit the following file `jobs/router/spec` and add the following content to it
+Open the file `jobs/router/spec` in a text editor and add the following content to it:
 
 ```yaml
 ---

@@ -1,12 +1,12 @@
 #### Viewing variables
 
-To view the available environmental variables available for your application, use:
+To view the environmental variables available to your application, use:
 
 ```sh
 cf env my-app
 ```
 
-Output should be similart to:
+The output should be similart to this:
 
 ```
 $ cf env my-app

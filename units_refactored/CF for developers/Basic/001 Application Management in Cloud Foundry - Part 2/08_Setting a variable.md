@@ -1,12 +1,12 @@
 #### Setting a variable
 
-Suposse that you need to set a variable to provide a value to your application. Just do:
+Let's assume that you need to set a variable to provide a value to your application. Just run:
 
 ```sh
 cf set-env my-app MYVAR myvalue
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf set-env my-app MYVAR myvalue
@@ -15,22 +15,22 @@ OK
 TIP: Use 'cf restage' to ensure your env variable changes take effect
 ```
 
-Although this variable will be imeediately availabe to all you application instances, if you want your application to start reading the variable you should **restage** it. However, since it is not necessary, you can skip that step.
+Although this variable will be immediately availabe to all your application instances, if you want your application to start reading the variable, you need to **restage** it. However, this is not a compusory step and you can skip it.
 
-If you run again `cf env my-app`, you will see that `MYVAR` and it's value appears under the `User-Provided` section.
-Now, define a second variable:
+Running `cf env my-app` again will reveal that `MYVAR` and its value appear under the `User-Provided` section.
+Now, define the second variable:
 
 ```sh
 cf set-env my-app MY_OTHER_VAR myothervalue
 ```
 
-Check again the variables. To unset (remove) a variable from the environment do:
+Check the variables again. To unset (remove) a variable from the environment, do:
 
 ```sh
 cf unset-env my-app MY_OTHER_VAR
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf unset-env my-app MY_OTHER_VAR
@@ -40,4 +40,4 @@ TIP: Use 'cf restage' to ensure your env variable changes take effect
 ```
 
 Easy as it seems, it is very powerful.
-Also, you can set all of this variables in the application manifest, as we will see later on.
+Also, you can set all of these variables in the application manifest, as we will see later on.

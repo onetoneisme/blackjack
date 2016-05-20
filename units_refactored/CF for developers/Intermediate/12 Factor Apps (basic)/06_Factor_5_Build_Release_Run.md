@@ -2,13 +2,13 @@
 #### Strictly separate build and run stages
 A codebase is transformed into a (non-development) deploy through three stages:
 
-The build stage is a transform which converts a code repo into an executable bundle known as a build. Using a version of the code at a commit specified by the deployment process, the build stage fetches and vendors dependencies and compiles binaries and assets.
-The release stage takes the build produced by the build stage and combines it with the deploy’s current config. The resulting release contains both the build and the config and is ready for immediate execution in the execution environment.
-The run stage (also known as “runtime”) runs the app in the execution environment, by launching some set of the app’s processes against a selected release.
+1. The **build stage** is a transformation, which converts a code repo into an executable bundle known as a build. Using a version of the code at a commit specified by the deployment process, the build stage fetches and vendors dependencies and compiles binaries and assets.
+2. The **release stage** takes the build produced by the build stage and combines it with the deploy’s current config. The resulting release contains both the build and the config and is ready for immediate execution in the execution environment.
+3. The **run stage** (also known as “runtime”) runs the app in the execution environment, by launching some set of the app’s processes against a selected release.
 
 **The twelve-factor app uses strict separation between the build, release, and run stages.** For example, it is impossible to make changes to the code at runtime, since there is no way to propagate those changes back to the build stage.
 
-**Release and Run** stages in Cloud Foundry:
+The **release** and **run** stages in Cloud Foundry loke as follows:
 ```
 Creating container
 Successfully created container

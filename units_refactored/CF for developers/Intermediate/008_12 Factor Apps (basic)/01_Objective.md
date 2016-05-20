@@ -1,11 +1,11 @@
-## Objective
+## Objectives
 
-In this lesson you will learn how to implement 12 Factors(http://12factor.net/) in Cloud Foundry using Spring.
-Also, you will take a look at some new CF cli commands.
+In this secton, you will learn how to implement [12-factor apps](http://12factor.net/) in Cloud Foundry, using Spring.
+Also, you will get familiar with some new CF CLI commands.
 
-To successfully complete this lesson you need Git, Java 8, Maven, and the CF cli already installed on your machine.
+To successfully complete this lesson you need Git, Java 8, Maven, and the CF CLI already installed on your machine.
 
-Please check
+Please check the following:
 ```sh
 $ java -version
 ```
@@ -19,15 +19,15 @@ $ git --version
 $ cf -v
 ```
 
-All these commands should return correct version. If you don't see any input executing some command, check if corresponding tool has been already installed and it is in PATH variable.
-If all is OK you need to connect your CF client to work environment. To do it execute the next command on your local machine:
+All these commands should return valid versions. If you don't see any output when executing any of the commands, check if the corresponding tool has been already installed and make sure is in the PATH variable.
+If everything is OK, you need to connect your CF client to a working environment. To do it, execute this command on your local machine:
 ```sh
 $ cf api --skip-ssl-validation http://api.{{echo $CF_DOMAIN}}
 ```
 ```sh
 $ cf login
 ```
-And enter **admin** and **admin** as credentials. If all is OK you should see similar output:
+And enter **admin** and **admin** as credentials. If the login was successful, you should see output similar to this:
 ```sh
 OK
 
@@ -41,11 +41,11 @@ Org:            default_organization
 Space:          No space targeted, use 'cf target -s SPACE'
 ```
 
-Now create development space in CF
+Now, create a development space in CF:
 ```sh
 $ cf create-space development
 ```
-and make it your target space
+and then make it your target space:
 ```sh
 $ cf target -s development
 ```

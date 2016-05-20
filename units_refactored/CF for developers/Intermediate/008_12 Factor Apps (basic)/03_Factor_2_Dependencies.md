@@ -3,14 +3,14 @@
 Most programming languages offer a packaging system for distributing support libraries, such as CPAN for Perl or Rubygems for Ruby. Libraries installed through a packaging system can be installed system-wide (known as “site packages”) or scoped into the directory containing the app (known as “vendoring” or “bundling”).
 
 A twelve-factor app never relies on implicit existence of system-wide packages. It declares all dependencies, completely and exactly, via a dependency declaration manifest. Furthermore, it uses a dependency isolation tool during execution to ensure that no implicit dependencies “leak in” from the surrounding system. The full and explicit dependency specification is applied uniformly to both production and development.
-In Java we use Maven and Gradle.
+In Java, we use Maven and Gradle.
 
-Generate your workshop project via **Maven** command **archetype:generate** (use appropriate names in braces) 
+Generate your workshop project via the Maven command `archetype:generate` (use appropriate names in the braces) 
 ```sh 
 $ mvn archetype:generate -DgroupId={project-packaging} -DartifactId={project-name} -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
-Maven should create folder with the next structure:
+Maven should create a folder with the following structure:
 ```
 ├── {project-name}/
 │   ├── pom.xml
@@ -24,11 +24,11 @@ Maven should create folder with the next structure:
 │   │   │   │   ├──{project-packaging}
 │   │   │   │   │   ├──AppTest.java
 ```
-Delete unnecessary files App.java and AppTest.java.
+Delete the unnecessary files: `App.java` and `AppTest.java`.
 
-To test dependency management we are going to create Spring Boot application with simple REST endpoint.
+To test dependency management, we are going to create a Spring Boot application with a simple REST endpoint.
 
-At first we need to add Spring Boot to our application. In the **pom.xml** add corresponding dependencies:
+First, we need to add Spring Boot to our application. Add the corresponding dependencies to `pom.xml`:
 ```
 <dependencies>
         <dependency>
@@ -68,7 +68,7 @@ At first we need to add Spring Boot to our application. In the **pom.xml** add c
         </plugins>
     </build>
 ```
-In the root package (project-packaging) create two classes StockSpringBootStarter and StockResource.
+In the root package (`project-packaging`), create two classes: `StockSpringBootStarter` and `StockResource`.
 ```
 @SpringBootApplication
 public class StockSpringBootStarter {
@@ -88,11 +88,11 @@ public class StockResource {
 }
 ```
 
-Build application by running form the root of your project
+Build the application by running this command form the root of your project:
 ```sh
 $ mvn clean install
 ```
-If all is OK you should see something like the next
+If all is OK, you should see output that looks something like:
 ```
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
@@ -102,17 +102,17 @@ If all is OK you should see something like the next
 [INFO] Final Memory: 24M/209M
 [INFO] ------------------------------------------------------------------------
 ```
-Then launch Spring Boot application
+Then, launch the Spring Boot application:
 ```
 $ java -jar target/{project-name}-1.0-SNAPSHOT.jar
 ```
 
-In your browser try to access **http://localhost:8080/stock/ping**. You should see **"Ping"** as response.
-As you have working application you can push it to CF. From the root of your project execute
+In your browser, try to access `http://localhost:8080/stock/ping`. You should get `"Ping"` as a response.
+Since you now have a working application, you can push it to CF. From the root of your project, execute:
 ```
 $ cf push workshop-12f-stock -p target/{project-name}-1.0-SNAPSHOT.jar
 ```
-If all is OK you should see similar output:
+If all is OK, you should see similar output:
 ```
 requested state: started
 instances: 1/1
@@ -127,4 +127,4 @@ buildpack: java-buildpack=v3.5.1-http://github.com/pivotal-cf/pcf-java-buildpack
 
 D:\temp\asd;lfka's;dflk\project-name>
 ```
-Try to access your app from CF **http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping**
+Try accessing your app from CF `http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping`.

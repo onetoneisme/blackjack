@@ -1,6 +1,6 @@
 ### Create the router startup script
 
-Edit the following file `jobs/router/templates/ctl` and add the following content to it
+Open the file `jobs/router/templates/ctl` in a text editor and add the following content to it:
 
 ```bash
 #!/bin/bash

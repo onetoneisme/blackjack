@@ -6,9 +6,9 @@ Logs are very easy to view:
 cf logs my-app
 ```
 
-While you are tailing the logs with the previous command, go to your browser and navigate to [your app](http://my-app.{{echo $CF_DOMAIN}}) and reload the page a couple of times.
+While you are tailing the logs with the previous command, go to your browser and navigate to [your app](http://my-app.{{echo $CF_DOMAIN}}). THen, reload the page a couple of times.
 
-Output should similar to:
+The output should be similar to:
 
 ```
 $ cf logs my-app
@@ -21,7 +21,7 @@ Connected, tailing logs for app my-app in org my-org / space my-first-space as m
 2015-12-23T15:06:33.07-0300 [App/0]      ERR 181.29.164.209, 10.244.0.21 - - [23/Dec/2015 18:06:33] "GET /favicon.ico HTTP/1.1" 404 18 0.0004
 2015-12-23T15:06:33.07-0300 [RTR/0]      OUT my-app.{{cf-get-instance-ip}}.xip.io - [23/12/2015:18:06:33 +0000] "GET /favicon.ico HTTP/1.1" 404 0 18 "http://my-app.{{echo $CF_DOMAIN}}" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36" 10.244.0.21:50393 x_forwarded_for:"181.29.164.209, 10.244.0.21" x_forwarded_proto:"http" vcap_request_id:806c5b61-3f99-4577-50a9-5bde5f499395 response_time:0.004557008 app_id:6d6911ed-ec44-40ca-92fa-14d14798686b
 ```
-> **Notice**: Don't worry about the ERR messages. We'll fix that later as part of the course.
+> **Note**: Do not worry about the ERR messages. We will be fixing them  later as part of this course.
 
 You can also dump the logs to a file instead of tailing, using the `--recent` flag.
 

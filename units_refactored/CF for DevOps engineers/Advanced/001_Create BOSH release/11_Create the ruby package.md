@@ -1,10 +1,11 @@
-### Create the ruby package
+### Create the Ruby package
 
+Generate the Ruby package:
 ```
 bosh generate package ruby
 ```
 
-After executing this command, the filesystem tree should look like the following:
+After executing this command, the filesystem tree should look similar to this:
 
 ```
 $ tree

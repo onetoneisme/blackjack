@@ -1,15 +1,14 @@
-### IV. Backing Services
-### IV. Backing Services
+### IV. Backing services
 #### Treat backing services as attached resources
 
-A backing service is any service the app consumes over the network as part of its normal operation. Examples include datastores (such as MySQL or CouchDB), messaging/queueing systems (such as RabbitMQ or Beanstalkd), SMTP services for outbound email (such as Postfix), and caching systems (such as Memcached).
+A backing service is any service the app consumes over a network as part of its normal operation. Examples include data stores (such as MySQL or CouchDB), messaging/queueing systems (such as RabbitMQ or Beanstalkd), SMTP services for outbound email (such as Postfix), and caching systems (such as Memcached).
 
-Backing services like the database are traditionally managed by the same systems administrators as the app’s runtime deploy. In addition to these locally-managed services, the app may also have services provided and managed by third parties. Examples include SMTP services (such as Postmark), metrics-gathering services (such as New Relic or Loggly), binary asset services (such as Amazon S3), and even API-accessible consumer services (such as Twitter, Google Maps, or Last.fm).
+Backing services, like a database, are traditionally managed by the same system administrators as the app’s runtime deploy. In addition to these locally-managed services, the app may also have services provided and managed by third parties. Examples include SMTP services (such as Postmark), metrics-gathering services (such as New Relic or Loggly), binary asset services (such as Amazon S3), and even API-accessible consumer services (such as Twitter, Google Maps, or Last.fm).
 
-The code for a twelve-factor app makes no distinction between local and third party services. To the app, both are attached resources, accessed via a URL or other locator/credentials stored in the config. A deploy of the twelve-factor app should be able to swap out a local MySQL database with one managed by a third party (such as Amazon RDS) without any changes to the app’s code. Likewise, a local SMTP server could be swapped with a third-party SMTP service (such as Postmark) without code changes. In both cases, only the resource handle in the config needs to change.
+The code for a twelve-factor app makes no distinction between local and third-party services. To the app, both are attached resources, accessed via a URL or other locator/credentials stored in the config. A deploy of the twelve-factor app should be able to swap out a local MySQL database with one managed by a third party (such as Amazon RDS) without any changes to the app’s code. Likewise, a local SMTP server could be swapped with a third-party SMTP service (such as Postmark) without code changes. In both cases, only the resource handle in the config needs to change.
 
-Lets implement some data storing via **JPA**. We are going to use MySql for it
-Add the next dependencies in your **pom.xml**.
+Let's implement some data storage via **JPA**. We are going to use MySQL for it.
+Add the following dependencies to your `pom.xml`.
 ```
         <dependency>
             <groupId>mysql</groupId>
@@ -27,8 +26,8 @@ Add the next dependencies in your **pom.xml**.
             <version>3.2.1</version>
         </dependency>
 ```
-Here we include MySql connector, let Spring Boot know that we use JPA to store/retrieve data and that DB versioning is supported by FlyWay.
-In **src/main/** create directory **resources/db/migration** and put file **V1.0.0__create_stock_table.sql** there. Here is the file content
+Here, we include a MySQL connector and let Spring Boot know that we are using JPA to store/retrieve data and that DB versioning is supported by Flyway.
+In `src/main/`, create a directory called `resources/db/migration`. Then, put a file called `V1.0.0__create_stock_table.sql` into the directory. Here, are the contents of this file:
 ```
 CREATE TABLE `stock_item` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -38,9 +37,9 @@ CREATE TABLE `stock_item` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 ```
-All we do is creating simple table in our MySQL.
+All we do here, is create a simple table in our MySQL.
 
-Now lets create JPA entity and repository. In your main package create subpackage **domain.model** and put ItemType enum and StockItem entity there:
+Now, let's create a JPA entity and a repository. In your main package, create a subpackage and name it `domain.model`. Then put the `ItemType` enum and `StockItem` entity in there:
 ```
 public enum ItemType {
 
@@ -106,13 +105,13 @@ public class StockItem {
 }
 ```
 
-Then create corresponding repository **StockItemRepository**
+After that, create a corresponding repository, `StockItemRepository`:
 ```
 public interface StockItemRepository extends CrudRepository<StockItem, Long> {
     List<StockItem> findByType(ItemType type);
 }
 ```
-Now you can update your StockResource to provide standart CRUD operations
+Now, you can update your `StockResource` to provide standard CRUD operations:
 ```
     @Autowired
     private Environment environment;
@@ -173,7 +172,7 @@ Now you can update your StockResource to provide standart CRUD operations
         return stockItemRepository.findAll();
     }
 ```
-The last step is to create CF configuration file **manifest.yml** to provide basic information about our application. Place it in the root of your project.
+The last step is to create a CF configuration file, `manifest.yml`, to provide basic information about our application. Place it into the root of your project.
 ```
 ---
 applications:
@@ -185,31 +184,31 @@ applications:
       - mysql
 ```
 
-So from now our application is able to use JPA. What is left is create MySQL service in our CF.
+So, from now, our application is able to use JPA. But we still need to create a MySQL service in our CF:
 ```
 cf create-service cleardb spark mysql
 ```
-and connect it with aour application
+and connect it to our application:
 ```
 cf bind-service workshop-12f-stock mysql
 ```
-Build application
+Now, let's build the application:
 ```
 mvn clean install
 ```
-and push it to CF
+and push it to CF:
 ```
 cf push
 ```
-Since we provide **manifest.yml** file we just to execute **cf push** command witout any information about jar file location.
+Since we provide the `manifest.yml` file, we can execute the `cf push` command without any information about the JAR file's location.
 
-Try to access your application **http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping**. Via some rest client POST new StockItem
+Try to access your application at `http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping`. Now, `POST` the new `StockItem` via some REST client:
 ```
 POST http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock
 Content-Type: application/json
 {"type":"CD","title":"Adele","description":"Hello"}
 ```
-and try to GET it
+then try to `GET` it:
 ```
 GET http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock
 ```
