@@ -1,12 +1,12 @@
 ### Listing quotas
 
-Let's list the built in plans:
+Let's list the built-in plans:
 
 ```sh
 cf quotas
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf quotas

@@ -1,12 +1,12 @@
 ### Getting quota info
 
-There is a way to get this information in a more wasy to read way:
+It is also possible to get the same information in a more easy-to-read way:
 
 ```sh
 cf quota default
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf quota default

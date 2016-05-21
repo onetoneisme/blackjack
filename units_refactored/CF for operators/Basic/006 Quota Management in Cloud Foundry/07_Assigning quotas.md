@@ -1,12 +1,12 @@
 ### Assigning quotas
 
-Now that we have a quota created, we can apply it to an Org:
+Now that we have created a quota, we can apply it to an org:
 
 ```sh
 cf set-quota my-org large-quota
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf set-quota my-org large-quota
@@ -14,13 +14,13 @@ Setting quota large-quota to org my-org as admin...
 OK
 ```
 
-If you query `my-org` details, you will see that the quota has been assigned:
+If you query `my-org` details, you will see that the quota has been assigned to it:
 
 ```sh
 cf org my-org
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf org my-org
@@ -34,4 +34,4 @@ my-org:
           space quotas:
 ```
 
-> **Caveat**: It is not possible to remove a quota from an Org once it has been assigned.
+> **Caveat**: It is not possible to remove a quota from an org, once it has been assigned.
