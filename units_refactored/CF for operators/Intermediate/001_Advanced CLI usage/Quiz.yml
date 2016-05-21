@@ -12,5 +12,5 @@ questions:
   - id: "2"
     value: "Tokens are very useful if you need to execute requests to the CF API without using the CLI."
   - id: "3"
-    value: "An authorization token will allow you to hack all of CF's resources."
+    value: "An authorization token will allow you to hack into all of CF's resources."
   answer: "2"
