@@ -18,7 +18,7 @@ OK
 TIP: Use 'cf target -o my-org -s my-second-space' to target new space
 ```
 
-Now, in case we need to rename the space, its very easy to do that:
+Now, if we need to rename the space, its very easy to do:
 
 ```sh
 cf rename-space my-second-space my-trash-space
@@ -32,7 +32,7 @@ OK
 
 Again, you don't need to worry about changing the name, since the internal reference is maintained without alteration.
 
-Deleting an space is really easy as well:
+Deleting a space is really easy, as well:
 
 ```sh
 cf delete-space my-trash-space

@@ -1,6 +1,6 @@
 #### Getting info about an organization
 
-A very good way to get information about the organization you just created is by using the `cf org` command:
+A very good way to get information about the organization you have just created is by using the `cf org` command:
 
 ```
 cf org my-org
@@ -21,5 +21,5 @@ my-org:
 
 ```
 
->**Tip:** note the *singular* vs. the *plural* noun used in `cf orgs`. Using the plural will get you a list of the objects represented by the noun, and the singular version will do something else, usually get details. This is a very common pattern in Cloud Foundry's CLI.
+>**Tip:** note the *singular* vs. the *plural* noun used in `cf orgs`. Using the plural will get you a list of objects represented by the noun, and the singular version will do something else, usually get details. This is a very common pattern in Cloud Foundry's CLI.
 >

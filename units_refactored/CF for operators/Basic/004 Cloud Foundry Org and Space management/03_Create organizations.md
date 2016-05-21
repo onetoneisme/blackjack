@@ -16,5 +16,5 @@ OK
 TIP: Use 'cf target -o my-org' to target new org
 ```
 
-Now, try again listing the existing organizations with `cf orgs`
-Your new organization should be listed there.
+Now, try listing the existing organizations with `cf orgs` again.
+Your new organization should be listed in the output.

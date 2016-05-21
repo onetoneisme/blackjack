@@ -1,12 +1,12 @@
 #### Getting info about spaces
 
-Getting info about an space is as simple as:
+Getting info about a space is as simple as:
 
 ```sh
 cf space my-first-space
 ```
-This will offer a good deal of info about the space we are enquiring.
-Don't worry about what does that information means, we'll get to it later on.
+This will return a good deal of info about the space we have specified.
+Don't worry about what all that information means. We'll get to it later on.
 
 ```
 $ cf space my-first-space
