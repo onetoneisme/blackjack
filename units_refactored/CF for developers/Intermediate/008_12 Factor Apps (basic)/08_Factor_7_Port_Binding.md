@@ -22,7 +22,9 @@ Ok, now let's add the following endpoint to `StockResource` class:
                 + " and ports " + environment.getProperty("CF_INSTANCE_PORTS");
     }
 ```
+
 Build and push the application:
+
 ```
 $ mvn clean install
 $ cf push

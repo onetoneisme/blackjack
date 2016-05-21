@@ -9,7 +9,7 @@
 
 ### Introduction
 
-Since we have deleted the application, let's deploy it again. But first, edit the `manifest.yml` file and change (**only**) the `name` attribute value to `my-app`. Then save the file and push the application:
+Since we have deleted the application, let's deploy it again. But first, edit the `manifest.yml` file and change **only** the `name` attribute value to `my-app`. Then save the file and push the application:
 
 ```sh
 cf push

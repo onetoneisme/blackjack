@@ -1,6 +1,6 @@
 questions:
 - id: "1"
-  formulation: "Please, scale 'my-batmobile-app' up to 3 instances."
+  formulation: "Please, scale 'my-batmobile-app' up to three instances."
   type: input
   answer: 'cf push my-batmobile-app -i 3'
 - id: "2"
@@ -8,7 +8,7 @@ questions:
   type: checkbox
   options:
   - id: "1"
-    value: "None. It is the same."
+    value: "None. They are the same."
   - id: "2"
     value: "'restage' will upload the code again"
   - id: "3"

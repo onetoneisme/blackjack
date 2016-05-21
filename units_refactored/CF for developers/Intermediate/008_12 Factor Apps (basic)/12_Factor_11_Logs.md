@@ -16,6 +16,7 @@ The event stream for an app can be routed to a file, or watched via real-time ta
 * Active alerting according to user-defined heuristics, such as an alert when the quantity of errors per minute exceeds a certain threshold
 
 So, let's add some logging to our application. To do that, add the following dependencies to `pom.xml`:
+
 ```
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -28,7 +29,9 @@ So, let's add some logging to our application. To do that, add the following dep
             <version>1.1.3</version>
         </dependency>
 ```
+
 In the `resources` folder create a Logback configuration file called `logback.xml` with the following content:
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
@@ -50,8 +53,10 @@ In the `resources` folder create a Logback configuration file called `logback.xm
     </root>
 </configuration>
 ```
+
 Make sure that you have provided a valid package name instead of the `"YOUR.PACKAGE"` placeholder **<logger name="YOUR.PACKAGE" level="info" additivity="false">**.
 And then add logging to the `"get by id"` endpoint:
+
 ```
     private static final Logger LOGGER = LoggerFactory.getLogger(StockResource.class);
 
@@ -80,6 +85,7 @@ $ cf logs workshop-12f-stock
 ```
 
 Try accessing the endpoint (`http://workshop-12f-stock.cfapps.io/stock/{id}`) with an appropriate item ID and check the log output. It should contain something similar to this:
+
 ```
 !!!!!! Starting search of stock item(id=1) search
 !!!!!! Finishing search of stock item(id=1) search
@@ -88,14 +94,18 @@ Try accessing the endpoint (`http://workshop-12f-stock.cfapps.io/stock/{id}`) wi
 If you have the ELK (Elasticsearch, Logstash, Kibana) stack already installed, you can connect your to ELK directly from CF.
 
 Create a user defined service for log draining:
+
 ```
 cf cups logstash-drain -l syslog://URL:5000
 ```
+
 The `"-l"` directive indicates that CF should send logs to the endpoint.
 
 Next, bind and restart your application:
+
 ```
 cf bind-service workshop-12f-stock logstash-drain
 cf restart workshop-12f-stock
 ```
+
 Now, check your Kibana and make sure that it is receiving logs from CF.

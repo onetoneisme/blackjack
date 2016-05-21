@@ -16,7 +16,7 @@ Deleting app my-app in org my-org / space my-first-space as my-user...
 OK
 ```
 
-> **Tip:** you can always skip the confirmation, using the `-f` flag: `cf delete my-app -f`
+> **Tip:** You can always skip the confirmation, using the `-f` flag: `cf delete my-app -f`.
 
 Now, try deleting the `my-sinatra-example` application, forcing the confirmation:
 

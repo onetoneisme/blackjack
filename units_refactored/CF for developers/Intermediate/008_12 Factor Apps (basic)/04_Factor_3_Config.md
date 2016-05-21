@@ -14,6 +14,7 @@ Twelve-factor apps store config in *environment variables* (often shortened to *
 
 To access CF environment variables via Spring, you need to use the `org.springframework.core.env.Environment` class.
 Change the `StockResource` class with the following code:
+
 ```
     @Autowired
     private Environment environment;
@@ -23,16 +24,22 @@ Change the `StockResource` class with the following code:
         return "Ping" + " " + environment.getProperty("environment.variable");
     }
 ```
+
 Execute:
+
 ```
 $ mvn clean install
 $ cf push workshop-12f-stock -p target/{project-name}-1.0-SNAPSHOT.jar
 ```
+
 Now, if you access `http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping` you will get `"Ping null"` as the output. It is because we haven't set any environmrnt variable values yet. Let's do it:
+
 ```
 $ cf set-env workshop-12f-stock environment.variable some_value
 ```
+
 Next, restart your app:
+
 ```
 cf restart workshop-12f-stock
 ```

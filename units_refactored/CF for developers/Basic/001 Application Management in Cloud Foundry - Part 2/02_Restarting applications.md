@@ -1,6 +1,6 @@
 ### Restarting applications
 
-There are several ways to restart an application, each one with some differences that makes them very useful.
+There are several ways to restart an application, each one with some differences that make them very useful.
 
 Try:
 

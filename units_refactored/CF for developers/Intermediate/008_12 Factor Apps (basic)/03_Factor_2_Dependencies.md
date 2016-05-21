@@ -68,7 +68,9 @@ First, we need to add Spring Boot to our application. Add the corresponding depe
         </plugins>
     </build>
 ```
+
 In the root package (`project-packaging`), create two classes: `StockSpringBootStarter` and `StockResource`.
+
 ```
 @SpringBootApplication
 public class StockSpringBootStarter {
@@ -89,10 +91,13 @@ public class StockResource {
 ```
 
 Build the application by running this command form the root of your project:
+
 ```sh
 $ mvn clean install
 ```
+
 If all is OK, you should see output that looks something like:
+
 ```
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
@@ -102,17 +107,23 @@ If all is OK, you should see output that looks something like:
 [INFO] Final Memory: 24M/209M
 [INFO] ------------------------------------------------------------------------
 ```
+
 Then, launch the Spring Boot application:
+
 ```
 $ java -jar target/{project-name}-1.0-SNAPSHOT.jar
 ```
 
-In your browser, try to access `http://localhost:8080/stock/ping`. You should get `"Ping"` as a response.
+In your browser, try accessing `http://localhost:8080/stock/ping`. You should get `"Ping"` as a response.
+
 Since you now have a working application, you can push it to CF. From the root of your project, execute:
+
 ```
 $ cf push workshop-12f-stock -p target/{project-name}-1.0-SNAPSHOT.jar
 ```
+
 If all is OK, you should see similar output:
+
 ```
 requested state: started
 instances: 1/1
@@ -127,4 +138,5 @@ buildpack: java-buildpack=v3.5.1-http://github.com/pivotal-cf/pcf-java-buildpack
 
 D:\temp\asd;lfka's;dflk\project-name>
 ```
+
 Try accessing your app from CF `http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping`.

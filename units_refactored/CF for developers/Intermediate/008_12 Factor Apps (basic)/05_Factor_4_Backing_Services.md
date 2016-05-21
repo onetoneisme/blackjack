@@ -8,7 +8,9 @@ Backing services, like a database, are traditionally managed by the same system 
 The code for a twelve-factor app makes no distinction between local and third-party services. To the app, both are attached resources, accessed via a URL or other locator/credentials stored in the config. A deploy of the twelve-factor app should be able to swap out a local MySQL database with one managed by a third party (such as Amazon RDS) without any changes to the app’s code. Likewise, a local SMTP server could be swapped with a third-party SMTP service (such as Postmark) without code changes. In both cases, only the resource handle in the config needs to change.
 
 Let's implement some data storage via **JPA**. We are going to use MySQL for it.
+
 Add the following dependencies to your `pom.xml`.
+
 ```
         <dependency>
             <groupId>mysql</groupId>
@@ -26,8 +28,10 @@ Add the following dependencies to your `pom.xml`.
             <version>3.2.1</version>
         </dependency>
 ```
+
 Here, we include a MySQL connector and let Spring Boot know that we are using JPA to store/retrieve data and that DB versioning is supported by Flyway.
 In `src/main/`, create a directory called `resources/db/migration`. Then, put a file called `V1.0.0__create_stock_table.sql` into the directory. Here, are the contents of this file:
+
 ```
 CREATE TABLE `stock_item` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -37,9 +41,11 @@ CREATE TABLE `stock_item` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 ```
+
 All we do here, is create a simple table in our MySQL.
 
 Now, let's create a JPA entity and a repository. In your main package, create a subpackage and name it `domain.model`. Then put the `ItemType` enum and `StockItem` entity in there:
+
 ```
 public enum ItemType {
 
@@ -106,12 +112,15 @@ public class StockItem {
 ```
 
 After that, create a corresponding repository, `StockItemRepository`:
+
 ```
 public interface StockItemRepository extends CrudRepository<StockItem, Long> {
     List<StockItem> findByType(ItemType type);
 }
 ```
+
 Now, you can update your `StockResource` to provide standard CRUD operations:
+
 ```
     @Autowired
     private Environment environment;
@@ -172,7 +181,9 @@ Now, you can update your `StockResource` to provide standard CRUD operations:
         return stockItemRepository.findAll();
     }
 ```
+
 The last step is to create a CF configuration file, `manifest.yml`, to provide basic information about our application. Place it into the root of your project.
+
 ```
 ---
 applications:
@@ -185,30 +196,41 @@ applications:
 ```
 
 So, from now, our application is able to use JPA. But we still need to create a MySQL service in our CF:
+
 ```
 cf create-service cleardb spark mysql
 ```
+
 and connect it to our application:
+
 ```
 cf bind-service workshop-12f-stock mysql
 ```
+
 Now, let's build the application:
+
 ```
 mvn clean install
 ```
+
 and push it to CF:
+
 ```
 cf push
 ```
+
 Since we provide the `manifest.yml` file, we can execute the `cf push` command without any information about the JAR file's location.
 
-Try to access your application at `http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping`. Now, `POST` the new `StockItem` via some REST client:
+Try accessing your application at `http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock/ping`. Now, `POST` the new `StockItem` via some REST client:
+
 ```
 POST http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock
 Content-Type: application/json
 {"type":"CD","title":"Adele","description":"Hello"}
 ```
-then try to `GET` it:
+
+then `GET` it:
+
 ```
 GET http://workshop-12f-stock.{{echo $CF_DOMAIN}}/stock
 ```

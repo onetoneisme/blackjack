@@ -27,5 +27,5 @@ questions:
   - id: "2"
     value: "A YAML file with a list of properties that helps to deploy applications to CF"
   - id: "3"
-    value: "An XML file that helps Cloud Foundry to add the application to the router"
+    value: "An XML file that helps Cloud Foundry to add an application to the router"
   answer: "2"

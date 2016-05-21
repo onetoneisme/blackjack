@@ -13,7 +13,9 @@ Asset packagers (such as Jammit or django-compressor) use the filesystem as a ca
 Some Web systems rely on “sticky sessions” – that is, caching user session data in memory of the app’s process and expecting future requests from the same visitor to be routed to the same process. Sticky sessions are a violation of the twelve-factor methodology and should never be used or relied upon. Session state data is a good candidate for a datastore that offers time-expiration, such as Memcached or Redis.
 
 #### Part 1
+
 Let's create a statefull process. Probably the most common case is an in-memory user session. So, we will need to enable Spring Security and set up an in-memory session. First, we must include Spring Security dependencies into our project. Insert the following text into your ``pom.xml``:
+
 ```
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -21,6 +23,7 @@ Let's create a statefull process. Probably the most common case is an in-memory 
             <version>1.3.1.RELEASE</version>
         </dependency>
 ```
+
 To set up Spring Security, we need to create some security context. In your main package, create a class called `"SecurityConfig"`:
 
 ```
@@ -49,8 +52,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .requestCache(new NullRequestCache());
     }
 }
+
 ```
 In this class, we define two users (**admin** and **user**) with the `ADMIN` and `USER` roles correspondingly. We also set authorization rules for these roles.
+
 Spring Boot automatically includes this class into its configuration on startup.
 
 Now, create two resources to test `Spring Session`: `SecuredResource` and `LogoutResource`
@@ -87,24 +92,31 @@ public class LogoutResource {
 
 }
 ```
+
 `SecuredResource` provides two endpoints:`'/admin'` can be accessed only by `ADMIN` and `'/user'` can be accessed by `ADMIN` and `USER`.
 
 Build and push your project:
+
 ```
 $ mvn clean build
 $ cf push
 ```
+
 Now, try accessing the secured endpoints (`http://workshop-12f-stock.cfapps.io/secured/admin` and `http://workshop-12f-stock.cfapps.io/secured/user`). Make sure that you are not allowed to access `'/admin'` with `'user'`.
 Once you are logged in, restart the application:
+
 ```
 $ cf restart workshop-12f-stock
 ```
+
 and check that you have to login again. Make sure that you close and open your browser. Some of them can cache basic authentication credentials.
 
 #### Part 2
-Now let's implement a user session, using a stateless process. We will use Redis to hold the session.
+
+Let's implement a user session, using a stateless process. We will use Redis to hold the session.
 
 Add the corresponding dependency to `pom.xml`:
+
 ```
         <dependency>
             <groupId>org.springframework.session</groupId>
@@ -112,18 +124,23 @@ Add the corresponding dependency to `pom.xml`:
             <version>1.0.2.RELEASE</version>
         </dependency>
 ```
+
 Mark `StockSpringBootStarter` with the annotation `@EnableRedisHttpSession` to let Spring Boot know that we will be using Redis to keep the sessions.
+
 ```
 @SpringBootApplication
 @EnableRedisHttpSession
 public class StockSpringBootStarter {
 ```
+
 Create a `Redis service` on CF:
+
 ```
 $ cf create-service rediscloud 30mb redis
 ```
 
 Update `manifest.yml` to bind the Redis service (replace `{project-name}` with a correct value):
+
 ```
 ---
 applications:
@@ -135,14 +152,19 @@ applications:
       - mysql
       - redis
 ```
+
 Build and push your project:
+
 ```
 $ mvn clean install
 $ cf push
 ```
+
 Try accessing the secured endpoints (`http://workshop-12f-stock.cfapps.io/secured/admin` and `http://workshop-12f-stock.cfapps.io/secured/user`). Make sure that you are not allowed to access `'/admin'` with `'user'`.
 After you have logged in, restart the application:
+
 ```
 $ cf restart workshop-12f-stock
 ```
+
 and check that the session is being kept.

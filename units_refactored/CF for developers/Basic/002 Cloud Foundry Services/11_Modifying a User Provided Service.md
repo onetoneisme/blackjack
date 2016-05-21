@@ -1,6 +1,6 @@
-#### Modifying a User Provided Service
+#### Modifying a user-provided service
 
-Now, let's say that you need to modify the user provided service with a new key to specify the port:
+Now, let's say you need to modify the user-provided service with a new key to specify the port:
 
 ```sh
 cf uups my-fictional-service -p '{"host":"the-db-host","db_name":"the-db-name","username":"the-user-name","password":"the-super-secret-user-password","db_port":"3306"}'
@@ -17,6 +17,6 @@ git checkout with-ups
 ```
 
 Now, do `cf bs my-app my-fictional-service && cf push my-app`
->**Tip**: instead of using `bind-service`, we are using it's alias, `bs`.
+>**Tip**: Instead of using `bind-service`, we are using its alias, `bs`.
 
-Go to the URL that CF provides, and you will see the credentials you just entered with some service metadata.
+Go to the URL that CF provides and you will see the credentials you have just entered with some service metadata.

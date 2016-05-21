@@ -4,9 +4,9 @@ questions:
   type: checkbox
   options:
   - id: "1"
-    value: "A SOAP or REST web app that exposes an API"
+    value: "A SOAP or REST Web app that exposes an API"
   - id: "2"
-    value: "Not a clue"
+    value: "No clue"
   - id: "3"
     value: "Any external piece of software that can be used by Cloud Foundry"
   answer: "3"
@@ -15,13 +15,13 @@ questions:
   type: input
   answer: 'cf marketplace'
 - id: "3"
-  formulation: "What happens if you try to delete a service that is still bound to applications?"
+  formulation: "What happens if you try deleting a service that is still bound to applications?"
   type: checkbox
   options:
   - id: "1"
     value: "Nothing. Cloud Foundry will not allow it."
   - id: "2"
-    value: "All data will be lost"
+    value: "All data will be lost."
   - id: "3"
-    value: "Cloud Foundry will automatically unbind the service from the applications and delete the service"
+    value: "Cloud Foundry will automatically unbind the service from the applications and delete the service."
   answer: "1"

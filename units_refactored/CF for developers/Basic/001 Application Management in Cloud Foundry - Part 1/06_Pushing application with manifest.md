@@ -30,7 +30,7 @@ last uploaded: [output timestamp]
 #0   running   [output timestamp]       0.0%   46.4M of 128M   0 of 128M
 ```
 
-As you can see, it is much more convenient to use an application manifest.
+As you can see, it is much more convenient to use an application manifest for pushing apps.
 
 Here is one more trick to make pushing code even easier: rename the `my-sinatra-app_manifest.yml` file to `manifest.yml`. Then, if you do `cf push` with no parameters at all, the CLI will pick the `manifest.yml` file automatically.
 

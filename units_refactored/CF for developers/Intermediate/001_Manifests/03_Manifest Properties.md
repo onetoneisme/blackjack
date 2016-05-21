@@ -1,6 +1,6 @@
 ### Manifest properties
 
-Lets go through some very important manifest properties.
+Let's go through some very important manifest properties.
 First, go to the `cf-example-sinatra` application root directory.
 
 Just to be sure we are starting from scratch, do:

@@ -10,6 +10,7 @@ Scaling in CF is pretty simple. If you want to scale your application, you need 
 ```sh
 $ cf scale workshop-12f-stock -i 2
 ```
+
 So, we have just scaled our application, adding the second instance.
 Check that scaling was successful by accessing the endpoint from the previous lesson several times (`http://workshop-12f-stock.cfapps.io/stock/factor7`).
 Make sure that you are getting different IP addresses in the response.

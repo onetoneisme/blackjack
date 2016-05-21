@@ -1,14 +1,14 @@
 ### Binding and unbinding services
 
-So, how do you use this service you just created in your application?
+So, how do you use the service you have just created in your application?
 To do this, you need to *bind* your service to your application.
-Binding will allow your app to get the necessary information to use the service: connection URI, username, password, connection parameters, etc.
+Binding will allow your app to get the necessary information to use the service. This includes the connection URI, username, password, connection parameters, etc.
 
 ```sh
 cf bind-service my-app my-app-db
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf bind-service my-app my-app-db
@@ -17,7 +17,7 @@ OK
 TIP: Use 'cf restage' to ensure your env variable changes take effect
 ```
 
-Cloud Foundry will inject, via environment variables, all the information required to use the service you just binded. Use the `cf env` command to see this information. You will get somthing like:
+Cloud Foundry will inject, via environment variables, all the information required to use the service you just bound. Use the `cf env` command to view this information. You will get something like:
 
 ```
  "VCAP_SERVICES": {
@@ -47,7 +47,7 @@ Cloud Foundry will inject, via environment variables, all the information requir
 Now, let's try it in our application.
 
 First, you need to have some code in place to use the service.
-Go to the `cf-example-sinatra` application that you cloned before, and do:
+Go to the `cf-example-sinatra` application that you have cloned before, and do:
 
 ```sh
 git checkout with-service
@@ -64,17 +64,17 @@ db_host = vcap_services['p-mysql'].first['credentials']['hostname']
 @db_name = vcap_services['p-mysql'].first['credentials']['name']
 ```
 
-That is the whole magic.
+This is where all the magic is hidden.
 The first line will parse the JSON object that Cloud Foundry injects into the `VCAP_SERVICES` environment variable.
 The following lines will access the properties of that JSON object to get the necessary information to connect to the database and retrieve some data.
 
-Now, push your app with `cf push my-app`
+Now, push your app with `cf push my-app`.
 
 If you go to the URL provided by Cloud Foundry, you will see some information extracted from MySQL's *information schema*.
 
 That's it!
 
-Of course, there is the `unbind-service` command, which will detach a service instance from an application. **Don't** unbind the service right now, you will do it later.
+Of course, there is the `unbind-service` command, which will detach a service instance from an application. Do **NOT** unbind the service right now, you will do it later.
 
 ```
 cf unbind-service my-app my-sinatra-app-db

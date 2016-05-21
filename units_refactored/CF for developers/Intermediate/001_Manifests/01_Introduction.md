@@ -3,7 +3,7 @@
 In this section, you will:
 
 * Learn about and create complex application manifests
-* Bind services through the manifests
+* Bind services through manifests
 * Learn about the different properties available
 
 ### Introduction
