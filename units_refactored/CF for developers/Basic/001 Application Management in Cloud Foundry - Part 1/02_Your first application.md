@@ -1,4 +1,4 @@
-### Your First Application
+### Your first application
 
 Before we can deploy anything to Cloud Foundry, we need source code. Get it by downloading the example Sinatra app, like this:
 

@@ -9,7 +9,7 @@ In a local development environment, the developer visits a service URL, like `ht
 
 This is typically implemented, using dependency declaration to add a Web server library to the app, such as Tornado for Python, Thin for Ruby, or Jetty for Java and other JVM-based languages. This happens entirely inside the user space, that is, within the app’s code. The contract with the execution environment is binding to a port to serve requests.
 
-HTTP is not the only service that can be exported by port binding. Nearly any kind of server software can be run via a process, binding to a port and awaiting incoming requests. Examples include ejabberd (XMPP) and Redis (the Redis protocol).
+HTTP is not the only service that can be exported by port binding. Nearly any kind of server software can be run via a process binding to a port and awaiting incoming requests. Examples include ejabberd (speaking XMPP), and Redis (speaking the Redis protocol).
 
 You should also note that the port-binding approach means one app can become the backing service for another app, if the URL to the backing app is provided as a resource handle in the config for the consuming app.
 
