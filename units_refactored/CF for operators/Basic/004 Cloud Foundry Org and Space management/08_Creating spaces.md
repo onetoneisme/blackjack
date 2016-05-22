@@ -2,7 +2,7 @@
 
 Spaces are a very convenient way of separating concerns and environments inside an Org. Managing Spaces is no different from managing Orgs.
 
-To create an space, it is as simple as:
+Creating a space is as simple as:
 
 ```sh
 cf create-space my-first-space
@@ -22,7 +22,7 @@ OK
 TIP: Use 'cf target -o my-org -s my-first-space' to target new space
 ```
 
-> **Tip:** Notice that the CLI offers you help in many commands on what to do next, such as how to target the space you just created.
+> **Tip:** Notice that, for many of its commands, the CLI offers help on what to do next, e.g., how to target the space you have just created.
 >
 
 Now, try listing all the spaces again with the `cf spaces` command.

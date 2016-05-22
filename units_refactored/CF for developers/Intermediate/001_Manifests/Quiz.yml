@@ -4,11 +4,11 @@ questions:
   type: checkbox
   options:
   - id: "1"
-    value: "A file that describes the application dependencies"
+    value: "A file that describes application dependencies"
   - id: "2"
     value: "A way to inject variables into a Cloud Foundry deployment"
   - id: "3"
-    value: "A convenient way to centralize and DRY an application deployment parameters"
+    value: "A convenient way to centralize and DRY an application's deployment parameters"
   answer: "3"
 - id: "2"
   formulation: "What is the precedence of execution when deploying manifests?"

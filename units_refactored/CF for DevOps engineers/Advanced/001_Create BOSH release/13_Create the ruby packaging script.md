@@ -1,7 +1,6 @@
-### Create the ruby packaging script
+### Create the Ruby packaging script
 
-
-Edit the following file `packages/ruby/packaging` and add the following content to it
+Edit the following file `packages/ruby/packaging` and add the following content to it:
 
 ```bash
 set -e

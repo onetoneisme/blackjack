@@ -1,6 +1,6 @@
 ### Update the app spec
 
-Edit the following file `jobs/app/spec` and add the following content to it
+Open the file `jobs/app/spec` in a text editor and add the following lines:
 
 ```yaml
 ---

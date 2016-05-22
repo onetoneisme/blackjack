@@ -1,16 +1,16 @@
 #### Removing roles
 
-In the previous step, you can notice that the user `admin` is set as an *Space Manager* and *Space Developer* roles. This is because Cloud Foundry will assign those roles automatically when an *admin* user creates a space.
+You might have noticed in the previous step that the user `admin` has `Space Manager` and `Space Developer` roles. This is because Cloud Foundry will assign those roles automatically when an `admin` user creates a space.
 
-You can remove roles from a user/Org or user/Space combination by using the `unset-org-role` and `unset-space-role` commands.
+You can remove roles from a `user/Org` or `user/Space` combination, using the `unset-org-role` and `unset-space-role` commands.
 
-Let's leave `admin` as a *Space Manager*  but remove it from *Space Developer*.
+Let's leave `admin` as a `Space Manager`,  but remove the `Space Developer` role.
 
 ```sh
 cf unset-space-role admin my-org my-first-space SpaceDeveloper
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf unset-space-role admin my-org my-first-space SpaceDeveloper

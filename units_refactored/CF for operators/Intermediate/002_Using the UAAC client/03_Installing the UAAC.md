@@ -1,6 +1,6 @@
 ### Installing the UAAC
 
-The UAAC is developed in [Ruby](http://www.ruby-lang.org) and it is distributed as a [Ruby Gem](https://en.wikipedia.org/wiki/RubyGems). Ruby has been preinstalled in your training jumpbox, so you have to install it manually, but if you want to check out how, you can visit [RVM](https://www.rvm.io) (Ruby Version Manager) website.
+The UAAC is written in [Ruby](http://www.ruby-lang.org) and distributed as a [Ruby gem](https://en.wikipedia.org/wiki/RubyGems). Ruby has been pre-installed on your training jumpbox, so you don't have to install it manually, but if you would like to check out how to install it, you can visit the [RVM](https://www.rvm.io) (Ruby Version Manager) website.
 
 To install the UAAC, you can do:
 
@@ -26,4 +26,4 @@ Just to try it, type:
 uaac help
 ```
 
-It should show lots of output with the commands and options it provides.
+It should show a lot of output with the commands and options the UAAC provides.

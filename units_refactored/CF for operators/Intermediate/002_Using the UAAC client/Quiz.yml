@@ -8,10 +8,10 @@ questions:
   - id: "2"
     value: "A token server"
   - id: "3"
-    value: "A multi tenant identity management service"
+    value: "A multi-tenant identity management service"
   answer: "(1,3)"
 - id: "2"
-  formulation: "How do you target the UAAC to the UAA located at 'my-batcave.com'?"
+  formulation: "How do you target the UAAC at the UAA located at 'my-batcave.com'?"
   type: input
   answer: 'uaac target uaa.my-batcave.com'
 - id: "3"
@@ -19,9 +19,9 @@ questions:
   type: checkbox
   options:
   - id: "1"
-    value: "It is part of the Cloud Foundry's CLI"
+    value: "It is part of the Cloud Foundry CLI"
   - id: "2"
-    value: "It allows to deploy applications easier"
+    value: "It makes it easier to deploy applications"
   - id: "3"
     value: "You can perform complex operations on users and permissions"
   answer: "3"

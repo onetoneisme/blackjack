@@ -1,7 +1,9 @@
 Operating Cloud Foundry
 =======================
 
-### What you are going to learn:
+### What you are going to learn
+
+In this section, you will learn how to:
 
 -	Connect to a Cloud Foundry deployment
 -	Create users

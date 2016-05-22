@@ -1,6 +1,6 @@
 ### Create the router config template
 
-Edit the following file `jobs/router/templates/config.yml.erb` and add the following content to it
+Create a config template for the router by opening the file `jobs/router/templates/config.yml.erb` and adding the following lines to it:
 
 ```yaml
 ---

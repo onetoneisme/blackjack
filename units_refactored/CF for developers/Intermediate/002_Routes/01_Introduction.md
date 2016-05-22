@@ -1,6 +1,6 @@
 ### Routes
 
-#### ToC
+#### Table of contents
 
 
 #### Introduction

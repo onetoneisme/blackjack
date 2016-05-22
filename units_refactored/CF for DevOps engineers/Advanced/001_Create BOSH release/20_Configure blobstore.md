@@ -1,6 +1,6 @@
-### Configure blobstore
+### Configure the blobstore
 
-Save the following file as `config/final.yml`
+Save the following file as `config/final.yml`:
 
 ```yaml
 ---

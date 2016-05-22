@@ -1,10 +1,10 @@
 questions:
 - id: "1"
-  formulation: "How do you create the user 'i-am-batman' with password 'check-my-batcave'?"
+  formulation: "How do you create the user 'i-am-batman' with the password 'check-my-batcave'?"
   type: input
   answer: 'cf create-user i-am-batman "check-my-batcave"'
 - id: "2"
-  formulation: "Which of these are default Cloud Foundry's default organization roles?"
+  formulation: "Which of these are Cloud Foundry's default organization roles?"
   type: checkbox_multiple
   options:
   - id: "1"
@@ -19,7 +19,7 @@ questions:
     value: "OrgDeveloper"
   answer: "(2,3)"
 - id: "3"
-  formulation: "Which role do you need if you want to add users to spaces?"
+  formulation: "Which role do you need, if you want to add users to spaces?"
   type: checkbox
   options:
   - id: "1"

@@ -6,7 +6,7 @@ Creating a quota is very straightforward. Let's see the options:
 cf help create-quota
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf help create-quota
@@ -24,7 +24,7 @@ OPTIONS:
    --allow-paid-service-plans	Can provision instances of paid service plans
 ```
 
-> **Reminder:** It is very easy to get help on a CLI command by doing `cf help command-name`.
+> **Reminder:** You can get help on a CLI command by doing `cf help command-name`.
 
 Now that we know what modifiers to use, we can create our first quota:
 
@@ -32,7 +32,7 @@ Now that we know what modifiers to use, we can create our first quota:
 cf create-quota small-quota -i 512M -m 2048M -r 10 -s 5
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf create-quota small-quota -i 512M -m 2048M -r 10 -s 5
@@ -40,7 +40,14 @@ Creating quota small-quota as admin...
 OK
 ```
 
-This command created a quota with a max instance memory use (`-i`) of 512M, a max memory allocation for all instances (`-m`) of 2048M, 10 routes max (`-r`) and a top usage of 5 services (`-s`). Note that you didn't use the `--allow-paid-service-plans` flag, which immediately sets that parameter to `false`.
+This command has created a quota with the following limits:
+
+* maximum instance memory (`-i`): 512M
+* maximum memory allocation for all instances (`-m`): 2048M
+* maximum number of routes (`-r`): 10
+* maximum number of services (`-s`): 5 
+
+Note that you didn't use the `--allow-paid-service-plans` flag, which immediately sets that parameter to `false`.
 
 If you list the quotas again, you'll see that your newly created quota is there.
 
@@ -60,7 +67,7 @@ Let's create a second quota, a larger one that allows paid plans:
 cf create-quota large-quota -i 2048M -m 10G -r 100 -s 20 --allow-paid-service-plans
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf create-quota large-quota -i 2048M -m 10G -r 100 -s 20 --allow-paid-service-plans

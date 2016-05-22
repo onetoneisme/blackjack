@@ -1,6 +1,6 @@
 ### Create the app startup script
 
-Edit the following file `jobs/app/templates/ctl` and add the following content to it
+Open the file `jobs/app/templates/ctl` in a text editor and add the following content to it:
 
 ```bash
 #!/bin/bash

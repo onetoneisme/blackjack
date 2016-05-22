@@ -1,6 +1,6 @@
-### Update the router monit config
+### Update the router Monit config
 
-Edit the following file `jobs/router/monit` and add the following content to it
+Open the file `jobs/router/monit` in a text editor and add the following content to it:
 
 ```
 check process router

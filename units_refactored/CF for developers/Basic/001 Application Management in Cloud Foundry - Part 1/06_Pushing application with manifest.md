@@ -1,12 +1,12 @@
-### Pushing application with manifest
+### Pushing an application with a manifest
 
-Now, let's reduce the instance memory again, since our application is very small and can run without any issue with 128M. Open the file and change the `memory:` value to `512M`. Save it and push the application again, this time specifying the manifest file:
+Now, let's reduce the amount of instance memory again, since our application is very small and can run on 128M without any issues. Open the manifest file and change the `memory:` value to `512M`. Save it and push the application again, this time, specifying the manifest file:
 
 ```sh
 cf push -f my-sinatra-app_manifest.yml
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf push -f my-sinatra-app_manifest.yml
@@ -30,8 +30,8 @@ last uploaded: [output timestamp]
 #0   running   [output timestamp]       0.0%   46.4M of 128M   0 of 128M
 ```
 
-As you can see, is much more convenient for you to use an application manifest. One more trick for make the code pushing even more easy: rename the `my-sinatra-app_manifest.yml` file to `manifest.yml`.
+As you can see, it is much more convenient to use an application manifest for pushing apps.
 
-Then, if you do `cf push`, with no parameter at all, the CLI will pick the `manifest.yml` file automatically.
+Here is one more trick to make pushing code even easier: rename the `my-sinatra-app_manifest.yml` file to `manifest.yml`. Then, if you do `cf push` with no parameters at all, the CLI will pick the `manifest.yml` file automatically.
 
 Go ahead and try it!

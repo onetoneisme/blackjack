@@ -1,12 +1,11 @@
-## Creating Release script
+## Creating a release script
 
-1. Create file `bin/release` with the following content
+1. Create the file `bin/release` with the following content:
+	```
+	#!/usr/bin/env bash
 
-```
-#!/usr/bin/env bash
-
-cat << EOF
-default_process_types:
-  web: sh boot.sh 
-EOF
-```
+	cat << EOF
+	default_process_types:
+	  web: sh boot.sh 
+	EOF
+	```

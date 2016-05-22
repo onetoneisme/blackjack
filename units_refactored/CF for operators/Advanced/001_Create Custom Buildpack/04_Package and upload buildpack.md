@@ -1,32 +1,32 @@
-## Package and upload buildpack
+## Package and upload the buildpack
 
-1. Install zip
-```
-sudo apt-get install zip
-```
+1. Install `zip`:
+	```
+	sudo apt-get install zip
+	```
 
-2. Add executable permissions
-```
-chmod +x ~/custom_buildpack/bin/*
-```
+2. Add executable permissions:
+	```
+	chmod +x ~/custom_buildpack/bin/*
+	```
 
-3. Package buildpack
-```
-cd ~
-zip -r custom_buildpack.zip custom_buildpack/
-```
+3. Package the buildpack:
+	```
+	cd ~
+	zip -r custom_buildpack.zip custom_buildpack/
+	```
 
-4. Log in to CloudFoundry (default user/password in manifest was admin/admin)
-```
-cf login
-```
+4. Login to Cloud Foundry (the default user/password in the manifest were `admin/admin`):
+	```
+	cf login
+	```
 
-5. Upload buildpack
-```
-cf create-buildpack custom_buildpack custom_buildpack.zip 1
-```
+5. Upload the buildpack:
+	```
+	cf create-buildpack custom_buildpack custom_buildpack.zip 1
+	```
 
-6. See available buildpacks
-```
-cf buildpacks
-```
+6. See the available buildpacks:
+	```
+	cf buildpacks
+	```

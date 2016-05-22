@@ -1,6 +1,6 @@
 #### Getting info about users and roles
 
-How do we get information about what user is assigned to what role in an organization or an space?
+How do we get information about what user is assigned to what role in an organization or a space?
 
 There are two very useful commands for this: `org-users` and `space-users`.
 
@@ -10,7 +10,7 @@ Try the first one:
 cf org-users my-org
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf org-users my-org
@@ -24,14 +24,14 @@ ORG AUDITOR
   my-user
 ```
 
-Notice that the user `my-user` appears under *Org Auditor*, just as we assigned it before.
-Same can be done for spaces:
+Notice that the user `my-user` appears under `Org Auditor`, just as we have assigned it before.
+The same can be done for spaces:
 
 ```sh
 cf space-users my-org my-first-space
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf space-users my-org my-first-space

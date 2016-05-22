@@ -1,0 +1,2 @@
+description: "Learn how to deploy and connect ELK (Elasticsearch, Logstash, Kibana) with Cloud Foundry to aggregate and manage all application and CF component logs."
+image: "/images/course-list-img.png"

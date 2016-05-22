@@ -1,0 +1,2 @@
+description: "Buildpacks provide dependencies for Cloud Foundry apps, but all apps are different and the standard buildpacks may not always work. This advanced section teaches the steps for assembling your own custom buildpack."
+image: "/images/course-list-img.png"

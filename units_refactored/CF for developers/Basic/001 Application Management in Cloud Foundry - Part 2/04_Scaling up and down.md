@@ -1,6 +1,6 @@
 ### Scaling up and down
 
-Scaling up and down an application deployed in CF is easy.
+Scaling applications deployed to CF up and down is easy:
 
 ```
 $ cf help scale
@@ -17,11 +17,11 @@ OPTIONS:
    -f   Force restart of app without prompt
 ```
 
-As you can see, Cloud Foundry allows you to have a complete control over the size and number of instances of your applications. However, you must take in consideration the following factors:
+Cloud Foundry gives users full control over the size and number of their application instances. However, you must take the following into consideration:
 
-* You can scale up and down with the same command.
+* Scaling up and down can be done with the same command.
 * Scaling vertically (modifying any of the instance size parameters) will *restart* the application.
 * Scaling horizontally will NOT restart the application.
-* There is a limit on the amount of instances that can be created according to the Quotas and Space Quotas set.
+* The number of instances that can be created is limited by the *quotas* and *space quotas* you set.
 
-One **very** important thing to know about how Cloud Foundry works with scaling applications is that when an application that has many instances is restarted, they get restarted in sequence. Why? Simply to have a zero-downtime deployment. When an instance of your application is down, the Cloud Foundry Router will NOT route packages to that instance. Simple and effective!
+**One more very important thing to know about how Cloud Foundry works with scaling applications:** when an application that has many instances is restarted, they get restarted in a sequence. Why? Simply to get zero-downtime deployments. When an instance of your application is down, the Cloud Foundry Router will NOT route packages to that instance. Simple and effective!

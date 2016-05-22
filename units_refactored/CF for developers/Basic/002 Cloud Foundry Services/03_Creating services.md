@@ -7,7 +7,7 @@ Let's create a database for our application:
 cf create-service p-mysql 100mb my-app-db
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf create-service p-mysql 100mb my-app-db
@@ -15,7 +15,11 @@ Creating service my-app-db in org my-org / space my-first-space as my-user...
 OK
 ```
 
-The parameters of the **create-service** command are: the name of the software service, the plan identifier and the name of the *your* service. This name is very important, since it is the one you are going to use for your application.
+The parameters of the `create-service` command are:
+
+* the name of the software service
+* the plan identifier
+* the name of *your* service (This name is very important, since it is the one you are going to use for your application.)
 
 You can explore which services are instantiated by doing:
 
@@ -23,7 +27,7 @@ You can explore which services are instantiated by doing:
 cf services
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf services
@@ -40,7 +44,7 @@ Also, getting detailed information for a service is very easy:
 cf service my-app-db
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf service my-app-db

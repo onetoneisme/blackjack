@@ -1,14 +1,14 @@
 ### Creating application manifests
 
-Although pushing your source code to Cloud Foundry is really simple, you will probably need some place to specify and save all the parameters you customized when deploying your application. As you can see in the help that the `push` command offers, there is something called a *manifest*. A manifest is a [YAML](http://yaml.org/) usually residing in the root directory of your source code. If you name it `manifest.yml` or `manifest.yaml`, the CLI will pick it automatically without having to specify its location.
+Although pushing source code to Cloud Foundry is really simple, you will probably need some place to specify and save all the parameters you customized when deploying your application. As you can see from the help that the `cf push` command offers, there is something called a *manifest*. A manifest is a [YAML](http://yaml.org/) file that usually resides in the root directory of your source code. If you name it `manifest.yml` or `manifest.yaml`, the CLI will pick it up automatically without you having to specify its location.
 
-Now, create a manifest template by using the following command:
+Now, create a manifest template, using the following command:
 
 ```sh
 cf create-app-manifest my-sinatra-app
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf create-app-manifest my-sinatra-app
@@ -18,7 +18,7 @@ OK
 Manifest file created successfully at ./my-sinatra-app_manifest.yml
 ```
 
-The CLI just created a `my-sinatra-app_manifest.yml` file with this content:
+The CLI has just created a `my-sinatra-app_manifest.yml` file, which looks like this:
 
 ```yaml
 ---

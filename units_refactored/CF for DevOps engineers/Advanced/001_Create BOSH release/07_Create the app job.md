@@ -1,10 +1,12 @@
 ### Create the app job
 
+Generate a job:
+
 ```
 bosh generate job app
 ```
 
-After executing this command file system tree should look like the following:
+After executing this command, the file system tree should look similar to this:
 
 ```
 $ tree

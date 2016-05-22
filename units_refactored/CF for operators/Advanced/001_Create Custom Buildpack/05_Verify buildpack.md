@@ -1,17 +1,18 @@
-## Verify buildpack
+## Verify the buildpack
 
-1. Download some static application
-```
-cd ~
-git clone https://github.com/s-matyukevich/iot-dashboard
-``` 
+1. Download a static application:
+	```
+	cd ~
+	git clone https://github.com/s-matyukevich/iot-dashboard
+	``` 
 
-2. Add `Staticfile` to our appliction to make buildpack recognize it
-```
-cd ~/iot-dashboard
-touch Staticfile
-```
-3. Deploy our application
-```
-cf push static
-```
+2. Add `Staticfile` to the appliction to make the buildpack recognize it:
+	```
+	cd ~/iot-dashboard
+	touch Staticfile
+	```
+
+3. Deploy the application:
+	```
+	cf push static
+	```

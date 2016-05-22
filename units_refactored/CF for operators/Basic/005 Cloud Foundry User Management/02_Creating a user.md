@@ -5,7 +5,7 @@ Creating a user is as simple as:
 cf create-user my-user "my-password"
 ```
 
-Cloud Foundry then will create the user, and show the result:
+Cloud Foundry will then create the user and show the result:
 
 ```
 $ cf create-user my-user "my-password"
@@ -15,4 +15,4 @@ OK
 TIP: Assign roles with 'cf set-org-role' and 'cf set-space-role'
 ```
 
-Note that the user has been created, but it still not assigned to any Org or Space.
+Note that the user has been created, but they are not assigned to any org or space.

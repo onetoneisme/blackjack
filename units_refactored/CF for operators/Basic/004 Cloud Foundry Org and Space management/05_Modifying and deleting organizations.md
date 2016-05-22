@@ -1,12 +1,12 @@
 #### Modifying and deleting organizations
 
-One situation that might happen, is that you need to rename one of the Orgs you created. Do not worry about this situation, since Cloud Foundry maintains an internal reference for the Org, decoupling the name from the internal structure:
+At some point, you might need to rename one of the Orgs you have previously created. The good news is that Cloud Foundry maintains an internal reference for the Org, decoupling the name from the internal structure:
 
 ```sh
 cf rename-org my-org my-renamed-org
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf rename-org my-org my-renamed-org
@@ -14,13 +14,13 @@ Renaming org my-org to my-renamed-org as admin...
 OK
 ```
 
-Also, at some point is probable that we are going to need to delete an organization.
+Also, at some point, is probable that we are going to need to delete an organization. You can do it with:
 
 ```sh
 cf delete-org my-renamed-org
 ```
 
-The CLI is going to ask for confirmation and then effectively erase the org:
+The CLI is going to ask for a confirmation and then effectively erase the org:
 
 ```
 $ cf delete-org my-renamed-org

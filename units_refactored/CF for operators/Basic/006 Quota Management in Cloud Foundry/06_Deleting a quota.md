@@ -1,12 +1,12 @@
 #### Deleting a quota
 
-Removing a quota definition from the system is very easy:
+Removing a quota definition from the system can be accomplished with:
 
 ```sh
 cf delete-quota small-quota
 ```
 
-Output should be:
+The output should be:
 
 ```
 $ cf delete-quota small-quota
@@ -16,4 +16,4 @@ Deleting quota small-quota as admin...
 OK
 ```
 
-> **Reminder:** you can always use the `-f` modifier to force the command without confirmation
+> **Reminder:** You can always use the `-f` modifier to force a command without confirmation.

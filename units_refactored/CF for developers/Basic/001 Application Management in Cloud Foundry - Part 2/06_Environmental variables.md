@@ -1,3 +1,3 @@
-### Environmental variables
+### Environment variables
 
-Following the principles of the **12 factor app** (don't worry, we'll talk about this soon), Cloud Foundry implements a series of enviromental variables that allows you, as a developer, to read and use them. Please read the following article before moving forward: [Cloud Foundry Environment Variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).
+Following the **12 factor app** principles (don't worry, we will talk about them soon), Cloud Foundry implements a number of enviroment variables that you, as a developer, can read and use. Please read the following section from the Cloud Foundry docs before moving forward: [Cloud Foundry Environment Variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).
