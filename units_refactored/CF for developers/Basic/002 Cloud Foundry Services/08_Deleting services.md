@@ -29,4 +29,4 @@ OK
 
 There you go!
 
-Now, as a little exercise, please create the `my-app-db` service instance again with the **100mb** plan and bind it to the `my-app` application.
+Now, as a little exercise, please create the `my-app-db` service instance again with the **512mb** plan and bind it to the `my-app` application.

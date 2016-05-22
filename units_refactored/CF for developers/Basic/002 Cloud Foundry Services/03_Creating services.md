@@ -4,13 +4,13 @@ To use a service plan and *instantiate* it, you need to create a *service*. A *s
 Let's create a database for our application:
 
 ```sh
-cf create-service p-mysql 100mb my-app-db
+cf create-service p-mysql 512mb my-app-db
 ```
 
 The output should be:
 
 ```
-$ cf create-service p-mysql 100mb my-app-db
+$ cf create-service p-mysql 512mb my-app-db
 Creating service my-app-db in org my-org / space my-first-space as my-user...
 OK
 ```
@@ -35,7 +35,7 @@ Getting services in org my-org / space my-first-space as my-user...
 OK
 
 name        service   plan    bound apps   last operation
-my-app-db   p-mysql   100mb                create succeeded
+my-app-db   p-mysql   512mb                create succeeded
 ```
 
 Also, getting detailed information for a service is very easy:
@@ -51,7 +51,7 @@ $ cf service my-app-db
 
 Service instance: my-app-db
 Service: p-mysql
-Plan: 100mb
+Plan: 512mb
 Description: MySQL databases on demand
 Documentation url:
 Dashboard: https://p-mysql.{{echo $CF_DOMAIN}}manage/instances/c353ea5a-6720-4db4-9207-235cb9032dee

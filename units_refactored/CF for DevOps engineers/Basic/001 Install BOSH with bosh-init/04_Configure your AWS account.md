@@ -80,19 +80,3 @@ To configure your AWS account for BOSH, you need to do the following:
     aws ec2 create-key-pair --key-name $key_name --query 'KeyMaterial' --output text > deployment/bosh.pem
     chmod 400 deployment/bosh.pem
     ```
-
-10. Store all variables in a file for later use
-    ```
-    cat > ~/deployment/vars <<EOF
-    export vpc_id=$vpc_id
-    export subnet_id=$subnet_id
-    export gateway_id=$gateway_id
-    export route_table_id=$route_table_id
-    export sg_id=$sg_id
-    export eip_id=$eip_id
-    export eip=$eip
-    export avz=$avz
-    export key_name=$key_name
-    EOF
-    chmod +x deployment/vars
-    ```

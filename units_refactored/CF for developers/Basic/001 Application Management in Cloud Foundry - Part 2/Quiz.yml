@@ -2,7 +2,7 @@ questions:
 - id: "1"
   formulation: "Please, scale 'my-batmobile-app' up to three instances."
   type: input
-  answer: 'cf push my-batmobile-app -i 3'
+  answer: 'cf scale my-batmobile-app -i 3'
 - id: "2"
   formulation: "What is the difference between restarting and restaging an application?"
   type: checkbox
@@ -24,4 +24,4 @@ questions:
     value: "Environment variables allow apps deployed in Cloud Foundry to safely get credentials for various services."
   - id: "3"
     value: "Environment variables enable Cloud Foundry to communicate with deployed applications and receive data about their environments."
-  answer: "(1,2,3)"
+  answer: "(2,3)"

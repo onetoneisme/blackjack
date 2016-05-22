@@ -34,7 +34,7 @@ Cloud Foundry will inject, via environment variables, all the information requir
        },
        "label": "p-mysql",
        "name": "my-app-db",
-       "plan": "100mb",
+       "plan": "512mb",
        "tags": [
         "mysql"
        ]

@@ -15,8 +15,10 @@ $ cf marketplace
 Getting services from marketplace in org my-org / space my-first-space as my-user...
 OK
 
-service   plans        description
-p-mysql   100mb, 1gb   MySQL databases on demand
+service      plans        description
+p-mysql      512mb, 1gb   MySQL databases on demand
+p-rabbitmq   standard     RabbitMQ is a robust and scalable high-performance multi-protocol messaging broker.
+p-redis      shared-vm    Redis service to provide a key-value store
 
 TIP:  Use 'cf marketplace -s SERVICE' to view descriptions of individual plans of a given service.
 ```
@@ -24,7 +26,7 @@ TIP:  Use 'cf marketplace -s SERVICE' to view descriptions of individual plans o
 The output will show the name of the service, available plans, and a description of what the service does.
 A *service plan* is a set of limits and rules that the service states. It can be a disk size limit for a database, a memory limit for a queue management system, or any set of limits that uniquely identifies a subset of a service.
 In this example, the plans for the `p-mysql` (a MySQL database) service are:
-* a database with a 100 MB disk size limit
+* a database with a 512 MB disk size limit
 * a database with a 1 GB disk size limit 
 
 Although useful, this information will not show if the service is free or paid. There is another way to view the details of a service:
@@ -41,6 +43,6 @@ Getting service plan information for service p-mysql as my-user...
 OK
 
 service plan   description           free or paid
-100mb          Shared MySQL Server   free
+512mb          Shared MySQL Server   free
 1gb            Shared MySQL Server   free
 ```
