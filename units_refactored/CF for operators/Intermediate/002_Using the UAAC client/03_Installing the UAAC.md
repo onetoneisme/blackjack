@@ -5,6 +5,7 @@ The UAAC is written in [Ruby](http://www.ruby-lang.org) and distributed as a [Ru
 To install the UAAC, you can do:
 
 ```sh
+sudo apt-get install ruby2.1-dev
 gem install cf-uaac
 ```
 
