@@ -1,6 +1,6 @@
 ## Create a manifest stub
 
-Create the `cf-stub.yml` file with the following content:
+Create the `~/deployment/cf-release/cf-stub.yml` file with the following content:
 
 ```
 ---
