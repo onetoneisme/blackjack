@@ -12,7 +12,7 @@ $ govendor sync
 2. Push it to the Cloud Foundry.
 
 ```
-$ cf push pg-app --no-start -m 128M -k 256M
+$ cf push pg-app --no-start -m 128M -k 256M -b 'https://github.com/cloudfoundry/go-buildpack#v1.7.8'
 ```
 
 3. Create a service
@@ -30,7 +30,7 @@ $ cf bind-service pg-app pgsql
 5. Set the broker name environment variable
 
 ```
-$ cf set-env postgresql PG_BROKER_NAME
+$ cf set-env pg-app PG_BROKER_NAME postgresql
 ```
 
 6. Start the application

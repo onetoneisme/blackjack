@@ -3,7 +3,7 @@
 1. Push code to the Cloud Foundry but without starting the application
 
 ```
-$ cf push p-postgresql --no-start -m 128M -k 256M
+$ cf push postgresql --no-start -m 128M -k 256M -b 'https://github.com/cloudfoundry/go-buildpack#v1.7.8'
 ```
 
 2. Set application's environment. `{GUID}` will be replaced with runtime values.
@@ -14,7 +14,7 @@ $ AUTH_PASSWORD=admin
 $ PG_SOURCE=$pg_url
 $ PG_SERVICES='[{
   "id": "service-1-{GUID}",
-  "name": "p-postgresql",
+  "name": "postgresql",
   "description": "DBaaS",
   "bindable": true,
   "plan_updateable": false,
@@ -25,27 +25,27 @@ $ PG_SERVICES='[{
   }]
 }]'
 
-$ cf set-env p-postgresql PG_SOURCE "$PG_SOURCE"
-$ cf set-env p-postgresql PG_SERVICES "$PG_SERVICES"
-$ cf set-env p-postgresql AUTH_USER "$AUTH_USER"
-$ cf set-env p-postgresql AUTH_PASSWORD "$AUTH_PASSWORD"
+$ cf set-env postgresql PG_SOURCE "$PG_SOURCE"
+$ cf set-env postgresql PG_SERVICES "$PG_SERVICES"
+$ cf set-env postgresql AUTH_USER "$AUTH_USER"
+$ cf set-env postgresql AUTH_PASSWORD "$AUTH_PASSWORD"
 ```
 
 3. Start the application
 
 ```
-$ cf start p-postgresql
+$ cf start postgresql
 ```
 
 4. Register it as a service broker
 
 ```
-$ BROKER_URL=$(cf app p-postgresql | grep urls: | awk '{print $2}')
-$ cf create-service-broker p-postgresql $AUTH_USER $AUTH_PASSWORD http://$BROKER_URL
-$ cf enable-service-access p-postgresql
+$ BROKER_URL=$(cf app postgresql | grep urls: | awk '{print $2}')
+$ cf create-service-broker postgresql $AUTH_USER $AUTH_PASSWORD http://$BROKER_URL
+$ cf enable-service-access postgresql
 ```
 
-5. Check installation in marketplace. `p-postgresql` should be there
+5. Check installation in marketplace. `postgresql` should be there
 
 ```
 $ cf marketplace
