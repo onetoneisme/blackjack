@@ -3,7 +3,8 @@
 1. Install **golang**
 
 ```
-$ sudo apt-get install golang
+$ sudo apt-get install golang-1.6
+$ sudo ln -sf /usr/lib/go-1.6/bin/go /usr/bin/go
 ```
 
 2. Configure your `$GOPATH` and save it to your `.bashrc`
