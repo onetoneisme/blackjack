@@ -1,151 +1,151 @@
 ### Prepare deployment manifest
 
 1. Save the following file as `~/deployment/bosh.yml`
-    ```
-    ---
-    name: bosh
+  ```
+  ---
+  name: bosh
 
-    releases:
-    - name: bosh
-      url: https://bosh.io/d/github.com/cloudfoundry/bosh?v=256.2
-      sha1: ff2f4e16e02f66b31c595196052a809100cfd5a8
-    - name: bosh-aws-cpi
-      url: https://bosh.io/d/github.com/cloudfoundry-incubator/bosh-aws-cpi-release?v=52
-      sha1: dc4a0cca3b33dce291e4fbeb9e9948b6a7be3324
+  releases:
+  - name: bosh
+    url: https://bosh.io/d/github.com/cloudfoundry/bosh?v=256.2
+    sha1: ff2f4e16e02f66b31c595196052a809100cfd5a8
+  - name: bosh-aws-cpi
+    url: https://bosh.io/d/github.com/cloudfoundry-incubator/bosh-aws-cpi-release?v=52
+    sha1: dc4a0cca3b33dce291e4fbeb9e9948b6a7be3324
 
-    resource_pools:
-    - name: vms
-      network: private
-      stemcell:
-        url: https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent?v=3012
-        sha1: 3380b55948abe4c437dee97f67d2d8df4eec3fc1
-      cloud_properties:
-        instance_type: m3.xlarge
-        ephemeral_disk: {size: 25_000, type: gp2}
-        availability_zone: {{source deployment/vars && echo $avz}} # <--- Replace with Availability Zone
+  resource_pools:
+  - name: vms
+    network: private
+    stemcell:
+      url: https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent?v=3012
+      sha1: 3380b55948abe4c437dee97f67d2d8df4eec3fc1
+    cloud_properties:
+      instance_type: m3.xlarge
+      ephemeral_disk: {size: 25_000, type: gp2}
+      availability_zone: {{source deployment/vars && echo $avz}} # <--- Replace with Availability Zone
 
-    disk_pools:
-    - name: disks
-      disk_size: 20_000
-      cloud_properties: {type: gp2}
+  disk_pools:
+  - name: disks
+    disk_size: 20_000
+    cloud_properties: {type: gp2}
+
+  networks:
+  - name: private
+    type: manual
+    subnets:
+    - range: 10.0.0.0/24
+      gateway: 10.0.0.1
+      dns: [10.0.0.2]
+      cloud_properties: {subnet: {{source deployment/vars && echo $subnet_id}} } # <--- Replace with Subnet ID
+  - name: public
+    type: vip
+
+  jobs:
+  - name: bosh
+    instances: 1
+
+    templates:
+    - {name: nats, release: bosh}
+    - {name: postgres, release: bosh}
+    - {name: blobstore, release: bosh}
+    - {name: director, release: bosh}
+    - {name: health_monitor, release: bosh}
+    - {name: registry, release: bosh}
+    - {name: aws_cpi, release: bosh-aws-cpi}
+
+    resource_pool: vms
+    persistent_disk_pool: disks
 
     networks:
     - name: private
-      type: manual
-      subnets:
-      - range: 10.0.0.0/24
-        gateway: 10.0.0.1
-        dns: [10.0.0.2]
-        cloud_properties: {subnet: {{source deployment/vars && echo $subnet_id}} } # <--- Replace with Subnet ID
+      static_ips: [10.0.0.6]
+      default: [dns, gateway]
     - name: public
-      type: vip
+      static_ips: [{{source deployment/vars && echo $eip}}] # <--- Replace with Elastic IP
 
-    jobs:
-    - name: bosh
-      instances: 1
+    properties:
+      nats:
+        address: 127.0.0.1
+        user: nats
+        password: nats-password
 
-      templates:
-      - {name: nats, release: bosh}
-      - {name: postgres, release: bosh}
-      - {name: blobstore, release: bosh}
-      - {name: director, release: bosh}
-      - {name: health_monitor, release: bosh}
-      - {name: registry, release: bosh}
-      - {name: aws_cpi, release: bosh-aws-cpi}
+      postgres: &db
+        listen_address: 127.0.0.1
+        host: 127.0.0.1
+        user: postgres
+        password: postgres-password
+        database: bosh
+        adapter: postgres
 
-      resource_pool: vms
-      persistent_disk_pool: disks
+      registry:
+        address: 10.0.0.6
+        host: 10.0.0.6
+        db: *db
+        http: {user: admin, password: admin, port: 25777}
+        username: admin
+        password: admin
+        port: 25777
 
-      networks:
-      - name: private
-        static_ips: [10.0.0.6]
-        default: [dns, gateway]
-      - name: public
-        static_ips: [{{source deployment/vars && echo $eip}}] # <--- Replace with Elastic IP
+      blobstore:
+        address: 10.0.0.6
+        port: 25250
+        provider: dav
+        director: {user: director, password: director-password}
+        agent: {user: agent, password: agent-password}
 
-      properties:
-        nats:
-          address: 127.0.0.1
-          user: nats
-          password: nats-password
+      director:
+        address: 127.0.0.1
+        name: my-bosh
+        db: *db
+        cpi_job: aws_cpi
+        max_threads: 10
+        user_management:
+          provider: local
+          local:
+            users:
+            - {name: admin, password: admin}
+            - {name: hm, password: hm-password}
 
-        postgres: &db
-          listen_address: 127.0.0.1
-          host: 127.0.0.1
-          user: postgres
-          password: postgres-password
-          database: bosh
-          adapter: postgres
+      hm:
+        director_account: {user: hm, password: hm-password}
+        resurrector_enabled: true
 
-        registry:
-          address: 10.0.0.6
-          host: 10.0.0.6
-          db: *db
-          http: {user: admin, password: admin, port: 25777}
-          username: admin
-          password: admin
-          port: 25777
+      aws: &aws
+        access_key_id: {{cat ~/.aws/credentials | grep aws_access_key_id | awk '{print $3}'}} # <--- Replace with AWS Access Key ID
+        secret_access_key: {{cat ~/.aws/credentials | grep aws_secret_access_key | awk '{print $3}'}} # <--- Replace with AWS Secret Key
+        default_key_name: {{source deployment/vars && echo $key_name}}
+        default_security_groups: [training_sg]
+        region: {{cat ~/.aws/config | grep region | awk '{print $3}'}}  # <--- Replace with Region
 
-        blobstore:
-          address: 10.0.0.6
-          port: 25250
-          provider: dav
-          director: {user: director, password: director-password}
-          agent: {user: agent, password: agent-password}
+      agent: {mbus: "nats://nats:nats-password@10.0.0.6:4222"}
 
-        director:
-          address: 127.0.0.1
-          name: my-bosh
-          db: *db
-          cpi_job: aws_cpi
-          max_threads: 10
-          user_management:
-            provider: local
-            local:
-              users:
-              - {name: admin, password: admin}
-              - {name: hm, password: hm-password}
+      ntp: &ntp [0.pool.ntp.org, 1.pool.ntp.org]
 
-        hm:
-          director_account: {user: hm, password: hm-password}
-          resurrector_enabled: true
+  cloud_provider:
+    template: {name: aws_cpi, release: bosh-aws-cpi}
 
-        aws: &aws
-          access_key_id: {{cat ~/.aws/credentials | grep aws_access_key_id | awk '{print $3}'}} # <--- Replace with AWS Access Key ID
-          secret_access_key: {{cat ~/.aws/credentials | grep aws_secret_access_key | awk '{print $3}'}} # <--- Replace with AWS Secret Key
-          default_key_name: {{source deployment/vars && echo $key_name}}
-          default_security_groups: [training_sg]
-          region: {{cat ~/.aws/config | grep region | awk '{print $3}'}}  # <--- Replace with Region
+    ssh_tunnel:
+      host: {{source deployment/vars && echo $eip}} # <--- Replace with your Elastic IP address
+      port: 22
+      user: vcap
+      private_key: ./bosh.pem # Path relative to this manifest file
 
-        agent: {mbus: "nats://nats:nats-password@10.0.0.6:4222"}
+    mbus: "https://mbus:mbus-password@{{source deployment/vars && echo $eip}}:6868" # <--- Replace with Elastic IP
 
-        ntp: &ntp [0.pool.ntp.org, 1.pool.ntp.org]
-
-    cloud_provider:
-      template: {name: aws_cpi, release: bosh-aws-cpi}
-
-      ssh_tunnel:
-        host: {{source deployment/vars && echo $eip}} # <--- Replace with your Elastic IP address
-        port: 22
-        user: vcap
-        private_key: ./bosh.pem # Path relative to this manifest file
-
-      mbus: "https://mbus:mbus-password@{{source deployment/vars && echo $eip}}:6868" # <--- Replace with Elastic IP
-
-      properties:
-        aws: *aws
-        agent: {mbus: "https://mbus:mbus-password@0.0.0.0:6868"}
-        blobstore: {provider: local, path: /var/vcap/micro_bosh/data/cache}
-        ntp: *ntp
-    ```
+    properties:
+      aws: *aws
+      agent: {mbus: "https://mbus:mbus-password@0.0.0.0:6868"}
+      blobstore: {provider: local, path: /var/vcap/micro_bosh/data/cache}
+      ntp: *ntp
+  ```
 
 2. Navigate to the `deployment` directory and execute the following command
-    ```
-    bosh-init deploy ~/deployment/bosh.yml
-    ```
+  ```
+  bosh-init deploy ~/deployment/bosh.yml
+  ```
 
 3. Connect to the BOSH Director
-    ```
-    bosh target {{source deployment/vars && echo $eip}}
-    ```
-    Credentials are: `admin / admin`
+  ```
+  bosh target {{source deployment/vars && echo $eip}}
+  ```
+  Credentials are: `admin / admin`
