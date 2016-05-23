@@ -1,10 +1,12 @@
 ## Push a test application
 
-1. Download a test application.
+1. Download and install a test application.
 
 ```
 $ go get github.com/altoros/pg-app
+$ go get github.com/kardianos/govendor
 $ cd $GOPATH/src/github.com/altoros/pg-app
+$ govendor sync
 ```
 
 2. Push it to the Cloud Foundry.
