@@ -16,12 +16,12 @@ Name    mysql-sg
 Rules
 	[
 		{
-			"destination": "0.0.0.0/24",
+			"destination": "0.0.0.0/0",
 			"ports": "3306",
 			"protocol": "tcp"
 		}
 	]
 
      Organization   Space
-#0   my-org         my-first-space   
+#0   my-org         my-first-space
 ```

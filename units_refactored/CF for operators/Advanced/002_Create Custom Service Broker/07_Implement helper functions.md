@@ -1,7 +1,7 @@
 ## Implement helper functions
 
 1. The **appName** function determines the application name from environment or returns a default value
-  ```
+  ```go
   func appName(envJSON string, defaultName string) string {
     env := struct {
       ApplicationName string `json:"application_name"`
@@ -27,7 +27,7 @@
   ```
 
 1. The **newHandler** function is an important one. It creates a handler instance, connects it to the database and parses json services that our broker provides.
-  ```
+  ```go
   func newHandler(source string, servicesJSON string, GUID string) (*Handler, error) {
     conn, err := pgp.New(source)
 

@@ -2,7 +2,7 @@
 
 The **main** function is required by any go application. Have a look at code comments.
 
-```
+```go
 func main() {
 	// Set up logger
 	logger := lager.NewLogger(appName(os.Getenv("VCAP_APPLICATION"), "cf-postgresql-broker"))

@@ -8,7 +8,7 @@
   ```
 
 1. Add them into `import` block in `main.go`. It should look like:
-  ```
+  ```go
   import (
     "encoding/json"
     "errors"

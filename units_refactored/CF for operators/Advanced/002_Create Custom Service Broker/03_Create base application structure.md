@@ -12,8 +12,7 @@
   ```
 
 1. Create the `manifest.yml` file with the following content:
-  ```
-
+  ```yaml
   ---
   env:
     GOPACKAGENAME: cf-postgresql-broker
