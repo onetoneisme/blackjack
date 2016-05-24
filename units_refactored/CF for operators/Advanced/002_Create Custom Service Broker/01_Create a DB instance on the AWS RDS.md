@@ -3,7 +3,6 @@
 1. Create a security group that accepts only 5432 port connections which is default for PostgreSQL.
   ```
   pg_sg=$(aws ec2 create-security-group --group-name pgsql --description "PostgreSQL Security Group" --query GroupId --output text)
-
   aws ec2 authorize-security-group-ingress --group-id $pg_sg --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 5432, "ToPort": 5432, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
   ```
 
