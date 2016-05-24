@@ -141,12 +141,14 @@ cloud_provider:
 ```
 
 2. Navigate to the `deployment` directory and execute the following command
-  ```
-  bosh-init deploy ~/deployment/bosh.yml
-  ```
+
+```
+bosh-init deploy ~/deployment/bosh.yml
+```
 
 3. Connect to the BOSH Director
-  ```
-  bosh target {{source deployment/vars && echo $eip}}
-  ```
-  Credentials are: `admin / admin`
+
+```
+bosh target {{source deployment/vars && echo $eip}}
+```
+Credentials are: `admin / admin`
