@@ -40,7 +40,7 @@
       - range: 10.0.2.0/24
         gateway: 10.0.2.1
         az: z1
-        dns: [10.0.2.2]
+        dns: [10.0.0.2]
         reserved: [10.0.2.1 - 10.0.2.10]
         cloud_properties: 
           subnet: {{source deployment/vars && echo $concourse_subnet_id}} 
