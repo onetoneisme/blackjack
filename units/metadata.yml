@@ -1,0 +1,13 @@
+courses:
+  - id: operator
+    title: 'CF for operators'
+    description: 'Learn how to efficiently manage Cloud Foundry users and resources, ensure that your deployments are secure, and create your own buildpacks and service brokers.'
+  - id: developer
+    title: 'CF for developers'
+    description: 'Learn how to create and manage your own Cloud Foundry apps and services, compile deployment manifests, and use Cloud Foundry to build 12-factor software.'
+  - id: devop
+    title: CF for DevOps engineers
+    description: "Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and other distributed software. The advanced section also provides a more in-depth overview of BOSH internals."
+    lessons:
+      - install_bosh
+      - install_cf

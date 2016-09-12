@@ -1,3 +1,0 @@
-cf org-users my-org|ORG AUDITOR.*my-user|User "my-user" not found or not assigned as ORG AUDITOR.
-cf space-users my-org my-first-space|SPACE DEVELOPER.*my-user|User "my-user" not found or not assigned as SPACE DEVELOPER
-cf space-users my-org my-first-space|!!SPACE DEVELOPER.*admin|User "admin" still assigned to SPACE DEVELOPER

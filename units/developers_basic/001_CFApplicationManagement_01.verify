@@ -1,3 +1,0 @@
->cf target -o my-org -s my-first-space
-cf apps|!!my-app|"my-app" application was not deleted.
-cf apps|!!my-sinatra-example|"my-sinatra-example" was not deleted.

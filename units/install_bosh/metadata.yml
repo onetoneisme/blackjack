@@ -1,0 +1,17 @@
+title: 'Install BOSH'
+description: "Learn how to configure your AWS account and install BOSH to deploy distributed software."
+image: "/images/course-list-img.png"
+labels:
+  - level: basic
+  - iaas: aws
+steps:
+  - path: install_bosh_init
+    title: 'Install BOSH using bosh-init'
+  - path: install_bosh_cli
+    title: 'Install BOSH CLI'
+  - path: install_aws_cli
+    title: 'Install AWS CLI'
+  - path: configure_aws
+    title: 'Configure your AWS account'
+  - path: deploy_bosh
+    title: 'Deploy BOSH' 
