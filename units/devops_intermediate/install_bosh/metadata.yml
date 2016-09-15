@@ -1,13 +1,13 @@
 title: 'Install BOSH'
 description: "Learn how to configure your AWS account and install BOSH to deploy distributed software."
 steps:
-  - path: install_bosh_init
-    title: 'Install BOSH using bosh-init'
-  - path: install_bosh_cli
-    title: 'Install BOSH CLI'
-  - path: install_aws_cli
-    title: 'Install AWS CLI'
-  - path: configure_aws
-    title: 'Configure your AWS account'
-  - path: deploy_bosh
-    title: 'Deploy BOSH' 
+- id: install_bosh_init
+  title: 'Install BOSH using bosh-init'
+- id: install_bosh_cli
+  title: 'Install BOSH CLI'
+- id: install_aws_cli
+  title: 'Install AWS CLI'
+- id: configure_aws
+  title: 'Configure your AWS account'
+- id: deploy_bosh
+  title: 'Deploy BOSH' 

@@ -1,51 +1,46 @@
 courses:
-  - id: operators_basic
-    title: 'CF for operators (Basic)'
-    description: 'Learn how to efficiently manage Cloud Foundry users and resources, ensure that your deployments are secure, and create your own buildpacks and service brokers.'
-    labels:
-      for: operators
-      level: basic
-  - id: operators_intermediate
-    title: 'CF for operators (Intermediate)'
-    description: 'Learn how to efficiently manage Cloud Foundry users and resources, ensure that your deployments are secure, and create your own buildpacks and service brokers.'
-    labels:
-      for: operators
-      level: intermediate
-  - id: operators_advanced
-    title: 'CF for operators (Advanced)'
-    description: 'Learn how to efficiently manage Cloud Foundry users and resources, ensure that your deployments are secure, and create your own buildpacks and service brokers.'
-    labels:
-      for: operators
-      level: advanced
-      language: [go, bash]
-  - id: developers_basic
-    title: 'CF for developers (Basic)'
-    description: 'Learn how to create and manage your own Cloud Foundry apps and services, compile deployment manifests, and use Cloud Foundry to build 12-factor software.'
-    labels:
-      for: developers
-      level: basic
-      language: ruby
-  - id: developers_intermediate
-    title: 'CF for developers (Intermediate)'
-    description: 'Learn how to create and manage your own Cloud Foundry apps and services, compile deployment manifests, and use Cloud Foundry to build 12-factor software.'
-    labels:
-      for: developers
-      level: intermediate
-      language: ruby
-  - id: devops_intermediate
-    title: 'CF for DevOps engineers (Intermediate)'
-    description: "Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and other distributed software. The advanced section also provides a more in-depth overview of BOSH internals."
-    labels:
-      - level: basic
-      - iaas: aws
-    infrastructure: default_ubuntu
-    lessons:
-      - install_bosh
-      - install_cf
-  - id: devops_advanced
-    title: 'CF for DevOps engineers (Advanced)'
-    description: "Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and other distributed software. The advanced section also provides a more in-depth overview of BOSH internals."
-    labels:
-      - level: advanced
-      - iaas: aws
-    depends_on: devops_intermediate
+- id: developers_intermediate
+  title: 'CF for developers (Intermediate)'
+  description: 'Learn how to create and manage your own Cloud Foundry apps and services, compile deployment manifests, and use Cloud Foundry to build 12-factor software.'
+  infrastructure:
+    type: "ami"
+    name: "cf-developers"
+  labels:
+    for: developers
+    level: intermediate
+    language: ruby
+  lessons:
+    - id: install_cf
+- id: operators_basic
+  title: 'CF for operators (Basic)'
+  description: 'Learn how to efficiently manage Cloud Foundry users and resources, ensure that your deployments are secure, and create your own buildpacks and service brokers.'
+  labels:
+    for: operators
+    level: basic
+- id: operators_intermediate
+  title: 'CF for operators (Intermediate)'
+  description: 'Learn how to efficiently manage Cloud Foundry users and resources, ensure that your deployments are secure, and create your own buildpacks and service brokers.'
+  labels:
+    for: operators
+    level: intermediate
+- id: operators_advanced
+  title: 'CF for operators (Advanced)'
+  description: 'Learn how to efficiently manage Cloud Foundry users and resources, ensure that your deployments are secure, and create your own buildpacks and service brokers.'
+  labels:
+    for: operators
+    level: advanced
+    language: [go, bash]
+- id: developers_basic
+  title: 'CF for developers (Basic)'
+  description: 'Learn how to create and manage your own Cloud Foundry apps and services, compile deployment manifests, and use Cloud Foundry to build 12-factor software.'
+  labels:
+    for: developers
+    level: basic
+    language: ruby
+- id: developers_intermediate
+  title: 'CF for developers (Intermediate)'
+  description: 'Learn how to create and manage your own Cloud Foundry apps and services, compile deployment manifests, and use Cloud Foundry to build 12-factor software.'
+  labels:
+    for: developers
+    level: intermediate
+    language: ruby
