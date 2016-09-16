@@ -1,15 +1,15 @@
 title: 'Install Cloud Foundry'
 description: "Follow the steps to install you own, full-fledged Cloud Foundry PaaS, using BOSH."
 steps:
-  - path: configure_aws
-    title: 'Configure AWS acount'
-  - path: install_spiff
-    title: 'Install spiff'
-  - path: download_cf
-    title: 'Download Cloud Foundry sources'
-  - path: create_manifest_stub
-    title: 'Create a manifest stub'
-  - path: deploy
-    title: 'Deploy'
-  - path: verify_deployment
-    title: 'Verify Deployment'
+- id: configure_aws
+  title: 'Configure AWS acount'
+- id: install_spiff
+  title: 'Install spiff'
+- id: download_cf
+  title: 'Download Cloud Foundry sources'
+- id: create_manifest_stub
+  title: 'Create a manifest stub'
+- id: deploy
+  title: 'Deploy'
+- id: verify_deployment
+  title: 'Verify Deployment'
