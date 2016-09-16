@@ -1,0 +1,203 @@
+#!/usr/bin/env ruby
+
+require "yaml"
+require "fileutils"
+
+source_path = ARGV.shift
+target_path = ARGV.shift
+
+
+class Course
+  attr_accessor :id
+  attr_accessor :title
+  attr_accessor :path
+  attr_accessor :price
+  attr_accessor :description
+  attr_accessor :dependsOn
+  attr_accessor :infrastructure
+  attr_accessor :labels
+  attr_accessor :lessons
+  attr_accessor :source_path
+  def labels; @labels ||= {} end
+  def lessons; @lessons ||= [] end
+
+  def initialize(path, title)
+  	@source_path = path
+    self.title = title
+  end
+
+  def title=(v)
+    @id = v.downcase.gsub(/[^a-zA-Z0-9\s\_]/, '').gsub(/\s{2,}/, ' ').gsub(" ", "_")
+    @title = v.gsub(/[0-9\_]/, '').strip
+    @source_path = File.join(@source_path, v)
+    labels["for"] = v.split(" ").last.downcase
+    @description = YAML.load_file("metadata.yml")["description"]
+  end
+  def level=(v)
+    labels["level"] = v.downcase
+    @id = "#{@id}_#{v.downcase}"
+    @title = "#{@title} - #{v}"
+    @source_path = File.join(@source_path, v)
+  end
+  def add_lesson(lesson_title)
+    lessons.push(Lesson.new(self, lesson_title))
+  end
+
+  def metadata
+    metadata = {"id" => @id,
+                "title" => @title,
+                "price" =>  0,
+                "description" =>  @description,
+                "infrastructure" =>  {"type" => "ami",    "name" => "cf-developers"},
+                "labels" => @labels,
+                "lessons" => @lessons.map { |l| l.id }}
+  end
+
+  def copy_to(target_path)
+  	puts "Copying #{self.id} from #{self.source_path} to #{target_path}"
+    course_folder = File.join(target_path, self.id)
+    FileUtils.mkdir_p(course_folder)
+    Dir.chdir(course_folder) do
+      puts "Copying #{self.id} from #{self.source_path} to #{target_path}"
+    end
+    lessons.each { |l| l.copy_to(course_folder) }
+  end
+
+end
+
+class Lesson
+  attr_reader :id
+  attr_reader :title
+  attr_reader :course
+  attr_reader :path
+  attr_reader :description
+  attr_reader :quiz
+  attr_reader :prerequisites 
+  attr_reader :steps
+  attr_reader :course
+  attr_reader :source_path
+  def steps; @steps ||= [] end
+
+  def initialize(course, title)
+    @course = course
+    self.title = title
+
+    load_steps
+  end
+
+  def title=(title)
+    @id = title.downcase.gsub(/[^a-zA-Z0-9\s\_]/, '').gsub(/\s{2,}/, ' ').gsub(" ", "_")
+    @original_title = title
+    @title = title.gsub(/^[0-9\_]/, '').strip
+    @source_path = File.join(self.course.source_path, @original_title)
+    puts Dir.entries('.').inspect
+    @description = YAML.load_file(File.join(title, "metadata.yml"))["description"]
+  end
+
+  def load_steps
+  	in_each_md_file(@original_title) do |step_md_file|
+  	  step_name = step_md_file[0..-4]
+  	  steps.push(Step.new(self, step_name))
+  	end
+  end
+
+  def metadata
+    { "id" => @id,
+      "title" => @title,
+      "description" => @description,
+      "steps" => steps.map { |s| {"id" => s.id, "path" => s.id, "title" => s.title} }}
+  end
+
+  def copy_to(target_path)
+    lesson_folder = File.join(target_path, self.id)
+    FileUtils.mkdir_p(lesson_folder)
+    Dir.chdir(lesson_folder) do
+      File.open("metadata.yml", 'w') { |file| file.write(self.metadata.to_yaml) }
+    end
+    self.steps.each do |s|
+      puts "cp " + File.join(self.source_path, s.title) + ".md" + ' .'
+      puts "cp " + File.join(self.source_path, s.title) + ".verify.sh" + ' .'
+      puts "cp " + File.join(self.source_path, "Prerequisites.sh") + ' prerequisites.sh'
+      puts "cp " + File.join(self.source_path, "Quiz.yml") + ' quiz.yml'
+      FileUtils.cp(File.join(self.source_path, s.title) + ".md", lesson_folder) rescue nil
+      FileUtils.cp(File.join(self.source_path, s.title) + ".verify.sh", lesson_folder) rescue nil
+      FileUtils.cp(File.join(self.source_path, "Prerequisites.sh"), File.join(lesson_folder, 'prerequisites.sh')) rescue nil
+      FileUtils.cp(File.join(self.source_path, "Quiz.yml"), File.join(lesson_folder, 'quiz.yml')) rescue nil
+    end
+
+  end
+
+  def cp()
+  end
+
+
+end
+
+class Step
+  attr_reader :id
+  attr_reader :title
+  attr_reader :lesson
+
+  def initialize(lesson, title)
+    @lesson = lesson
+    @id = title.downcase.gsub(/[^a-zA-Z0-9\s\_]/, '').gsub(/\s{2,}/, ' ').gsub(" ", "_")
+    @title = title
+  end
+end
+
+def in_each_md_file(path)
+  Dir.entries(path).select { |e| e.end_with?(".md") }.each do |folder|
+    yield(folder)
+  end
+end
+
+def in_each_folder(path)
+  puts "in_each_folder #{path}"
+  puts .inspect
+  Dir.entries(path)
+    .select { |e| File.directory?(File.join(path, e)) && !e.start_with?('.') }
+    .each do |folder|
+  	  puts "in_each_folder #{folder}"
+      Dir.chdir(path) do
+        yield(folder)
+      end
+  end
+end
+
+
+courses = []
+# puts source_path
+in_each_folder(source_path) do |course_title|
+  puts "processing #{course_title}"
+  in_each_folder(course_title) do |course_level|
+    puts "processing #{course_level}"
+    course = Course.new(source_path, course_title)
+    course.level = course_level
+    in_each_folder(course_level) do |lesson_name|
+      puts "processing #{lesson_name}"
+      course.add_lesson(lesson_name)
+    end
+    courses.push(course)
+  end
+  
+end
+
+courses.each do |c|
+  puts "-" * 30
+  puts c.metadata.to_yaml
+  puts "#" * 30
+  c.lessons.each_with_index do |l, i|
+    puts "lesson - ##{i}"
+    puts l.metadata.to_yaml
+    puts "#" * 30
+  end
+  c.copy_to(target_path)
+end
+File.open(File.join(target_path, "metadata.yml"), 'w') do |file|
+  final_metadata = { "courses" => courses.map { |c| c.metadata } } 
+  file.write(final_metadata.to_yaml)
+end
+
+
+
+

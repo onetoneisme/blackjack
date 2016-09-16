@@ -1,0 +1,24 @@
+---
+id: 002_install_cloud_foundry
+title: 02 Install Cloud Foundry
+description: Follow the steps to install you own, full-fledged Cloud Foundry PaaS,
+  using BOSH.
+steps:
+- id: 01_configure_aws_account
+  path: 01_configure_aws_account
+  title: 01_Configure AWS Account
+- id: 02_install_spiff
+  path: 02_install_spiff
+  title: 02_Install spiff
+- id: 03_download_cloud_foundry_sources
+  path: 03_download_cloud_foundry_sources
+  title: 03_Download Cloud Foundry sources
+- id: 04_create_a_manifest_stub
+  path: 04_create_a_manifest_stub
+  title: 04_Create a manifest stub
+- id: 05_deploy
+  path: 05_deploy
+  title: 05_Deploy
+- id: 06_verify_deployment
+  path: 06_verify_deployment
+  title: 06_Verify deployment

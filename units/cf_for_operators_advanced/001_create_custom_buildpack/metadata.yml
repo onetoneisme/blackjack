@@ -1,0 +1,22 @@
+---
+id: 001_create_custom_buildpack
+title: 01_Create Custom Buildpack
+description: Buildpacks provide dependencies for Cloud Foundry apps, but all apps
+  are different and the standard buildpacks may not always work. This advanced section
+  teaches the steps for assembling your own custom buildpack.
+steps:
+- id: 01_creating_detect_script
+  path: 01_creating_detect_script
+  title: 01_Creating Detect script
+- id: 02_creating_compile_script
+  path: 02_creating_compile_script
+  title: 02_Creating Compile script
+- id: 03_creating_release_script
+  path: 03_creating_release_script
+  title: 03_Creating Release script
+- id: 04_package_and_upload_buildpack
+  path: 04_package_and_upload_buildpack
+  title: 04_Package and upload buildpack
+- id: 05_verify_buildpack
+  path: 05_verify_buildpack
+  title: 05_Verify buildpack

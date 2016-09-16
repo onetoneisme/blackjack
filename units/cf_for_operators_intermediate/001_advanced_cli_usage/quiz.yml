@@ -1,0 +1,16 @@
+questions:
+- id: "1"
+  formulation: "How do you tell the CLI to be as verbose as it can while deploying the 'my-batmobile-app'?"
+  type: input
+  answer: 'CF_TRACE=true cf push my-batmobile-app'
+- id: "2"
+  formulation: "Why is it necessary to know how to get the CLI's session token?"
+  type: checkbox
+  options:
+  - id: "1"
+    value: "You cannot access CF's API directly without an authorization token."
+  - id: "2"
+    value: "Tokens are very useful if you need to execute requests to the CF API without using the CLI."
+  - id: "3"
+    value: "An authorization token will allow you to hack into all of CF's resources."
+  answer: "2"

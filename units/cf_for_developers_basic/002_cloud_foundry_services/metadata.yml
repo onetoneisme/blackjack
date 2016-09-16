@@ -1,0 +1,42 @@
+---
+id: 002_cloud_foundry_services
+title: 02 Cloud Foundry Services
+description: Learn about the service marketplace, as well as how to create and manage
+  Cloud Foundry services.
+steps:
+- id: 01_introduction
+  path: 01_introduction
+  title: 01_Introduction
+- id: 02_the_service_marketplace
+  path: 02_the_service_marketplace
+  title: 02_The Service Marketplace
+- id: 03_creating_services
+  path: 03_creating_services
+  title: 03_Creating services
+- id: 04_binding_and_unbinding_services
+  path: 04_binding_and_unbinding_services
+  title: 04_Binding and unbinding services
+- id: 05_managing_services
+  path: 05_managing_services
+  title: 05_Managing services
+- id: 06_renaming_services
+  path: 06_renaming_services
+  title: 06_Renaming services
+- id: 07_updating_services
+  path: 07_updating_services
+  title: 07_Updating services
+- id: 08_deleting_services
+  path: 08_deleting_services
+  title: 08_Deleting services
+- id: 09_user_provided_services
+  path: 09_user_provided_services
+  title: 09_User provided services
+- id: 10_creating_a_user_provided_service
+  path: 10_creating_a_user_provided_service
+  title: 10_Creating a User Provided Service
+- id: 11_modifying_a_user_provided_service
+  path: 11_modifying_a_user_provided_service
+  title: 11_Modifying a User Provided Service
+- id: 12_deleting_a_user_provided_service
+  path: 12_deleting_a_user_provided_service
+  title: 12_Deleting a User Provided Service

@@ -1,0 +1,24 @@
+---
+id: 001_manifests
+title: 01_Manifests
+description: Learn how to create your own YAML manifests to manage services, apps,
+  etc.
+steps:
+- id: 01_introduction
+  path: 01_introduction
+  title: 01_Introduction
+- id: 02_precedence
+  path: 02_precedence
+  title: 02_Precedence
+- id: 031_manifest_properties
+  path: 031_manifest_properties
+  title: 03.1_Manifest Properties
+- id: 032_manifest_properties
+  path: 032_manifest_properties
+  title: 03.2_Manifest Properties
+- id: 033_service_binding
+  path: 033_service_binding
+  title: 03.3_Service Binding
+- id: 03_manifest_properties
+  path: 03_manifest_properties
+  title: 03_Manifest Properties

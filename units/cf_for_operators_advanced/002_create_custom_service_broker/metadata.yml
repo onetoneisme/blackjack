@@ -1,0 +1,42 @@
+---
+id: 002_create_custom_service_broker
+title: 02_Create Custom Service Broker
+description: Learn how to design a service broker to connect additional services with
+  Cloud Foundry.
+steps:
+- id: 01_create_a_db_instance_on_the_aws_rds
+  path: 01_create_a_db_instance_on_the_aws_rds
+  title: 01_Create a DB instance on the AWS RDS
+- id: 02_install_required_packages
+  path: 02_install_required_packages
+  title: 02_Install required packages
+- id: 03_create_base_application_structure
+  path: 03_create_base_application_structure
+  title: 03_Create base application structure
+- id: 04_install_application_dependencies
+  path: 04_install_application_dependencies
+  title: 04_Install application dependencies
+- id: 05_define_the_requests_handler
+  path: 05_define_the_requests_handler
+  title: 05_Define the requests handler
+- id: 06_implement_service_broker_api_methods
+  path: 06_implement_service_broker_api_methods
+  title: 06_Implement service broker API methods
+- id: 07_implement_helper_functions
+  path: 07_implement_helper_functions
+  title: 07_Implement helper functions
+- id: 08_implement_the_main_function
+  path: 08_implement_the_main_function
+  title: 08_Implement the main function
+- id: 09_save_dependencies
+  path: 09_save_dependencies
+  title: 09_Save dependencies
+- id: 10_create_the_postgresql_security_group
+  path: 10_create_the_postgresql_security_group
+  title: 10_Create the postgresql security group
+- id: 11_push_the_broker_to_the_cloud_foundry
+  path: 11_push_the_broker_to_the_cloud_foundry
+  title: 11_Push the broker to the Cloud Foundry
+- id: 12_push_a_test_application
+  path: 12_push_a_test_application
+  title: 12_Push a test application

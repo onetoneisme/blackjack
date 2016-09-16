@@ -1,0 +1,18 @@
+---
+id: 003_deploy_elk
+title: 03_Deploy ELK
+description: Learn how to deploy and connect ELK (Elasticsearch, Logstash, Kibana)
+  with Cloud Foundry to aggregate and manage all application and CF component logs.
+steps:
+- id: 01_configure_aws_account
+  path: 01_configure_aws_account
+  title: 01_Configure AWS Account
+- id: 02_generate_deployment_manifest
+  path: 02_generate_deployment_manifest
+  title: 02_Generate deployment manifest
+- id: 03_deploy
+  path: 03_deploy
+  title: 03_Deploy
+- id: 04_connect_elk_with_cloud_foundry
+  path: 04_connect_elk_with_cloud_foundry
+  title: 04_Connect ELK with Cloud Foundry

@@ -1,0 +1,21 @@
+---
+id: 001_advanced_cli_usage
+title: 01_Advanced CLI usage
+description: Master some of the more advanced Cloud Foundry CLI commands in this hands-on
+  section.
+steps:
+- id: 01_introduction
+  path: 01_introduction
+  title: 01_Introduction
+- id: 02_using_cf_trace
+  path: 02_using_cf_trace
+  title: 02_Using CF_TRACE
+- id: 03_cli_plugins
+  path: 03_cli_plugins
+  title: 03_CLI Plugins
+- id: 04_using_cf_curl
+  path: 04_using_cf_curl
+  title: 04_Using CF cURL
+- id: 05_getting_the_cli_authorization_token
+  path: 05_getting_the_cli_authorization_token
+  title: 05_Getting the CLI authorization token

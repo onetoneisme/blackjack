@@ -1,0 +1,36 @@
+---
+id: 001_application_management_in_cloud_foundry_part_2
+title: 01 Application Management in Cloud Foundry - Part 2
+description: 'In this section, you will learn how to manage applications in CF, including:
+  how to restart, restage, and scale apps.'
+steps:
+- id: 01_introduction
+  path: 01_introduction
+  title: 01_Introduction
+- id: 02_restarting_applications
+  path: 02_restarting_applications
+  title: 02_Restarting applications
+- id: 03_restaging_applications
+  path: 03_restaging_applications
+  title: 03_Restaging applications
+- id: 041_scaling_horizontally
+  path: 041_scaling_horizontally
+  title: 04.1_Scaling horizontally
+- id: 042_scaling_vertically
+  path: 042_scaling_vertically
+  title: 04.2_Scaling vertically
+- id: 04_scaling_up_and_down
+  path: 04_scaling_up_and_down
+  title: 04_Scaling up and down
+- id: 05_restarting_an_instance
+  path: 05_restarting_an_instance
+  title: 05_Restarting an instance
+- id: 06_environmental_variables
+  path: 06_environmental_variables
+  title: 06_Environmental variables
+- id: 07_viewing_variables
+  path: 07_viewing_variables
+  title: 07_Viewing variables
+- id: 08_setting_a_variable
+  path: 08_setting_a_variable
+  title: 08_Setting a variable

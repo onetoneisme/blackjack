@@ -1,0 +1,20 @@
+---
+id: 002_explore_bosh_internals
+title: 02_Explore BOSH internals
+description: Take a closer look at the BOSH VM, BOSH Agent, database, and debug logs.
+steps:
+- id: 01_explore_bosh_vm_folder_structure
+  path: 01_explore_bosh_vm_folder_structure
+  title: 01_Explore BOSH VM folder structure
+- id: 02_connect_to_director_database
+  path: 02_connect_to_director_database
+  title: 02_Connect to Director database
+- id: 03_view_nats_trafic
+  path: 03_view_nats_trafic
+  title: 03_View NATS trafic
+- id: 04_investigate_bosh_agent
+  path: 04_investigate_bosh_agent
+  title: 04_Investigate BOSH Agent
+- id: 05_view_bosh_debug_log
+  path: 05_view_bosh_debug_log
+  title: 05_View bosh debug log

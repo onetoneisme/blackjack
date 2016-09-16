@@ -1,0 +1,26 @@
+---
+id: 003_security_groups
+title: 03_Security Groups
+description: Learn how create, bind, view, and manage security groups in Cloud Foundry.
+steps:
+- id: 011_introduction
+  path: 011_introduction
+  title: 01.1_Introduction
+- id: 012_introduction
+  path: 012_introduction
+  title: 01.2_Introduction
+- id: 01_introduction
+  path: 01_introduction
+  title: 01_Introduction
+- id: 02_creating_security_groups
+  path: 02_creating_security_groups
+  title: 02_Creating security groups
+- id: 03_binding_security_groups
+  path: 03_binding_security_groups
+  title: 03_Binding security groups
+- id: 04_viewing_security_groups
+  path: 04_viewing_security_groups
+  title: 04_Viewing security groups
+- id: 06_managing_security_groups
+  path: 06_managing_security_groups
+  title: 06_Managing Security Groups
