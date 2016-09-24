@@ -1,81 +1,5 @@
 ---
 courses:
-- id: cf_for_developers_basic
-  title: CF for developers - Basic
-  price: 0
-  description: Learn how to create and manage your own Cloud Foundry apps and services,
-    compile deployment manifests, and use Cloud Foundry to build 12-factor software.
-  infrastructure:
-    type: ami
-    name: cf-developers
-  labels:
-    for: developers
-    level: basic
-  lessons:
-  - 001_application_management_in_cloud_foundry_part_1
-  - 001_application_management_in_cloud_foundry_part_2
-  - 001_application_management_in_cloud_foundry_part_3
-  - 002_cloud_foundry_services
-- id: cf_for_developers_intermediate
-  title: CF for developers - Intermediate
-  price: 0
-  description: Learn how to create and manage your own Cloud Foundry apps and services,
-    compile deployment manifests, and use Cloud Foundry to build 12-factor software.
-  infrastructure:
-    type: ami
-    name: cf-developers
-  labels:
-    for: developers
-    level: intermediate
-  lessons:
-  - 001_manifests
-- id: cf_for_devops_engineers_advanced
-  title: CF for DevOps engineers - Advanced
-  price: 0
-  description: Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and
-    other distributed software. The advanced section also provides a more in-depth
-    overview of BOSH internals.
-  infrastructure:
-    type: ami
-    name: cf-developers
-  labels:
-    for: engineers
-    level: advanced
-  lessons:
-  - 001_create_bosh_release
-  - 002_explore_bosh_internals
-  - 003_deploy_elk
-  - 004_deploy_concourse
-- id: cf_for_devops_engineers_basic
-  title: CF for DevOps engineers - Basic
-  price: 0
-  description: Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and
-    other distributed software. The advanced section also provides a more in-depth
-    overview of BOSH internals.
-  infrastructure:
-    type: ami
-    name: cf-developers
-  labels:
-    for: engineers
-    level: basic
-  lessons:
-  - 001_install_bosh_with_boshinit
-  - 002_install_cloud_foundry
-- id: cf_for_operators_advanced
-  title: CF for operators - Advanced
-  price: 0
-  description: Learn how to efficiently manage Cloud Foundry users and resources,
-    ensure that your deployments are secure, and create your own buildpacks and service
-    brokers.
-  infrastructure:
-    type: ami
-    name: cf-developers
-  labels:
-    for: operators
-    level: advanced
-  lessons:
-  - 001_create_custom_buildpack
-  - 002_create_custom_service_broker
 - id: cf_for_operators_basic
   title: CF for operators - Basic
   price: 0
@@ -83,8 +7,8 @@ courses:
     ensure that your deployments are secure, and create your own buildpacks and service
     brokers.
   infrastructure:
-    type: ami
-    name: cf-developers
+    type: aws_ami
+    id: single_vm_cf
   labels:
     for: operators
     level: basic
@@ -101,9 +25,7 @@ courses:
   description: Learn how to efficiently manage Cloud Foundry users and resources,
     ensure that your deployments are secure, and create your own buildpacks and service
     brokers.
-  infrastructure:
-    type: ami
-    name: cf-developers
+  depends_on: cf_for_operators_basic
   labels:
     for: operators
     level: intermediate
@@ -111,3 +33,73 @@ courses:
   - 001_advanced_cli_usage
   - 002_using_the_uaac_client
   - 003_security_groups
+- id: cf_for_operators_advanced
+  title: CF for operators - Advanced
+  price: 0
+  description: Learn how to efficiently manage Cloud Foundry users and resources,
+    ensure that your deployments are secure, and create your own buildpacks and service
+    brokers.
+  depends_on: cf_for_operators_intermediate
+  labels:
+    for: operators
+    level: advanced
+  lessons:
+  - 001_create_custom_buildpack
+  - 002_create_custom_service_broker
+- id: cf_for_developers_basic
+  title: CF for developers - Basic
+  price: 0
+  description: Learn how to create and manage your own Cloud Foundry apps and services,
+    compile deployment manifests, and use Cloud Foundry to build 12-factor software.
+  infrastructure:
+    type: aws_ami
+    id: single_vm_cf
+  labels:
+    for: developers
+    level: basic
+  lessons:
+  - 001_application_management_in_cloud_foundry_part_1
+  - 001_application_management_in_cloud_foundry_part_2
+  - 001_application_management_in_cloud_foundry_part_3
+  - 002_cloud_foundry_services
+- id: cf_for_developers_intermediate
+  title: CF for developers - Intermediate
+  price: 0
+  description: Learn how to create and manage your own Cloud Foundry apps and services,
+    compile deployment manifests, and use Cloud Foundry to build 12-factor software.
+  depends_on: cf_for_developers_basic
+  labels:
+    for: developers
+    level: intermediate
+  lessons:
+  - 001_manifests
+- id: cf_for_devops_engineers_intermediate
+  title: CF for DevOps engineers - Intermediate
+  price: 0
+  description: Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and
+    other distributed software. The advanced section also provides a more in-depth
+    overview of BOSH internals.
+  infrastructure:
+    type: aws_ami
+    id: default_ubuntu
+  labels:
+    for: devops
+    level: intermediate
+  lessons:
+  - 001_install_bosh_with_boshinit
+  - 002_install_cloud_foundry
+- id: cf_for_devops_engineers_advanced
+  title: CF for DevOps engineers - Advanced
+  price: 0
+  description: Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and
+    other distributed software. The advanced section also provides a more in-depth
+    overview of BOSH internals.
+  depends_on: cf_for_developers_intermediate
+  labels:
+    for: devops
+    level: advanced
+  lessons:
+  - 001_create_bosh_release
+  - 002_explore_bosh_internals
+  - 003_deploy_elk
+  - 004_deploy_concourse
