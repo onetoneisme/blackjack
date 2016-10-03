@@ -2,7 +2,7 @@
 courses:
 - id: cf_for_operators_basic
   title: CF for operators - Basic
-  price: 0
+  price: 100
   description: Learn how to efficiently manage Cloud Foundry users and resources,
     ensure that your deployments are secure, and create your own buildpacks and service
     brokers.
@@ -21,7 +21,7 @@ courses:
   - 006_quota_management_in_cloud_foundry
 - id: cf_for_operators_intermediate
   title: CF for operators - Intermediate
-  price: 0
+  price: 100
   description: Learn how to efficiently manage Cloud Foundry users and resources,
     ensure that your deployments are secure, and create your own buildpacks and service
     brokers.
@@ -35,7 +35,7 @@ courses:
   - 003_security_groups
 - id: cf_for_operators_advanced
   title: CF for operators - Advanced
-  price: 0
+  price: 100
   description: Learn how to efficiently manage Cloud Foundry users and resources,
     ensure that your deployments are secure, and create your own buildpacks and service
     brokers.
@@ -64,7 +64,7 @@ courses:
   - 002_cloud_foundry_services
 - id: cf_for_developers_intermediate
   title: CF for developers - Intermediate
-  price: 0
+  price: 100
   description: Learn how to create and manage your own Cloud Foundry apps and services,
     compile deployment manifests, and use Cloud Foundry to build 12-factor software.
   depends_on: cf_for_developers_basic
@@ -75,7 +75,7 @@ courses:
   - 001_manifests
 - id: cf_for_devops_engineers_intermediate
   title: CF for DevOps engineers - Intermediate
-  price: 0
+  price: 100
   description: Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and
     other distributed software. The advanced section also provides a more in-depth
     overview of BOSH internals.
@@ -90,7 +90,7 @@ courses:
   - 002_install_cloud_foundry
 - id: cf_for_devops_engineers_advanced
   title: CF for DevOps engineers - Advanced
-  price: 0
+  price: 100
   description: Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and
     other distributed software. The advanced section also provides a more in-depth
     overview of BOSH internals.
