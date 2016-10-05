@@ -12,6 +12,7 @@ courses:
   labels:
     for: operators
     level: basic
+    product: "Cloud Foundry"
   lessons:
   - 001_introduction
   - 002_cloud_foundry_main_concepts
@@ -29,6 +30,7 @@ courses:
   labels:
     for: operators
     level: intermediate
+    product: "Cloud Foundry"
   lessons:
   - 001_advanced_cli_usage
   - 002_using_the_uaac_client
@@ -43,6 +45,7 @@ courses:
   labels:
     for: operators
     level: advanced
+    product: "Cloud Foundry"
   lessons:
   - 001_create_custom_buildpack
   - 002_create_custom_service_broker
@@ -57,6 +60,7 @@ courses:
   labels:
     for: developers
     level: basic
+    product: "Cloud Foundry"
   lessons:
   - 001_application_management_in_cloud_foundry_part_1
   - 001_application_management_in_cloud_foundry_part_2
@@ -71,6 +75,7 @@ courses:
   labels:
     for: developers
     level: intermediate
+    product: "Cloud Foundry"
   lessons:
   - 001_manifests
 - id: cf_for_devops_engineers_intermediate
@@ -85,6 +90,7 @@ courses:
   labels:
     for: devops
     level: intermediate
+    product: "Cloud Foundry"
   lessons:
   - 001_install_bosh_with_boshinit
   - 002_install_cloud_foundry
@@ -98,6 +104,7 @@ courses:
   labels:
     for: devops
     level: advanced
+    product: "Cloud Foundry"
   lessons:
   - 001_create_bosh_release
   - 002_explore_bosh_internals
