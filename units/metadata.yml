@@ -7,7 +7,7 @@ courses:
     ensure that your deployments are secure, and create your own buildpacks and service
     brokers.
   infrastructure:
-    type: aws_ami
+    type: terraform
     id: single_vm_cf
   labels:
     for: operators
@@ -55,7 +55,7 @@ courses:
   description: Learn how to create and manage your own Cloud Foundry apps and services,
     compile deployment manifests, and use Cloud Foundry to build 12-factor software.
   infrastructure:
-    type: aws_ami
+    type: terraform
     id: single_vm_cf
   labels:
     for: developers
@@ -85,7 +85,7 @@ courses:
     other distributed software. The advanced section also provides a more in-depth
     overview of BOSH internals.
   infrastructure:
-    type: aws_ami
+    type: terraform
     id: default_ubuntu
   labels:
     for: devops
