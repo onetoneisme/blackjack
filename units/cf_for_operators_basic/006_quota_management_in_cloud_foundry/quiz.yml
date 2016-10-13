@@ -1,31 +1,20 @@
 questions:
-- id: "1"
-  formulation: "What is a CF quota?"
-  type: checkbox
+- formulation: "What is a CF quota?"
+  type: option
   options:
-  - id: "1"
-    value: "A way to use Cloud Foundry's logging facilities"
-  - id: "2"
-    value: "No clue"
-  - id: "3"
-    value: "The proportion of the funds of a parish contributed to the diocese"
-  - id: "4"
-    value: "A configuration for a specific resource management plan"
-  - id: "5"
-    value: "A resource to configure apps"
-  answer: "4"
-- id: "2"
-  formulation: "How do you list quotas?"
-  type: input
+  - "A way to use Cloud Foundry's logging facilities"
+  - "No clue"
+  - "The proportion of the funds of a parish contributed to the diocese"
+  - "A configuration for a specific resource management plan"
+  - "A resource to configure apps"
+  answer: [3]
+- formulation: "How do you list quotas?"
+  type: text
   answer: 'cf quotas'
-- id: "3"
-  formulation: "What is a space quota?"
-  type: checkbox
+- formulation: "What is a space quota?"
+  type: option
   options:
-  - id: "1"
-    value: "A quota that was launched by NASA to study cosmic radiation"
-  - id: "2"
-    value: "A way to set permissions for users in a space"
-  - id: "3"
-    value: "A quota that can be applied to spaces instead of organizations"
-  answer: "3"
+  - "A quota that was launched by NASA to study cosmic radiation"
+  - "A way to set permissions for users in a space"
+  - "A quota that can be applied to spaces instead of organizations"
+  answer: [2]

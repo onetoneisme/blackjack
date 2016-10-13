@@ -1,27 +1,18 @@
 questions:
-- id: "1"
-  formulation: "Please, scale 'my-batmobile-app' up to three instances."
-  type: input
+- formulation: "Please, scale 'my-batmobile-app' up to three instances."
+  type: text
   answer: 'cf scale my-batmobile-app -i 3'
-- id: "2"
-  formulation: "What is the difference between restarting and restaging an application?"
-  type: checkbox
+- formulation: "What is the difference between restarting and restaging an application?"
+  type: option
   options:
-  - id: "1"
-    value: "None. They are the same."
-  - id: "2"
-    value: "'restage' will upload the code again"
-  - id: "3"
-    value: "'restage' deletes the droplet and then recreates it"
-  answer: "2"
-- id: "3"
-  formulation: "Why are enviornment variables so important in Cloud Foundry?"
-  type: checkbox_multiple
+  - "None. They are the same."
+  - "'restage' will upload the code again"
+  - "'restage' deletes the droplet and then recreates it"
+  answer: [ 1 ]
+- formulation: "Why are enviornment variables so important in Cloud Foundry?"
+  type: option
   options:
-  - id: "1"
-    value: "Thanks to environment variables, developers do not have to worry about credentials and URIs and can focus on the business logic."
-  - id: "2"
-    value: "Environment variables allow apps deployed in Cloud Foundry to safely get credentials for various services."
-  - id: "3"
-    value: "Environment variables enable Cloud Foundry to communicate with deployed applications and receive data about their environments."
-  answer: "(2,3)"
+  - "Thanks to environment variables, developers do not have to worry about credentials and URIs and can focus on the business logic."
+  - "Environment variables allow apps deployed in Cloud Foundry to safely get credentials for various services."
+  - "Environment variables enable Cloud Foundry to communicate with deployed applications and receive data about their environments."
+  answer: [ 1, 2 ]

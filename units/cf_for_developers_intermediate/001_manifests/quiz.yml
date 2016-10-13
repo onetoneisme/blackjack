@@ -1,22 +1,15 @@
 questions:
-- id: "1"
-  formulation: "What is a `manifest.yml` file?"
-  type: checkbox
+- formulation: "What is a `manifest.yml` file?"
+  type: option
   options:
-  - id: "1"
-    value: "A file that describes application dependencies"
-  - id: "2"
-    value: "A way to inject variables into a Cloud Foundry deployment"
-  - id: "3"
-    value: "A convenient way to centralize and DRY an application's deployment parameters"
-  answer: "3"
-- id: "2"
-  formulation: "What is the precedence of execution when deploying manifests?"
-  type: checkbox
+  - "A file that describes application dependencies"
+  - "A way to inject variables into a Cloud Foundry deployment"
+  - "A convenient way to centralize and DRY an application's deployment parameters"
+  answer: [2]
+- formulation: "What is the precedence of execution when deploying manifests?"
+  type: option
   options:
-  - id: "1"
-    value: "Command line > Manifest > Defaults"
-  - id: "2"
-    value: "Defaults > Command line > Manifest"
-  - id: "3"
-    value: "Manifest > Defaults > Command line"
+  - "Command line > Manifest > Defaults"
+  - "Defaults > Command line > Manifest"
+  - "Manifest > Defaults > Command line"
+  answer: [0]

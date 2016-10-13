@@ -1,38 +1,25 @@
 questions:
-- id: "1"
-  formulation: "What is an organization?"
-  type: checkbox
+- formulation: "What is an organization?"
+  type: option
   options:
-  - id: "1"
-    value: "A development account that an individual or multiple collaborators can own and use"
-  - id: "2"
-    value: "A physical subdivision of a Cloud Foundry deployment"
-  - id: "3"
-    value: "A logical way to group spaces and separate concerns in Cloud Foundry"
-  answer: "3"
-- id: "2"
-  formulation: "How do you delete the 'my-space' space?"
-  type: input
+  - "A development account that an individual or multiple collaborators can own and use"
+  - "A physical subdivision of a Cloud Foundry deployment"
+  - "A logical way to group spaces and separate concerns in Cloud Foundry"
+  answer: [2]
+- formulation: "How do you delete the 'my-space' space?"
+  type: text
   answer: "cf delete-space my-space"
-- id: "3"
-  formulation: "What happens if you rename an organization?"
-  type: checkbox
+- formulation: "What happens if you rename an organization?"
+  type: option
   options:
-  - id: "1"
-    value: "The name changes, but the internal reference is kept, so nothing else is needed."
-  - id: "2"
-    value: "You will have to manually rename all the references in your Cloud Foundry deployment."
-  - id: "3"
-    value: "All will be lost and you'll have to start from scratch."
-  answer: "1"
-- id: "4"
-  formulation: "You are going to delete an organization or a space."
-  type: checkbox
+  - "The name changes, but the internal reference is kept, so nothing else is needed."
+  - "You will have to manually rename all the references in your Cloud Foundry deployment."
+  - "All will be lost and you'll have to start from scratch."
+  answer: [0]
+- formulation: "You are going to delete an organization or a space."
+  type: option
   options:
-  - id: "1"
-    value: "Go ahead, everything that depends on the object will be left orphan, but you can re-assign it later."
-  - id: "2"
-    value: "Think carefully: every entity depending on the object will be lost... forever!"
-  - id: "3"
-    value: "DON'T DO IT!! CLOUD FOUNDRY WILL STOP WORKING... AT ALL!!!"
-  answer: "2"
+  - "Go ahead, everything that depends on the object will be left orphan, but you can re-assign it later."
+  - "Think carefully: every entity depending on the object will be lost... forever!"
+  - "DON'T DO IT!! CLOUD FOUNDRY WILL STOP WORKING... AT ALL!!!"
+  answer: [1]
