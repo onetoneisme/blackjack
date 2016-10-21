@@ -1,16 +1,11 @@
 questions:
-- id: "1"
-  formulation: "What is a security group?"
-  type: checkbox
+- formulation: "What is a security group?"
+  type: option
   options:
-  - id: "1"
-    value: "A set of rules that define infrastructure security policies"
-  - id: "2"
-    value: "A security service that restricts user access rights"
-  - id: "3"
-    value: "A set of rules that explicitely allows outbound traffic from applications"
-  answer: "3"
-- id: "2"
-  formulation: "How do you create the security group 'my-seg-group'? Use the 'my-seg-group.json' filename."
-  type: input
+  - "A set of rules that define infrastructure security policies"
+  - "A security service that restricts user access rights"
+  - "A set of rules that explicitely allows outbound traffic from applications"
+  answer: [2]
+- formulation: "How do you create the security group 'my-seg-group'? Use the 'my-seg-group.json' filename."
+  type: text
   answer: 'cf create-security-group my-seg-group my-seg-group.json'

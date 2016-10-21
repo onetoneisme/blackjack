@@ -100,7 +100,7 @@ courses:
   description: Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and
     other distributed software. The advanced section also provides a more in-depth
     overview of BOSH internals.
-  depends_on: cf_for_developers_intermediate
+  depends_on: cf_for_devops_engineers_intermediate
   labels:
     for: devops
     level: advanced
