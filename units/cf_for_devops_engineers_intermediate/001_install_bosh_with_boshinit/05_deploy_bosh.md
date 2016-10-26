@@ -1,7 +1,7 @@
 ### Prepare deployment manifest
 
 1. Save the following file as `~/deployment/bosh.yml`
-   ```yaml
+   ```file=~/deployment/bosh.yml
    ---
    name: bosh
 
