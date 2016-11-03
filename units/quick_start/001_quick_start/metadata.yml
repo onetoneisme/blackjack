@@ -1,0 +1,20 @@
+---
+id: quick_start
+title: 03 Quick Start
+description: Complete the Quick Start section to grasp the basics of cloud-native
+  operations and start using your Cloud Foundry PaaS.
+steps:
+- id: objective
+  title: Objective
+- id: cli_installation
+  title: Cloud Foundry CLI installation
+- id: connecting_to_the_cf_api
+  title: Connecting to the CF API
+- id: target_you_org_and_space
+  title: Target you Org and Space
+- id: deploy_an_application
+  title: Deploy an application
+- id: viewing_logs
+  title: Viewing logs
+- id: scaling
+  title: Scaling
