@@ -2,6 +2,7 @@
 courses:
 - id: cf_for_operators
   title: CF for operators
+  price: 100
   description: Learn how to efficiently manage Cloud Foundry users and resources,
     ensure that your deployments are secure, and create your own buildpacks and service
     brokers.
@@ -11,7 +12,6 @@ courses:
   levels:
   - id: quick_start
     title: Quick Start
-    price: 100
     description: Learn how to efficiently manage Cloud Foundry users and resources,
       ensure that your deployments are secure, and create your own buildpacks and service
       brokers.
@@ -24,7 +24,6 @@ courses:
     - 001_quick_start
   - id: cf_for_operators_basic
     title: Basic
-    price: 100
     description: Learn how to efficiently manage Cloud Foundry users and resources,
       ensure that your deployments are secure, and create your own buildpacks and service
       brokers.
@@ -42,7 +41,6 @@ courses:
     - 006_quota_management_in_cloud_foundry
   - id: cf_for_operators_intermediate
     title: Intermediate
-    price: 100
     description: Learn how to efficiently manage Cloud Foundry users and resources,
       ensure that your deployments are secure, and create your own buildpacks and service
       brokers.
@@ -57,7 +55,6 @@ courses:
     - 003_security_groups
   - id: cf_for_operators_advanced
     title: Advanced
-    price: 100
     description: Learn how to efficiently manage Cloud Foundry users and resources,
       ensure that your deployments are secure, and create your own buildpacks and service
       brokers.
@@ -71,6 +68,7 @@ courses:
     - 002_create_custom_service_broker
 - id: cf_for_developers
   title: CF for developers
+  price: 100
   description: Learn how to create and manage your own Cloud Foundry apps and services,
     compile deployment manifests, and use Cloud Foundry to build 12-factor software.
   labels:
@@ -79,7 +77,6 @@ courses:
   levels:
   - id: quick_start
     title: Quick Start
-    price: 100
     description: Learn how to efficiently manage Cloud Foundry users and resources,
       ensure that your deployments are secure, and create your own buildpacks and service
       brokers.
@@ -92,7 +89,6 @@ courses:
     - 001_quick_start
   - id: cf_for_developers_basic
     title: Basic
-    price: 0
     description: Learn how to create and manage your own Cloud Foundry apps and services,
       compile deployment manifests, and use Cloud Foundry to build 12-factor software.
     infrastructure:
@@ -107,7 +103,6 @@ courses:
     - 002_cloud_foundry_services
   - id: cf_for_developers_intermediate
     title: Intermediate
-    price: 100
     description: Learn how to create and manage your own Cloud Foundry apps and services,
       compile deployment manifests, and use Cloud Foundry to build 12-factor software.
     infrastructure:
@@ -129,7 +124,6 @@ courses:
   levels:
   - id: cf_for_devops_engineers_advanced
     title: Advanced
-    price: 100
     description: Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and
       other distributed software. The advanced section also provides a more in-depth
       overview of BOSH internals.

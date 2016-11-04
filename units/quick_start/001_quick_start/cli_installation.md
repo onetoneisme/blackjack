@@ -8,23 +8,25 @@ As we are using an Ubuntu jumpbox, you are going to download and install the Deb
 
 To download the `.deb` package, use `cURL`:
 
-    ```exec
-    curl -o cf_cli.deb -J -L 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
-    ```
+```exec
+curl -o cf_cli.deb -J -L 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+```
 
 This will download the latest CLI version for Debian 64-bit distributions.
 
 To install it, simply run:
 
-    ```exec
-    sudo dpkg -i cf_cli.deb
-    ```
+```exec
+sudo dpkg -i cf_cli.deb
+```
 
 Try it by simply typing `cf --version`.
 
 You should see something like:
 
-    $ cf --version
-    cf version 6.14.0+2654a47-2015-11-18
+```
+$ cf --version
+cf version 6.14.0+2654a47-2015-11-18
+```
 
 Note that the version number will likely vary.
