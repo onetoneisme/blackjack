@@ -1,5 +1,3 @@
-### Objectives
-
 ### Table of contents
 
 1. Introduction
@@ -19,12 +17,10 @@ Organization(s)
 |
 --- Space(s)
     |
-    --- User(s) < (permissions/roles)
-        |
-        --- Application(s)
+    --- Application(s)
 ```
 
-In short, Cloud Foundry has one or many organizations, which in turn have one or many spaces that have one or many users that have permissions, and the users deploy or target applications in the spaces assigned.
+In short, Cloud Foundry has one or many organizations, which in turn have one or many spaces. The users get permissions according to pre-defined roles, and the users deploy applications in the spaces assigned.
 
 This simple, yet flexible organizational structure will allow you to adapt Cloud Foundry to your company's needs.
 
