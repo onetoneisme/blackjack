@@ -21,4 +21,4 @@ You'll need an AWS account, AWS access keys, and a Web browser.  Basic knowledge
 
 Note: We recommend that you create temporary AWS Access Keys that can be later destroyed when the course is complete.
 
-You must also have a functioning Cloud Foundry deployment and jumphost.  For this lesson, we'll use MicroPCF, a single-VM solution that provides functionality of both. Create a MicroPCF instance by selecting `Create New > MicroPCF` from the Manage Infrastructure page in the training platform.
+You must also have a functioning Cloud Foundry deployment and jumphost.  For this lesson, we'll use MicroPCF, a single-VM solution that provides functionality of both.

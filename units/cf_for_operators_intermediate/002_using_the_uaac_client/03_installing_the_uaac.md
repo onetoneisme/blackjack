@@ -1,11 +1,10 @@
 ### Installing the UAAC
 
-The UAAC is written in [Ruby](http://www.ruby-lang.org) and distributed as a [Ruby gem](https://en.wikipedia.org/wiki/RubyGems). Ruby has been pre-installed on your training jumpbox, so you don't have to install it manually, but if you would like to check out how to install it, you can visit the [RVM](https://www.rvm.io) (Ruby Version Manager) website.
+The UAAC is written in [Ruby](http://www.ruby-lang.org) and distributed as a [Ruby gem](https://en.wikipedia.org/wiki/RubyGems). Ruby has been pre-installed on your training jumpbox, so you don't have to install it manually.
 
 To install the UAAC, you can do:
 
 ```sh
-sudo apt-get install ruby2.1-dev
 gem install cf-uaac
 ```
 
