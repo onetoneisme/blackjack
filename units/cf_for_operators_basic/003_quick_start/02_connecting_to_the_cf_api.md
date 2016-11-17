@@ -20,6 +20,6 @@ OK
 
 > **Important**: we are using `--skip-ssl-validation` since the Cloud Foundry deployment we are using for this course doesn't have a trusted SSL certificate installed, but as a good practice for development and testing, and mandatory for production, a trusted SSL cert should always be present.
 
-Now, you need to provide credentials. This is accomplished through the interactive command `cf login`. For this part of the training course, use the `admin` / `admin` credentials.
+Now, you need to provide credentials. This is accomplished through the interactive command `cf login`. For this part of the training course, use the `admin` / `admin` credentials. Enter user name (admin) when asked for Email.
 
 > **Tip**: you can also use the `cf login` command setting the API: `cf login --skip-ssl-validation -a https://api.{{echo $CF_DOMAIN}}`

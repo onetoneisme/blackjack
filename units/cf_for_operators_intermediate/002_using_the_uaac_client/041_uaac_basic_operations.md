@@ -18,13 +18,13 @@ Well, that "secret" is not much of a secret really, but we will learn how to cha
 The second step is to get authorized to use the UAAC:
 
 ```sh
-uaac token client get admin -s admin-client-secret
+uaac token client get admin -s admin-secret
 ```
 
 This should output something like:
 
 ```sh
-$ uaac token client get admin -s admin-client-secret
+$ uaac token client get admin -s admin-secret
 
 Successfully fetched token via client credentials grant.
 Target: https://uaa.{{ echo $CF_DOMAIN }}

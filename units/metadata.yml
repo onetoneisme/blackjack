@@ -2,7 +2,7 @@
 courses:
 - id: cf_for_operators
   title: CF for operators
-  price: 100
+  price: 199
   description: Learn how to efficiently manage Cloud Foundry users and resources,
     ensure that your deployments are secure, and create your own buildpacks and service
     brokers.
@@ -114,7 +114,7 @@ courses:
     - 001_manifests
 - id: cf_for_devops_engineers
   title: CF for DevOps engineers
-  price: 100
+  price: 199
   description: Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and
     other distributed software. The advanced section also provides a more in-depth
     overview of BOSH internals.
