@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-check 'cf apps | grep --color=never my-sinatra-example' 'my-sinatra-example   started .*  my-sinatra-example.*' true #> The application my-sinatra-example is not installed.
+check 'cf apps' 'my-sinatra-app   started .*  my-sinatra-app.*' true #> The application my-sinatra-example is not installed.
