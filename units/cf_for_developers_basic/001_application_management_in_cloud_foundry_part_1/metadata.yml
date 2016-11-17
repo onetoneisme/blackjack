@@ -4,30 +4,23 @@ title: 01 Application Management in Cloud Foundry - Part 1
 description: 'In this section, you will learn how to manage applications in CF, including:
   how to create, push, and modify applications.'
 steps:
-- id: 01_introduction
-  path: 01_introduction
-  title: 01_Introduction
-- id: 02_your_first_application
-  path: 02_your_first_application
-  title: 02_Your first application
-- id: 03_pushing_applications
-  path: 03_pushing_applications
-  title: 03_Pushing applications
-- id: 04_controlling_resources_when_pushing
-  path: 04_controlling_resources_when_pushing
-  title: 04_Controlling resources when pushing
-- id: 05_creating_application_manifests
-  path: 05_creating_application_manifests
-  title: 05_Creating application manifests
-- id: 06_pushing_application_with_manifest
-  path: 06_pushing_application_with_manifest
-  title: 06_Pushing application with manifest
-- id: 07_application_management
-  path: 07_application_management
-  title: 07_Application management
-- id: 08_modifying_applications
-  path: 08_modifying_applications
-  title: 08_Modifying applications
-- id: 09_deleting_applications
-  path: 09_deleting_applications
-  title: 09_Deleting applications
+- id: introduction
+  title: Introduction
+- id: cloud_foundrys_cli_installation
+  title: Cloud Foundry's CLI installation
+- id: your_first_application
+  title: Your first application
+- id: pushing_applications
+  title: Pushing applications
+- id: controlling_resources_when_pushing
+  title: Controlling resources when pushing
+- id: creating_application_manifests
+  title: Creating application manifests
+- id: pushing_application_with_manifest
+  title: Pushing application with manifest
+- id: application_management
+  title: Application management
+- id: modifying_applications
+  title: Modifying applications
+- id: deleting_applications
+  title: Deleting applications
