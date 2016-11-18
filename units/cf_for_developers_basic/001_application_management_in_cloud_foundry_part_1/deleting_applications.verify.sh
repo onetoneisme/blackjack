@@ -1,3 +1,5 @@
 #!/bin/bash -e
 
-check 'cf apps | grep --color=never my-app' '^$' true #> The application has not been deleted.
+if cf apps | grep -q my-app; then
+  echo "application my-app found"
+fi #> The application has not been deleted.

@@ -2,7 +2,8 @@
 
 As you can see, the `cf push` command uses some default values, such as  disk size and memory limits, when pushing applications. To specify custom values, the CLI offers a number of modifiers:
 
-```sh
+```exec
+cd ~/cf-example-sinatra
 cf push my-sinatra-app -k 128M -m 256M
 ```
 

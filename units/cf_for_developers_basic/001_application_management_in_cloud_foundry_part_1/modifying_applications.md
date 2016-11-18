@@ -2,7 +2,7 @@
 
 One of the possible scenarios you may run into is that you will need to rename your application. Again, this is *very* simple:
 
-```
+```exec
 cf rename my-sinatra-app my-app
 ```
 

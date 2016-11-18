@@ -4,18 +4,9 @@ Although pushing source code to Cloud Foundry is really simple, you will probabl
 
 Now, create a manifest template, using the following command:
 
-```sh
+```exec
+cd ~/cf-example-sinatra
 cf create-app-manifest my-sinatra-app
-```
-
-The output should be:
-
-```
-$ cf create-app-manifest my-sinatra-app
-Creating an app manifest from current settings of app my-sinatra-app ...
-
-OK
-Manifest file created successfully at ./my-sinatra-app_manifest.yml
 ```
 
 The CLI has just created a `my-sinatra-app_manifest.yml` file, which looks like this:

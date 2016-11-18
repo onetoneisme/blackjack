@@ -4,7 +4,8 @@ The act of deploying an application to Cloud Foundry is called **pushing**. Ther
 
 Once logged in, you can simply use the `cf push` command and one parameter (application name) to deploy the source code to Cloud Foundry.
 
-```sh
+```exec
+cd ~/cf-example-sinatra
 cf push my-sinatra-app
 ```
 
