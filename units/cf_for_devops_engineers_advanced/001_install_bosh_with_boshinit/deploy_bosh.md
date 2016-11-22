@@ -140,12 +140,13 @@
    ```
 
 1. Navigate to the `deployment` directory and execute the following command
-  ```
+  ```exec
+  cd ~/deployment
   bosh-init deploy ~/deployment/bosh.yml
   ```
 
 1. Connect to the BOSH Director
-  ```
-  bosh target {{source deployment/vars && echo $eip}}
+  ```exec
+  bosh -u admin -p admin target {{source deployment/vars && echo $eip}}
   ```
   Credentials are: `admin / admin`
