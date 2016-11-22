@@ -4,21 +4,13 @@ There are several ways to restart an application, each one with some differences
 
 Try:
 
-```sh
+```exec
 cf stop my-app
-```
-
-The output should be:
-
-```
-$ cf stop my-app
-Stopping app my-app in org my-org / space my-first-space as my-user...
-OK
 ```
 
 Check that the application has been halted successfully with `cf app my-app`. This will simply stop the application, leaving all the source code there, ready to be started again:
 
-```sh
+```exec
 cf start my-app
 ```
 

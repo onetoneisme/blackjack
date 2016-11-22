@@ -2,16 +2,8 @@
 
 Try scaling your application up to two instances:
 
-```sh
+```exec
 cf scale my-app -i 2
-```
-
-The output should be:
-
-```
-$ cf scale my-app -i 2
-Scaling app my-app in org my-org / space my-first-space as my-user...
-OK
 ```
 
 Now, check the status of the application:
