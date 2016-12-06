@@ -1,6 +1,6 @@
 ---
 id: 001_manifests
-title: 01_Manifests
+title: Manifests
 description: Learn how to create your own YAML manifests to manage services, apps,
   etc.
 steps:

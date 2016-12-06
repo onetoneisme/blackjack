@@ -1,18 +1,14 @@
 ---
 id: 001_application_management_in_cloud_foundry_part_3
-title: 01 Application Management in Cloud Foundry - Part 3
+title: Application Management in Cloud Foundry - Part 3
 description: 'In this section, you will learn how to manage applications in CF, including:
   how to view application logs and events.'
 steps:
-- id: 01_introduction
-  path: 01_introduction
-  title: 01_Introduction
-- id: 02_viewing_events
-  path: 02_viewing_events
-  title: 02_Viewing events
-- id: 03_viewing_logs
-  path: 03_viewing_logs
-  title: 03_Viewing logs
-- id: 04_application_files
-  path: 04_application_files
-  title: 04_Application files
+- id: introduction
+  title: Introduction
+- id: viewing_events
+  title: Viewing events
+- id: viewing_logs
+  title: Viewing logs
+- id: application_files
+  title: Application files

@@ -1,6 +1,6 @@
 ---
 id: 004_deploy_concourse
-title: 04 Deploy Concourse
+title: Deploy Concourse
 description: Master Concourse CI, Cloud Foundry’s native continuous integration tool.
 steps:
 - id: 01_configure_aws_account

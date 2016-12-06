@@ -1,6 +1,6 @@
 ---
 id: 002_explore_bosh_internals
-title: 02_Explore BOSH internals
+title: Explore BOSH internals
 description: Take a closer look at the BOSH VM, BOSH Agent, database, and debug logs.
 steps:
 - id: 01_explore_bosh_vm_folder_structure

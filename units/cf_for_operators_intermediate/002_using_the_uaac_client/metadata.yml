@@ -1,6 +1,6 @@
 ---
 id: 002_using_the_uaac_client
-title: 02_Using the UAAC client
+title: Using the UAAC client
 description: Learn about the UAA, Cloud Foundry’s identity management service.
 steps:
 - id: 01_introduction

@@ -1,6 +1,6 @@
 ---
 id: 002_create_custom_service_broker
-title: 02_Create Custom Service Broker
+title: Create Custom Service Broker
 description: Learn how to design a service broker to connect additional services with
   Cloud Foundry.
 steps:

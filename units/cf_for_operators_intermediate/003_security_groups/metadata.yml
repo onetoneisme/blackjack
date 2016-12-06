@@ -1,6 +1,6 @@
 ---
 id: 003_security_groups
-title: 03_Security Groups
+title: Security Groups
 description: Learn how create, bind, view, and manage security groups in Cloud Foundry.
 steps:
 - id: 011_introduction

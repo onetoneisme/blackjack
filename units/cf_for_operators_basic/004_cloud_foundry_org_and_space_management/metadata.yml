@@ -1,6 +1,6 @@
 ---
 id: 004_cloud_foundry_org_and_space_management
-title: 04 Cloud Foundry Org and Space management
+title: Cloud Foundry Org and Space management
 description: Learn how to manage Organizations and Spaces in Cloud Foundry.
 steps:
 - id: 01_introduction

@@ -1,6 +1,6 @@
 ---
 id: 001_create_bosh_release
-title: 01_Create BOSH release
+title: Create BOSH release
 description: Learn how to package your software so it can be deployed and then managed
   by BOSH.
 steps:

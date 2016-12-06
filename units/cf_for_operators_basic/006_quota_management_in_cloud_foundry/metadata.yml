@@ -1,6 +1,6 @@
 ---
 id: 006_quota_management_in_cloud_foundry
-title: 06 Quota Management in Cloud Foundry
+title: Quota Management in Cloud Foundry
 description: Learn how to manage resources in Cloud Foundry, using Quotas.
 steps:
 - id: 01_introduction

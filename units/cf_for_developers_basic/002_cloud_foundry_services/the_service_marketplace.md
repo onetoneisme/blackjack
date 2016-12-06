@@ -10,7 +10,7 @@ cf marketplace
 
 The output should be:
 
-```
+```exec
 $ cf marketplace
 Getting services from marketplace in org my-org / space my-first-space as my-user...
 OK
@@ -31,7 +31,7 @@ In this example, the plans for the `p-mysql` (a MySQL database) service are:
 
 Although useful, this information will not show if the service is free or paid. There is another way to view the details of a service:
 
-```sh
+```exec
 cf marketplace -s p-mysql
 ```
 

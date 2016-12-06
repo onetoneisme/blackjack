@@ -4,7 +4,7 @@ So, how do you use the service you have just created in your application?
 To do this, you need to *bind* your service to your application.
 Binding will allow your app to get the necessary information to use the service. This includes the connection URI, username, password, connection parameters, etc.
 
-```sh
+```exec
 cf bind-service my-app my-app-db
 ```
 
@@ -49,11 +49,13 @@ Now, let's try it in our application.
 First, you need to have some code in place to use the service.
 Go to the `cf-example-sinatra` application that you have cloned before, and do:
 
-```sh
+```exec
+cd ~/cf-example-sinatra
 git checkout with-service
 ```
 
-Now, use your favorite text editor to open the `app.rb` file.
+Now, use your favorite text editor to open the `app.rb` file. If you are not comfortable using console editor you can use File Browser included on the page. In order to edit files using the File Browser, right click on the file and select 'Edit content' option.
+
 You will notice this chunk of code:
 
 ```ruby

@@ -1,6 +1,6 @@
 ---
 id: 001_create_custom_buildpack
-title: 01_Create Custom Buildpack
+title: Create Custom Buildpack
 description: Buildpacks provide dependencies for Cloud Foundry apps, but all apps
   are different and the standard buildpacks may not always work. This advanced section
   teaches the steps for assembling your own custom buildpack.

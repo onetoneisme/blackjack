@@ -1,6 +1,6 @@
 ---
 id: 001_install_bosh_with_boshinit
-title: 01 Install BOSH with bosh-init
+title: Install BOSH with bosh-init
 description: Learn how to configure your AWS account and install BOSH to deploy distributed
   software.
 steps:

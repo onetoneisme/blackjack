@@ -1,6 +1,6 @@
 ---
 id: 001_application_management_in_cloud_foundry_part_2
-title: 01 Application Management in Cloud Foundry - Part 2
+title: Application Management in Cloud Foundry - Part 2
 description: 'In this section, you will learn how to manage applications in CF, including:
   how to restart, restage, and scale apps.'
 steps:

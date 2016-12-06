@@ -4,7 +4,7 @@ Cloud Foundry's CLI provides a way to view the files in each instance of your de
 
 To view the files of an application, simply do:
 
-```sh
+```exec
 cf files my-app
 ```
 
@@ -27,25 +27,25 @@ tmp/                                         -
 
 As you can see, you are in the root of the application deployment directory structure. If you want to open one of the directories, specify it in the command line:
 
-```sh
+```exec
 cf files my-app app/
 ```
 
 Or run:
 
-```sh
+```exec
 cf files my-app app/public
 ```
 
 Viewing the content of a file is just as easy as listing files in a directory:
 
-```sh
+```exec
 cf files my-app app/README.md
 ```
 
 It is also possible to run the `cf files` command for a specific instance:
 
-```sh
+```exec
 cf files my-app -i 1
 ```
 

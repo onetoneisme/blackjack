@@ -2,7 +2,7 @@
 
 If you want to change the name of your service, run:
 
-```sh
+```exec
 cf rename-service my-app-db my-sinatra-app-db
 ```
 
