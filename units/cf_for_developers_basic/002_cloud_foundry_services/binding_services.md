@@ -8,42 +8,6 @@ Binding will allow your app to get the necessary information to use the service.
 cf bind-service my-app my-app-db
 ```
 
-The output should be:
-
-```
-$ cf bind-service my-app my-app-db
-Binding service my-app-db to app my-app in org my-org / space my-first-space as my-user...
-OK
-TIP: Use 'cf restage' to ensure your env variable changes take effect
-```
-
-Cloud Foundry will inject, via environment variables, all the information required to use the service you just bound. Use the `cf env` command to view this information. You will get something like:
-
-```
- "VCAP_SERVICES": {
-   "p-mysql": [                                                                                                                                                                                              [0/250]
-      {
-       "credentials": {
-        "hostname": "10.244.7.6",
-        "jdbcUrl": "jdbc:mysql://10.244.7.6:3306/cf_c353ea5a_6720_4db4_9207_235cb9032dee?user=fX5sjC5m4yWxmVEZ\u0026password=ZNvVUJCiUxpMchN3",
-        "name": "cf_c353ea5a_6720_4db4_9207_235cb9032dee",
-        "password": "ZNvVUJCiUxpMchN3",
-        "port": 3306,
-        "uri": "mysql://fX5sjC5m4yWxmVEZ:ZNvVUJCiUxpMchN3@10.244.7.6:3306/cf_c353ea5a_6720_4db4_9207_235cb9032dee?reconnect=true",
-        "username": "fX5sjC5m4yWxmVEZ"
-       },
-       "label": "p-mysql",
-       "name": "my-app-db",
-       "plan": "512mb",
-       "tags": [
-        "mysql"
-       ]
-      }
-     ]
-    }
-   }
-```
-
 Now, let's try it in our application.
 
 First, you need to have some code in place to use the service.

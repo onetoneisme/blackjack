@@ -19,6 +19,7 @@ git checkout with-ups
 
 Now, do 
 ```exec
+cd ~/cf-example-sinatra
 cf bs my-app my-fictional-service 
 cf push my-app
 ```
