@@ -7,5 +7,5 @@ questions:
   options:
   - "You cannot access CF's API directly without an authorization token."
   - "Tokens are very useful if you need to execute requests to the CF API without using the CLI."
-  - value: "An authorization token will allow you to hack into all of CF's resources."
+  - "An authorization token will allow you to hack into all of CF's resources."
   answer: [1]
