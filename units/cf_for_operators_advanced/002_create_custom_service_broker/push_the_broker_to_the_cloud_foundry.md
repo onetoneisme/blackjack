@@ -2,7 +2,7 @@
 
 1. Push code to the Cloud Foundry but without starting the application
   ```
-  cf push postgresql --no-start -m 128M -k 256M -b 'https://github.com/cloudfoundry/go-buildpack#v1.7.8'
+  cf push postgresql --no-start -m 128M -k 256M -b 'https://github.com/cloudfoundry/go-buildpack#v1.7.16'
   ```
 
 1. Set application's environment. `{GUID}` will be replaced with runtime values.
@@ -10,21 +10,8 @@
   AUTH_USER=admin
   AUTH_PASSWORD=admin
   PG_SOURCE=$pg_url
-  PG_SERVICES='[{
-    "id": "service-1-{GUID}",
-    "name": "postgresql",
-    "description": "DBaaS",
-    "bindable": true,
-    "plan_updateable": false,
-    "plans": [{
-      "id": "plan-1-{GUID}",
-      "name": "basic",
-      "description": "Shared plan"
-    }]
-  }]'
 
   cf set-env postgresql PG_SOURCE "$PG_SOURCE"
-  cf set-env postgresql PG_SERVICES "$PG_SERVICES"
   cf set-env postgresql AUTH_USER "$AUTH_USER"
   cf set-env postgresql AUTH_PASSWORD "$AUTH_PASSWORD"
   ```

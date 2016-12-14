@@ -10,7 +10,7 @@
 
 1. Push it to the Cloud Foundry.
   ```
-  cf push pg-app --no-start -m 128M -k 256M -b 'https://github.com/cloudfoundry/go-buildpack#v1.7.8'
+  cf push pg-app --no-start -m 128M -k 256M -b 'https://github.com/cloudfoundry/go-buildpack#v1.7.16'
   ```
 
 1. Create a service

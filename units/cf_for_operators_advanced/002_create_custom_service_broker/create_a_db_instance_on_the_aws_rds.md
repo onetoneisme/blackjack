@@ -23,7 +23,8 @@
 
 1. Save DB connection URL.
   ```
+  mkdir ~/deployment
   pg_url=postgresql://johndoe:c1oudc0w@$pg_host:5432/postgres
 
-  echo "export pg_url=$pg_url" >> ~/deployment/vars`
+  echo "export pg_url=$pg_url" > ~/deployment/vars
   ```

@@ -1,5 +1,11 @@
 ## Verify the buildpack
 
+1. Install git
+  ```
+  sudo apt-get update
+  sudo apt-get install git -y
+  ```
+
 1. Download a static application:
   ```
   cd ~

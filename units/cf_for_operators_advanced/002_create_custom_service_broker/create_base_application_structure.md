@@ -18,15 +18,3 @@
     GOPACKAGENAME: cf-postgresql-broker
   ```
 
-1. Create the `main.go` file which is going to be the source file for our application
-  ```
-  package main
-
-  import (
-    "encoding/json"
-    "errors"
-    "net/http"
-    "os"
-    "strings"
-  )
-  ```
