@@ -1,14 +1,14 @@
 ## Creating a detect script
 
 1. Create a new folder for the buildpack:
-  ```
+  ```exec
   mkdir ~/custom_buildpack
   cd ~/custom_buildpack
   mkdir bin
   ```
 
 2. Create the file `bin/detect` with the following content:
-  ```
+  ```file=~/custom_buildpack/bin/detect
   #!/usr/bin/env bash
   # bin/detect <build-dir>
 

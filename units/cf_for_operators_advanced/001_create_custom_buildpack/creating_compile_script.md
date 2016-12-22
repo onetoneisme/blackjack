@@ -1,7 +1,7 @@
 ## Creating a compile script
 
 1. Create the file `bin/compile` with the following content:
-  ```
+  ```file=~/custom_buildpack/bin/compile
   #!/usr/bin/env bash
   # bin/compile <build-dir> <cache-dir>
 

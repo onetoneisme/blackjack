@@ -4,16 +4,14 @@ title: Create Custom Service Broker
 description: Learn how to design a service broker to connect additional services with
   Cloud Foundry.
 steps:
-- id: install_aws_cli
-  title: Install the AWS CLI
-- id: create_a_db_instance_on_the_aws_rds
-  title: Create a DB instance on the AWS RDS
+- id: install_postgresql_db
+  title: Install PostgreSQL DB
 - id: install_required_packages
   title: Install required packages
 - id: create_base_application_structure
   title: Create base application structure
 - id: install_application_dependencies
-  path: install_application_dependencies
+  title: install_application_dependencies
 - id: implement_the_main_function
   title: Implement the main function
 - id: implement_service_broker_api_methods

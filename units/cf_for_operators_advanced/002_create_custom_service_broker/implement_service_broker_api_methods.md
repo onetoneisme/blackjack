@@ -1,7 +1,7 @@
 ## Implement service broker API methods
 
 1. Implement the the **services** that returns the list of provided services
-  ```go
+  ```file=~/go/src/github.com/$USER/cf-postgresql-broker/main.go
   func (h Handler) Services(context context.Context) []brokerapi.Service {
     servicesJSON := `[{
       "id": "service-id",
@@ -26,7 +26,7 @@
   ```
 
 1. Implement the **provision** method that creates a DB using instance ID.
-  ```go
+  ```file=~/go/src/github.com/$USER/cf-postgresql-broker/main.go
   func (h Handler) Provision(context context.Context, instanceID string, _ brokerapi.ProvisionDetails, _ bool) (brokerapi.ProvisionedServiceSpec, error) {
     dbname, err := h.Db.CreateDB(instanceID)
 
@@ -42,7 +42,7 @@
   ```
 
 1. Implement the **deprovision** method. It simply drops a DB.
-  ```go
+  ```file=~/go/src/github.com/$USER/cf-postgresql-broker/main.go
   func (h Handler) Deprovision(context context.Context, instanceID string, _ brokerapi.DeprovisionDetails, _ bool) (brokerapi.DeprovisionServiceSpec, error) {
     if err := h.Db.DropDB(instanceID); err != nil {
       return brokerapi.DeprovisionServiceSpec{}, err
@@ -55,7 +55,7 @@
   ```
 
 1. Implement the **bind** method. It is needed to create DB users for bound application.
-  ```go
+  ```file=~/go/src/github.com/$USER/cf-postgresql-broker/main.go
   func (h Handler) Bind(context context.Context, instanceID, bindingID string, _ brokerapi.BindDetails) (brokerapi.Binding, error) {
     creds, err := h.Db.CreateUser(instanceID, bindingID)
 
@@ -70,9 +70,9 @@
   ```
 
 1. Implement the **unbind** method. It drops users and all their privileges for a service.
-  ```go
-  func (c Handler) Unbind(context context.Context, instanceID, bindingID string, _ brokerapi.UnbindDetails) error {
-    if err := c.Db.DropUser(instanceID, bindingID); err != nil {
+  ```file=~/go/src/github.com/$USER/cf-postgresql-broker/main.go
+  func (h Handler) Unbind(context context.Context, instanceID, bindingID string, _ brokerapi.UnbindDetails) error {
+    if err := h.Db.DropUser(instanceID, bindingID); err != nil {
       return err
     }
 
@@ -81,12 +81,12 @@
   ```
 
 1. Implement the rest methods that we won't support but still they are required.
-  ```go
-  func (Handler) LastOperation(context context.Context, instanceID string, operationData string) (brokerapi.LastOperation, error) {
+  ```file=~/go/src/github.com/$USER/cf-postgresql-broker/main.go
+  func (h Handler) LastOperation(context context.Context, instanceID string, operationData string) (brokerapi.LastOperation, error) {
     return brokerapi.LastOperation{}, errors.New("Not supported") 
   }
 
-  func (Handler) Update(context context.Context, instanceID string, _ brokerapi.UpdateDetails, _ bool) (brokerapi.UpdateServiceSpec, error) {
+  func (h Handler) Update(context context.Context, instanceID string, _ brokerapi.UpdateDetails, _ bool) (brokerapi.UpdateServiceSpec, error) {
     return brokerapi.UpdateServiceSpec{}, errors.New("Not supported")
   }
   ```
