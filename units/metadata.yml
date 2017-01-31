@@ -45,7 +45,7 @@ courses:
       brokers.
     infrastructure:
       type: terraform
-      id: single_vm_cf
+      id: ops_intermediate
     labels:
       level: intermediate
     lessons:
