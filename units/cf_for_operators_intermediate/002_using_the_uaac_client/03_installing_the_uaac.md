@@ -1,5 +1,15 @@
 ### Installing the UAAC
 
+In order to install UAAC, you need to install Ruby. 
+
+To install Ruby please run the command: 
+
+```sh 
+sudo apt-add-repository ppa:brightbox/ruby-ng
+sudo apt-get update
+sudo apt-get install ruby2.3
+```
+
 The UAAC is written in [Ruby](http://www.ruby-lang.org) and distributed as a [Ruby gem](https://en.wikipedia.org/wiki/RubyGems). Ruby has been pre-installed on your training jumpbox, so you don't have to install it manually.
 
 To install the UAAC, you can do:
