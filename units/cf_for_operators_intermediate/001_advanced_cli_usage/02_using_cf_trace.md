@@ -1,3 +1,30 @@
+### Prerequisites to the lesson
+
+Install CF-CLI. To download the .deb package, use cURL:
+```sh
+curl -o cf_cli.deb -J -L 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+```
+
+Then, to install it, simply run:
+
+```sh
+sudo dpkg -i cf_cli.deb
+Try it by simply typing cf --version.
+```
+
+In case of successfull installation, you will see the following output:
+
+```sh
+$ cf --version
+cf version 6.14.0+2654a47-2015-11-18
+```
+Install git by running the following command:
+
+```sh
+sudo apt-get update
+sudo apt-get install git -y
+```
+
 ### Using `CF_TRACE`
 
 When deploying applications or sending commands to Cloud Foundry, sometimes, you will need to take a look at what is going on with your requests.
