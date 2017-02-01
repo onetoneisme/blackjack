@@ -10,10 +10,10 @@ Then, to install it, simply run:
 ```sh
 sudo dpkg -i cf_cli.deb
 ```
-Check, whether CF-CLI has been successfully installed by running: 
+Check, whether CF-CLI has been successfully installed by typing: 
 
 ```sh
-Try it by simply typing cf --version.
+cf --version
 ```
 
 In case of successfull installation, you will see the following output:
