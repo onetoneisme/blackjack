@@ -1,6 +1,6 @@
 #### Creating spaces
 
-Spaces are a very convenient way of separating concerns and environments inside an Org. Managing Spaces is no different from managing Orgs.
+Spaces are a very convenient way of separating concerns and environments inside an Org. Managing Spaces is not different from managing Orgs.
 
 Creating a space is as simple as:
 
