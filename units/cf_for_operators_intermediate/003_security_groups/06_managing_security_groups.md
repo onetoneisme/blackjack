@@ -5,6 +5,7 @@
 To update a security group, use the following command:
 ```sh
 cf update-security-group SECURITY_GROUP_NAME FILE_PATH
+cf update-security-group mysql-sg mysql-sg.json
 ```
 
 This will update an existing security group with the new rules.
