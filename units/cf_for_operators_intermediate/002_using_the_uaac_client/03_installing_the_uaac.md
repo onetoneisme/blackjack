@@ -2,13 +2,16 @@
 
 In order to install UAAC, you need to install Ruby. 
 
-To install Ruby please run the command: 
-
+To install Ruby follow th instructions below: 
+1)Before any other step install mpapis public key:
 ```sh 
-sudo apt-add-repository ppa:brightbox/ruby-ng
-sudo apt-get update
-sudo apt-get install ruby2.3
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 ```
+2) Install RVM stable with Ruby:
+```sh
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+```
+3) To start using rvm run `source /home/vcap/.rvm/scripts/rvm`
 
 The UAAC is written in [Ruby](http://www.ruby-lang.org) and distributed as a [Ruby gem](https://en.wikipedia.org/wiki/RubyGems). Ruby has been pre-installed on your training jumpbox, so you don't have to install it manually.
 
