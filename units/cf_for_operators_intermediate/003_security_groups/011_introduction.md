@@ -1,3 +1,7 @@
+###Prerequisites
+
+Before starting this lesson, plese create new org and space. Run cf `cf create-org my-org`, then run `cf target -o my-org` to get into your new org and `cf create-space my-first-space`. 
+
 #### Structure
 
 A security group consists of a predetermined structure, which is defined by a JSON object:
