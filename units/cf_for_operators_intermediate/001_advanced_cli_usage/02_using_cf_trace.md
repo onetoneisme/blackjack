@@ -28,6 +28,12 @@ Install git by running the following command:
 sudo apt-get update
 sudo apt-get install git -y
 ```
+Сonnect to Cloud Foundry's API, using the cf api command from the previous lessons.
+
+```sh
+cf api --skip-ssl-validation https://api.{{echo $CF_DOMAIN}}
+```
+Finally provide your credentials using `cf login` command and use `admin / admin ` login and password.
 
 ### Using `CF_TRACE`
 
