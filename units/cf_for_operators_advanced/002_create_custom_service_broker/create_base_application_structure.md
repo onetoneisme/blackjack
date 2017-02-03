@@ -6,7 +6,7 @@
   cd ~/go/src/github.com/$USER/cf-postgresql-broker
   ```
 
-1. Create the `Procfile` file with the following content:
+1. Create the `Procfile` file in the cf-postgresql-broker folder with the following content:
   ```file=~/go/src/github.com/$USER/cf-postgresql-broker/Procfile
   web: cf-postgresql-broker
   ```
