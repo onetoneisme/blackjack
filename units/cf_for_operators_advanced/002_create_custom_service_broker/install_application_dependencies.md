@@ -4,7 +4,9 @@
   ```exec
   go get -u github.com/altoros/pg-puppeteer-go
   go get -u github.com/pivotal-cf/brokerapi
-  go get -u code.cloudfoundry.org/lager
+  go get -v github.com/cloudfoundry/lager
+  mkdir $GOPATH/src/code.cloudfoundry.org/
+  cp -R $GOPATH/src/github.com/cloudfoundry/lager/ $GOPATH/src/code.cloudfoundry.org/
   ```
 
 1. Create the `main.go` file which is going to be the source file for our application:
