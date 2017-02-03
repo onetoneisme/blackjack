@@ -6,6 +6,7 @@
   cd ~/custom_buildpack
   mkdir bin
   ```
+Now you should refresh the file directory to see the created folder. 
 
 2. Create the file `bin/detect` with the following content:
   ```file=~/custom_buildpack/bin/detect
