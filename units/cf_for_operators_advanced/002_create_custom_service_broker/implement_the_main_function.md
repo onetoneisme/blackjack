@@ -2,13 +2,17 @@
 
 The **main** function is a starting point for any go application. Have a look at code comments.
 
-```file=~/go/src/github.com/$USER/cf-postgresql-broker/main.go
-//This is a struct, that is responsible for handling all reauests to the broker
+``` sh
+file=~/go/src/github.com/$USER/cf-postgresql-broker/main.go
+```
+This is a struct, that is responsible for handling all requests to the broker
+```sh
 type Handler struct {
   //DB operations orchestrator
   Db *pgp.PGPuppeteer
 }
-
+```
+```sh
 func main() {
 	// Set up authentication
 	credentials := brokerapi.BrokerCredentials{
