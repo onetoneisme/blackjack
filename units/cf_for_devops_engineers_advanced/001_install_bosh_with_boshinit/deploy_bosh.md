@@ -114,7 +114,7 @@
          access_key_id: {{cat ~/.aws/credentials | grep aws_access_key_id | awk '{print $3}'}} # <--- Replace with AWS Access Key ID
          secret_access_key: {{cat ~/.aws/credentials | grep aws_secret_access_key | awk '{print $3}'}} # <--- Replace with AWS Secret Key
          default_key_name: {{source deployment/vars && echo $key_name}}
-         default_security_groups: [training_sg]
+         default_security_groups: [{{source deployment/vars && echo $sg_id}}]
          region: {{cat ~/.aws/config | grep region | awk '{print $3}'}}  # <--- Replace with Region
 
        agent: {mbus: "nats://nats:nats-password@10.0.0.6:4222"}
