@@ -147,6 +147,7 @@
 
 1. Connect to the BOSH Director
   ```exec
-  bosh -u admin -p admin target {{source deployment/vars && echo $eip}}
+  bosh -n target {{source deployment/vars && echo $eip}}
+  bosh login admin admin
   ```
   Credentials are: `admin / admin`
