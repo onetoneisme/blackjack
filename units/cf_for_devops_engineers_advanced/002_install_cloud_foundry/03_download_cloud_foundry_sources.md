@@ -1,18 +1,18 @@
 ## Download Cloud Foundry sources
 
-1. Install Git.
+* Install Git.
   ```
   sudo apt-get install git -y
   ```
 
-2. Clone the CF release repository.
+* Clone the CF release repository.
   ```
   git clone https://github.com/cloudfoundry/cf-release ~/deployment/cf-release
   cd ~/deployment/cf-release
   git checkout v236
   ```
 
-3. Patch the CF templates in order to use a ha_proxy job, decrease number of instances and use only one availability zone instead of two.
+* Patch the CF templates in order to use a ha_proxy job, decrease number of instances and use only one availability zone instead of two.
 
   Create the `instances.patch` file with the following content:
 
@@ -216,7 +216,7 @@ index 0f941c8..c6b2cc3 100644
        - name: cf2
 ```
 
-4. Apply the patch
+* Apply the patch
   ```
   git apply instances.patch
   ```
