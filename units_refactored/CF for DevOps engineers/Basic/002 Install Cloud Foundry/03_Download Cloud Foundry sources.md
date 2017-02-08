@@ -16,7 +16,7 @@
   Create the `instances.patch` file with the following content:
 
   ```
-    diff --git a/templates/cf-infrastructure-aws.yml b/templates/cf-infrastructure-aws.yml
+  diff --git a/templates/cf-infrastructure-aws.yml b/templates/cf-infrastructure-aws.yml
   index e31924f0..29bb7dc4 100644
   --- a/templates/cf-infrastructure-aws.yml
   +++ b/templates/cf-infrastructure-aws.yml
