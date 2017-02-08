@@ -65,52 +65,52 @@ courses:
     lessons:
     - 001_create_custom_buildpack
     - 002_create_custom_service_broker
-- id: cf_for_developers
-  title: CF for developers
-  price: 100
-  description: Learn how to create and manage your own Cloud Foundry apps and services,
-    compile deployment manifests, and use Cloud Foundry to build 12-factor software.
-  labels:
-    for: developers
-    product: "Cloud Foundry"
-  levels:
-  # - id: quick_start
-  #   title: Quick Start
-  #   description: Learn how to efficiently manage Cloud Foundry users and resources,
-  #     ensure that your deployments are secure, and create your own buildpacks and service
-  #     brokers.
-  #   infrastructure:
-  #     type: terraform
-  #     id: shared_cf
-  #   labels:
-  #     level: basic
-  #   lessons:
-  #   - 001_quick_start
-  - id: cf_for_developers_basic
-    title: Basic
-    description: Learn how to create and manage your own Cloud Foundry apps and services,
-      compile deployment manifests, and use Cloud Foundry to build 12-factor software.
-    infrastructure:
-      type: terraform
-      id: single_vm_cf
-    labels:
-      level: basic
-    lessons:
-    - 001_application_management_in_cloud_foundry_part_1
-    - 001_application_management_in_cloud_foundry_part_2
-    - 001_application_management_in_cloud_foundry_part_3
-#    - 002_cloud_foundry_services
-  - id: cf_for_developers_intermediate
-    title: Intermediate
-    description: Learn how to create and manage your own Cloud Foundry apps and services,
-      compile deployment manifests, and use Cloud Foundry to build 12-factor software.
-    infrastructure:
-      type: terraform
-      id: single_vm_cf
-    labels:
-      level: intermediate
-    lessons:
-    - 001_manifests
+# - id: cf_for_developers
+#   title: CF for developers
+#   price: 100
+#   description: Learn how to create and manage your own Cloud Foundry apps and services,
+#     compile deployment manifests, and use Cloud Foundry to build 12-factor software.
+#   labels:
+#     for: developers
+#     product: "Cloud Foundry"
+#   levels:
+#   # - id: quick_start
+#   #   title: Quick Start
+#   #   description: Learn how to efficiently manage Cloud Foundry users and resources,
+#   #     ensure that your deployments are secure, and create your own buildpacks and service
+#   #     brokers.
+#   #   infrastructure:
+#   #     type: terraform
+#   #     id: shared_cf
+#   #   labels:
+#   #     level: basic
+#   #   lessons:
+#   #   - 001_quick_start
+#   - id: cf_for_developers_basic
+#     title: Basic
+#     description: Learn how to create and manage your own Cloud Foundry apps and services,
+#       compile deployment manifests, and use Cloud Foundry to build 12-factor software.
+#     infrastructure:
+#       type: terraform
+#       id: single_vm_cf
+#     labels:
+#       level: basic
+#     lessons:
+#     - 001_application_management_in_cloud_foundry_part_1
+#     - 001_application_management_in_cloud_foundry_part_2
+#     - 001_application_management_in_cloud_foundry_part_3
+# #    - 002_cloud_foundry_services
+#   - id: cf_for_developers_intermediate
+#     title: Intermediate
+#     description: Learn how to create and manage your own Cloud Foundry apps and services,
+#       compile deployment manifests, and use Cloud Foundry to build 12-factor software.
+#     infrastructure:
+#       type: terraform
+#       id: single_vm_cf
+#     labels:
+#       level: intermediate
+#     lessons:
+#     - 001_manifests
 - id: cf_for_devops_engineers
   title: CF for DevOps engineers
   price: 199
