@@ -1,0 +1,55 @@
+---
+title: Creating a BOSH release
+description: Learn how to package your software so it can be deployed and then managed
+  by BOSH.
+steps:
+- id: initialize_an_empty_release
+  title: Initialize an empty release
+- id: create_a_router_job
+  title: Create a router job
+- id: update_the_router_spec
+  title: Update the router spec
+- id: update_the_router_monit_config
+  title: Update the router monit config
+- id: create_a_router_startup_script
+  title: Create a router startup script
+- id: create_a_router_config_template
+  title: Create a router config template
+- id: create_an_app_job
+  title: Create an app job
+- id: update_the_app_spec
+  title: Update the app spec
+- id: update_the_app_monit_config
+  title: Update the app monit config
+- id: create_an_app_startup_script
+  title: Create an app startup script
+- id: create_a_ruby_package
+  title: Create a ruby package
+- id: create_a_ruby_spec
+  title: Create a ruby spec
+- id: create_a_ruby_packaging_script
+  title: Create a ruby packaging script
+- id: download_ruby_sources
+  title: Download ruby sources
+- id: create_a_greeter_package
+  title: Create a greeter package
+- id: create_a_greeter_spec
+  title: Create a greeter spec
+- id: create_a_greeter_packaging_script
+  title: Create a greeter packaging script
+- id: download_greeter_sources
+  title: Download greeter sources
+- id: configure_your_aws_account
+  title: Configure your AWS account
+- id: configure_blobstore
+  title: Configure blobstore
+- id: generating_deployment_manifest
+  title: Generating deployment manifest
+- id: create_a_release
+  title: Create a release
+- id: upload_a_stemcell
+  title: Upload a stemcell
+- id: deploy
+  title: Deploy
+- id: scale_your_deployment
+  title: Scale your deployment

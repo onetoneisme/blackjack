@@ -1,0 +1,19 @@
+---
+id: Install_BOSH 
+title: Install BOSH 
+description: Learn how to configure your AWS account and install BOSH to deploy distributed software.
+steps:
+- id: Introduction
+  title: Introduction
+- id: Install_the_BOSH_CLI
+  title: Install the BOSH CLI
+- id: Install_the_AWS_CLI
+  title: Install the AWS CLI
+- id: Configure_Your_AWS_Account
+  title: Configure Your AWS Account
+- id: Generate_BOSH_Certificates
+  title: Generate BOSH certificates
+- id: Prepare_Your_Deployment_Manifest
+  title: Prepare Your Deployment Manifest
+- id: Deploy_BOSH
+  title: Deploy BOSH

@@ -132,9 +132,6 @@ courses:
     labels:
       level: advanced
     lessons:
-    - 001_install_bosh_with_boshinit
-    - 002_install_cloud_foundry
-    - 003_create_bosh_release
-    - 004_explore_bosh_internals
-    - 005_deploy_elk
-    - 006_deploy_concourse
+    - Install_BOSH
+    - Creating_a_bosh_release
+    - install_cloud_foundry
