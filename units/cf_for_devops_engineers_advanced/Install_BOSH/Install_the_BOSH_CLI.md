@@ -12,7 +12,7 @@ sudo apt-get update
 sudo apt-get install -y build-essential zlibc zlib1g-dev ruby ruby-dev openssl libxslt-dev libxml2-dev libssl-dev libreadline6 libreadline6-dev libyaml-dev libsqlite3-dev sqlite3
 ```
 
-###### 2. Download the binary for your platform and place it in your `/usr/local/bin/bosh` path. For example, on Linux machines:
+##### 2. Download the binary for your platform and place it in your `/usr/local/bin/bosh` path. For example, on Linux machines:
 
 ```exec
 curl https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-2.0.1-linux-amd64 -o bosh
