@@ -21,7 +21,6 @@ Contents of a deployment manifest:
 ```file=~/deployment/bosh.yml
 ---
 name: bosh
-
 ```
 Note, that in our case this block doesn't contain `director_uuid` parameter, because we are creating environment and don't have BOSH Director installed yet.
 
