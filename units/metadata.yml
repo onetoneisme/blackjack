@@ -133,5 +133,5 @@ courses:
       level: advanced
     lessons:    
     - Install_BOSH
-    - Creating_a_bosh_release
     - install_cloud_foundry
+    - Creating_a_bosh_release
