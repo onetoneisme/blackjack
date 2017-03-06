@@ -31,7 +31,7 @@ that contains special stubs that allow you to install all CF components to a sin
       availability_zone: {{source ~/deployment/vars && echo "$avz"}}
       subnet_id: {{source ~/deployment/vars && echo "$subnet_id"}}
 
-  director_uuid: {{ bosh status --uuid 2>/dev/null }}
+  director_uuid: {{ bosh env | grep UUID | awk '{print $2}' }}
   networks:
     - name: default 
       subnets:
