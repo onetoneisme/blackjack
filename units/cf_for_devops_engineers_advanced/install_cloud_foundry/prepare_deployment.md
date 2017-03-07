@@ -31,7 +31,6 @@ meta:
     availability_zone: {{source ~/deployment/vars && echo "$avz"}}
     subnet_id: {{source ~/deployment/vars && echo "$subnet_id"}}
 
-director_uuid: {{ bosh env | grep UUID | awk '{print $2}' }}
 networks:
 - name: default 
   subnets:
