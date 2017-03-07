@@ -22,7 +22,7 @@ that contains special stubs that allow you to install all CF components to a sin
 
 ##### 3. Save the following file as `~/deployment/single-vm-cf/cf-release/stub.yml`.
 ```
-  ---
+---
 meta:
   eip: {{source ~/deployment/vars && echo "$cf_eip"}} 
   system_domain: {{source ~/deployment/vars && echo "$cf_eip"}}.nip.io
