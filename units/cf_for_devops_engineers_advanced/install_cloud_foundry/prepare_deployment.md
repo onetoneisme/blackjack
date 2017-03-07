@@ -5,12 +5,12 @@ resulting installation will require 18 instances. If you only plan to use your i
 that is definitely an overhead. That's why we are going to use [single-vm-cf](https://github.com/Altoros/single-vm-cf) repository 
 that contains special stubs that allow you to install all CF components to a single vm.
 
-1. Install Git.
+##### 1. Install Git.
   ```exec
   sudo apt-get install git -y
   ```
 
-1. Clone the `single-vm-cf` repository.
+##### 2. Clone the `single-vm-cf` repository.
   ```exec
   git clone https://github.com/Altoros/single-vm-cf ~/deployment/single-vm-cf
   cd ~/deployment/single-vm-cf
@@ -20,7 +20,7 @@ that contains special stubs that allow you to install all CF components to a sin
   ```
   This repository includes standard `cf-release` repository as a submodule. 
 
-1. Save the following file as `~/deployment/single-vm-cf/cf-release/stub.yml`.
+##### 3. Save the following file as `~/deployment/single-vm-cf/cf-release/stub.yml`.
   ```
   ---
   meta:
@@ -52,7 +52,8 @@ that contains special stubs that allow you to install all CF components to a sin
       type: vip
   ```
 
-1. Use `spiff` to merge templates and create deployment manifest.
+##### 4. Use `spiff` to merge templates and create deployment manifest.
+  
   ```exec
   root_dir=~/deployment/single-vm-cf/cf-release
   single_vm_templates="${root_dir}/templates"
