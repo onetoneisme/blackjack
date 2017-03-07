@@ -19,26 +19,25 @@ Default Cloud Foundry installation is pretty large. Even if you reduce the numbe
 
 ##### 3. Save the following file as `~/deployment/single-vm-cf/cf-release/stub.yml`.
 
-  ```
-  ---
-  meta:
-    eip: {{source ~/deployment/vars && echo "$cf_eip"}} 
-    system_domain: {{source ~/deployment/vars && echo "$cf_eip"}}.nip.io
-    private_ip: 10.0.0.10
-    aws:
-      availability_zone: {{source ~/deployment/vars && echo "$avz"}}
-      subnet_id: {{source ~/deployment/vars && echo "$subnet_id"}}
+```
+---
+meta:
+  eip: {{source ~/deployment/vars && echo "$cf_eip"}} 
+  system_domain: {{source ~/deployment/vars && echo "$cf_eip"}}.nip.io
+  private_ip: 10.0.0.10
+  aws:
+    availability_zone: {{source ~/deployment/vars && echo "$avz"}}
+    subnet_id: {{source ~/deployment/vars && echo "$subnet_id"}}
 
-  director_uuid: {{ bosh env | grep UUID | awk '{print $2}' }}
-  networks:
-    - name: default 
-      subnets:
-        - range: 10.0.0.0/24
-          reserved:
-            - 10.0.0.2 - 10.0.0.9
-          static:
-            - 10.0.0.10 - 10.0.0.15
-          gateway: 10.0.0.1
+networks:
+- name: default 
+  subnets:
+  - range: 10.0.0.0/24
+    reserved:
+    - 10.0.0.2 - 10.0.0.9
+    static:
+    - 10.0.0.10 - 10.0.0.15
+    gateway: 10.0.0.1
           dns:
             - 10.0.0.2
           cloud_properties:
@@ -46,9 +45,9 @@ Default Cloud Foundry installation is pretty large. Even if you reduce the numbe
               - cf_training_sg
               - bosh
             subnet: (( meta.aws.subnet_id ))
-    - name: vip
-      type: vip
-  ```
+  - name: vip
+    type: vip
+```
 
 ##### 4. Use `spiff` to merge templates and create deployment manifest.
 
