@@ -53,14 +53,14 @@ networks:
 
 ##### 4. Use `spiff` to merge templates and create deployment manifest.
   
-  ```exec
-  root_dir=~/deployment/single-vm-cf/cf-release
-  single_vm_templates="${root_dir}/templates"
-  cf_templates="${root_dir}/cf-release/templates"
-  spiff merge \
-    "${cf_templates}/generic-manifest-mask.yml" \
-    "${single_vm_templates}/jobs-single-vm-aws.yml" \
-    "${cf_templates}/cf.yml" \
-    "${single_vm_templates}/infrastructure-single-vm-aws.yml" \
-    "${root_dir}/stub.yml" >  ~/deployment/single-vm-cf/cf-release/manifest.yml
-  ```
+```exec
+root_dir=~/deployment/single-vm-cf/cf-release
+single_vm_templates="${root_dir}/templates"
+cf_templates="${root_dir}/cf-release/templates"
+spiff merge \
+"${cf_templates}/generic-manifest-mask.yml" \
+"${single_vm_templates}/jobs-single-vm-aws.yml" \
+"${cf_templates}/cf.yml" \
+"${single_vm_templates}/infrastructure-single-vm-aws.yml" \
+"${root_dir}/stub.yml" >  ~/deployment/single-vm-cf/cf-release/manifest.yml
+```
