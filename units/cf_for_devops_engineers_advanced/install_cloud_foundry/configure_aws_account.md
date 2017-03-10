@@ -2,7 +2,9 @@
 
 Before deploying Cloud Foundry, first of all, you need to configure your infrastructure. The following steps will guide you through necessary configurations for your AWS account, so that you can prepare it for the Cloud Foundry deployment.
 
-##### 1. Add a rule to allow Loggregator traffic:
+##### 1. Add a rule to allow Loggregator traffic
+Loggregator provides a highly-available (HA) and secure stream of logs and metrics for all applications and components on Cloud Foundry:
+
 ```exec
 source ~/deployment/vars
 
