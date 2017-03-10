@@ -3,6 +3,8 @@ id: install_bosh_with_bosh_init
 title: Install BOSH With BOSH Init
 description: Follow the steps to install BOSH
 steps:
+- id: introduction
+  title: Introduction
 - id: install_bosh_init
   title: Install BOSH init
 - id: install_the_bosh_cli
