@@ -37,15 +37,10 @@ Before deploying Cloud Foundry, first of all, you need to configure your infrast
   ```
 
 1. Store all variables in a file for later use:
-  ```exec
-  cat >> ~/deployment/vars <<EOF
-  export cf_subnet_id=$cf_subnet_id
-  export cf_eip_id=$cf_eip_id
-  export cf_eip=$cf_eip
-  export nat_eip_id=$nat_eip_id
-  export nat_eip=$nat_eip
-  export nat_gateway_id=$nat_gateway_id
-  export cf_route_table_id=$cf_route_table_id
-  export cf_sg_id=$cf_sg_id
-  EOF
-  ```
+```exec
+cat >> ~/deployment/vars <<EOF
+export cf_eip_id=$cf_eip_id
+export cf_eip=$cf_eip
+export cf_sg_id=$cf_sg_id
+EOF
+```

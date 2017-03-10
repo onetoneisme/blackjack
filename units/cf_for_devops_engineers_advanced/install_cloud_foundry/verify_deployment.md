@@ -3,7 +3,7 @@
 1. To verify your Cloud Foundry deployment, run smoke tests:
 
 ```exec
-bosh run-errand smoke_tests
+bosh run errand smoke_tests
 ```
 
 2. Then, install the CF CLI:

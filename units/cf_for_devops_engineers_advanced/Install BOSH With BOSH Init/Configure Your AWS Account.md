@@ -18,6 +18,8 @@ After creating a VPC, we can add one or more subnets in each Availability Zone (
 
 ```exec
 subnet_id=$(aws ec2 create-subnet --vpc-id $vpc_id --cidr-block 10.0.0.0/24 --query 'Subnet.SubnetId' --output text)
+
+aws ec2  modify-subnet-attribute  --subnet-id $subnet_id  --map-public-ip-on-launch
   
 aws ec2 create-tags --resources $subnet_id --tags Key=Name,Value=training_subnet
   
@@ -94,9 +96,9 @@ aws ec2 authorize-security-group-ingress --group-id $sg_id --ip-permissions '[{"
  * Allow all TCP and UDP traffic inside the security group:
 ```exec
 aws ec2 authorize-security-group-ingress --group-id $sg_id --protocol '-1' --port -1 --source-group $sg_id
-```
+ ```
 
-##### 8. Create an [Elastic IP](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html).
+#### 8. Create an [Elastic IP](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html).
 
 An Elastic IP address is a static, public IPv4 address designed for dynamic cloud computing. Elastic IP address could be associated with any instance or network interface for any VPC in your account. With an Elastic IP address, you can mask the failure of an instance by rapidly remapping the address to another instance in your VPC.
 
@@ -106,7 +108,7 @@ eip_id=$(aws ec2 allocate-address --domain vpc --query 'AllocationId' --output t
 eip=$(aws ec2 describe-addresses --allocation-ids $eip_id --query 'Addresses[].PublicIp' --output text)
 ```
 
-##### 9. Create a [Key Pair](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html). 
+#### 9. Create a [Key Pair](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html). 
 
 Amazon EC2 uses public–key cryptography to encrypt and decrypt login information. Public–key cryptography uses a public key to encrypt a piece of data, such as a password, then the recipient uses the private key to decrypt the data. The public and private keys are known as a key pair.
 
@@ -118,7 +120,7 @@ mkdir deployment
 aws ec2 create-key-pair --key-name $key_name --query 'KeyMaterial' --output text > deployment/bosh.pem
 chmod 400 deployment/bosh.pem
 ```
-##### 10. Finally, we have to store all the variables in a 'vars' file for our deployment manifest:
+#### 10. Finally, we have to store all the variables in a 'vars' file for our deployment manifest:
 
 ```exec
 cat > ~/deployment/vars <<EOF
