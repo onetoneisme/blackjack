@@ -1,7 +1,7 @@
 ---
 id: install_bosh_with_bosh_init
 title: Install BOSH With BOSH Init
-description: Follow the steps to install BOSH
+description: Follow the steps to install BOSH with BOSH-init
 steps:
 - id: introduction
   title: Introduction
