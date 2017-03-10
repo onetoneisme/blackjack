@@ -132,6 +132,6 @@ courses:
     labels:
       level: advanced
     lessons:    
-    - Install_BOSH
+    - Install BOSH With BOSH Init
     - install_cloud_foundry
     - Creating_a_bosh_release
