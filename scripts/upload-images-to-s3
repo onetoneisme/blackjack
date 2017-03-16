@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# set -e
+
+images_folder=$1
+
+if [[ -z $images_folder ]]; then
+	echo "specify folder"
+	exit 1
+fi
+
+if [[ -z $AWS_ACCESS_KEY_ID || -z $AWS_SECRET_ACCESS_KEY || -z $AWS_DEFAULT_REGION || -z $AWS_BUCKET_NAME ]]; then
+  echo "one the following environment variables is not set: "
+  echo ""
+  echo "                 AWS_ACCESS_KEY_ID"
+  echo "                 AWS_SECRET_ACCESS_KEY"
+  echo "                 AWS_DEFAULT_REGION"
+  echo "                 AWS_BUCKET_NAME"
+  echo ""
+  exit 1
+fi
+
+aws s3api list-buckets --query 'Buckets[].Name' | grep "\"$AWS_BUCKET_NAME\""
+if [ $? -eq 1 ]; then
+    echo "Creating Bucket $AWS_BUCKET_NAME"
+	aws s3api create-bucket --bucket $AWS_BUCKET_NAME --acl public-read
+fi
+
+echo "Uploading resources to bucket $AWS_BUCKET_NAME"
+aws s3 cp $images_folder s3://$AWS_BUCKET_NAME/ --recursive --acl public-read
