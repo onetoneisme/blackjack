@@ -10,18 +10,18 @@ courses:
     for: operators
     product: "Cloud Foundry"
   levels:
-  # - id: quick_start
-  #   title: Quick Start
-  #   description: Learn how to efficiently manage Cloud Foundry users and resources,
-  #     ensure that your deployments are secure, and create your own buildpacks and service
-  #     brokers.
-  #   infrastructure:
-  #     type: terraform
-  #     id: shared_cf
-  #   labels:
-  #     level: basic
-  #   lessons:
-  #   - 001_quick_start
+  - id: quick_start
+    title: Quick Start
+    description: Learn how to efficiently manage Cloud Foundry users and resources,
+      ensure that your deployments are secure, and create your own buildpacks and service
+      brokers.
+    infrastructure:
+      type: terraform
+      id: shared_cf
+    labels:
+      level: basic
+    lessons:
+    - 001_quick_start
   - id: cf_for_operators_basic
     title: Basic
     description: Learn how to efficiently manage Cloud Foundry users and resources,
