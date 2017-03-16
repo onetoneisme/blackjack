@@ -4,7 +4,7 @@ Generate a job:
 
 ```exec
 cd ~/greeter-release
-bosh generate-job app
+bosh generate job app
 ```
 
 After executing this command, the file system tree should look similar to this:

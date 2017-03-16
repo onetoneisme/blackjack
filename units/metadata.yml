@@ -131,7 +131,7 @@ courses:
       id: default_ubuntu
     labels:
       level: advanced
-    lessons:
-    - Install_BOSH
-    - Creating_a_bosh_release
+    lessons:    
+    - install_bosh_with_bosh_init
     - install_cloud_foundry
+    - Creating_a_bosh_release

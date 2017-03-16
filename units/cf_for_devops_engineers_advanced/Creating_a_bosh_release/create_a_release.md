@@ -3,6 +3,6 @@
 Create a release by running:
 ```exec
 cd ~/greeter-release
-bosh create-release --force
-bosh upload-release
+bosh create release --force
+bosh upload release
 ```

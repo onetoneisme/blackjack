@@ -1,8 +1,11 @@
 ---
+id: Creating_a_bosh_release
 title: Creating a BOSH release
 description: Learn how to package your software so it can be deployed and then managed
   by BOSH.
 steps:
+- id: introduction
+  title: Introduction
 - id: initialize_an_empty_release
   title: Initialize an empty release
 - id: create_a_router_job

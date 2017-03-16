@@ -1,9 +1,10 @@
 ### Create a Ruby package
 
 Generate a Ruby package:
+
 ```exec
 cd ~/greeter-release
-bosh generate-package ruby
+bosh generate package ruby
 ```
 
 After executing this command, the filesystem tree should look similar to this:
