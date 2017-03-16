@@ -3,7 +3,7 @@
 Generate a greeter package with:
 ```exec
 cd ~/greeter-release
-bosh generate-package greeter
+bosh generate package greeter
 ```
 
 After executing this command, the filesystem tree should look similar to this:
