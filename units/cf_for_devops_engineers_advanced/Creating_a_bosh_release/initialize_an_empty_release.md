@@ -1,6 +1,7 @@
 ### Initialize an empty release
 
-To initialize a new release, run the following commands:
+We need to begin with initializing a new release, using the following commands:
+
 ```exec
 mkdir   ~/greeter-release
 cd ~/greeter-release
