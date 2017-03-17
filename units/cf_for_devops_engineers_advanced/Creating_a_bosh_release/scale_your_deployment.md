@@ -14,7 +14,9 @@ Note, that while identifying properties path we use the same syntax, as used in 
 Deploy once again:
 
 ```exec
-bosh  -d greeter-release -n  deploy -o ~/deployment/greeter-opfile.yml ~/deployment/greeter.yml
+bosh  deployment ~/deployment/greeter.yml
+
+bosh deploy
 ```
 
 And if you `curl` the router multiple times, you should see greetings from different upstreams:
