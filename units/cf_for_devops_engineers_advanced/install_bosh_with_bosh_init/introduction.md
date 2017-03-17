@@ -4,17 +4,30 @@
 
 While BOSH was developed to deploy [Cloud Foundry](https://www.cloudfoundry.org/), it can also be used to deploy almost any other software (e.g. services). In  this course, we will use BOSH for installing and configuring Cloud Foundry deployment as well as other important components. But the first thing we are going to do is to install BOSH itself.
 
-### The Main BOSH Concepts
+### Main BOSH Concepts
 
-BOSH has several concepts that are important to understand. You can say that the main BOSH job is spin up new VM, configure and manage them. These VMs in terms of BOSH are called `Instances`. Such `Instances` are grouped in `Instance Groups` which contain the same packages and configuration. 
+BOSH has several concepts that are very important to know and understand. You can say that the main BOSH job is to launch new VMs, configure and manage them. In terms of BOSH these VMS are called `Instances`. `Instances` are combined into `Instance Groups`, which contain same packages and configuration. 
 
-There are three things that you need to prepare as an input to BOSH to deploy anything:
+There are three core things, that you need to prepare as an input for BOSH to deploy anything:
 
-- `Stemcell` - basic operating system image, which.
-- `Release` - that is basically packages with source code or binaries of software that will be run on `Instances`.
-- `Manifest` - the main configuration file that provides BOSH with information on instances that need to be spin up.
+- `Stemcell` - a basic operating system image wrapped with IaaS specific packaging. A typical stemcell contains a bare minimum OS skeleton with a few common utilities pre-installed, a BOSH Agent, and a few configuration files to securely configure the OS by default. 
 
-You can think of stemcell as an operating system, about release as a package and about manifes as main configuration file. The diagram below shows relations between these terms:
+Stemcells do not contain any specific information about any software that will be installed once that stemcell becomes a specialized machine in the cluster; nor do they contain any sensitive information which would make them unable to be shared with other BOSH users. This clear separation between base Operating System and later-installed software is what makes stemcells a powerful concept.
+
+Together with that, stemcells for one OS are exactly the same for all infrastructures. This property of stemcells allows BOSH users to quickly and reliably switch between different infrastructures without worrying about the differences between OS images.
+
+- `Release` - is a versioned set of packages with source code or binaries of software, that we are going to run on `Instances`. Apart from that, releases also contain configuration properties, configuration templates, start up scripts, and anything else required to build and deploy software in a reproducible way.
+
+A release is the layer placed on top of a stemcell. They are self-contained and provide very specific software for the purpose of that release.
+
+By allowing layering of stemcells and releases, BOSH is able to solve problems such as “how does one make sure that the compiled version of the software is reliably available throughout the deploy”, or “how to version and roll out updated software to the whole cluster, VM-by-VM, that other orchestration software is not able to solve”.
+
+- `Manifest` - the main configuration file that provides BOSH with information on instances that we are going to launch.
+
+The deployment manifest is a YAML file that defines the components and properties of the deployment. When engineer initiates a new deployment, the Director receives a version of the deployment manifest and creates a new deployment using this manifest.
+
+
+##### You can think of stemcell as an operating system, about release as a package and about manifes as main configuration file. The diagram below shows relations between these terms:
 
 ![](https://s3.amazonaws.com/cf-training-resources/inputs.png)
 
