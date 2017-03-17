@@ -3,7 +3,9 @@
 Finally, everything is ready for deployment:
 
 ```exec
-bosh -d greeter-release -n  deploy ~/deployment/greeter.yml
+bosh deployment ~/deployment/greeter.yml
+
+bosh deploy
 ```
 
 Let's check if everything has been deployed as intended:
