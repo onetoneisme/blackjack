@@ -5,7 +5,7 @@ Save the following as `~/deployment/greeter.yml`:
 ```file=~/deployment/greeter.yml
 ---
 name: greeter-release
-director_uuid: {{source .profile && bosh env | grep UUID | awk '{print $2}'}}
+director_uuid: {{source .profile && bosh status --uuid}}
 
 releases:
 - name: greeter-release
