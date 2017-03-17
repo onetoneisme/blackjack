@@ -26,7 +26,7 @@ By allowing layering of stemcells and releases, BOSH is able to solve problems s
 
 The deployment manifest is a YAML file that defines the components and properties of the deployment. When engineer initiates a new deployment, the Director receives a version of the deployment manifest and creates a new deployment using this manifest.
 
-##### You can think of stemcell as an operating system, about release as a package and about manifes as main configuration file. The diagram below shows relations between these terms:
+##### In a nutshell, stemcell could be considered as an operating system, release as a package and manifest as the main configuration file. The diagram below shows relation between these terms:
 
 ![](https://s3.amazonaws.com/cf-training-resources/inputs.png)
 
