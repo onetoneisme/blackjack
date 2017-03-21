@@ -27,6 +27,10 @@ courses:
     description: Learn how to efficiently manage Cloud Foundry users and resources,
       ensure that your deployments are secure, and create your own buildpacks and service
       brokers.
+      <br><br>
+      <i>During the training you will spin up one m4.large AWS instances.
+      Before you proceed, please check out pricing policy
+      for <a href='https://aws.amazon.com/ec2/pricing/on-demand/' target='_blank'>AWS resources</a>.</i>
     infrastructure:
       type: terraform
       id: single_vm_cf
@@ -43,6 +47,10 @@ courses:
     description: Learn how to efficiently manage Cloud Foundry users and resources,
       ensure that your deployments are secure, and create your own buildpacks and service
       brokers.
+      <br><br>
+      <i>During the training you will spin up one m4.large AWS instances.
+      Before you proceed, please check out pricing policy
+      for <a href='https://aws.amazon.com/ec2/pricing/on-demand/' target='_blank'>AWS resources</a>.</i>
     infrastructure:
       type: terraform
       id: ops_intermediate
@@ -57,6 +65,10 @@ courses:
     description: Learn how to efficiently manage Cloud Foundry users and resources,
       ensure that your deployments are secure, and create your own buildpacks and service
       brokers.
+      <br><br>
+      <i>During the training you will spin up one m4.large AWS instances.
+      Before you proceed, please check out pricing policy
+      for <a href='https://aws.amazon.com/ec2/pricing/on-demand/' target='_blank'>AWS resources</a>.</i>
     infrastructure:
       type: terraform
       id: single_vm_cf
@@ -126,12 +138,16 @@ courses:
     description: Learn how to bootstrap BOSH and use it to deploy Cloud Foundry and
       other distributed software. The advanced section also provides a more in-depth
       overview of BOSH internals.
+      <br><br>
+      <i>During the training you will spin up three t2.small,
+      one t2.medium, and one c3.xlarge AWS instances. Before you proceed,
+      please check out pricing policy for <a href='https://aws.amazon.com/ec2/pricing/on-demand/' target='_blank'>AWS resources</a>.</i>
     infrastructure:
       type: terraform
       id: default_ubuntu
     labels:
       level: advanced
-    lessons:    
+    lessons:
     - install_bosh_with_bosh_init
     - install_cloud_foundry
     - Creating_a_bosh_release
