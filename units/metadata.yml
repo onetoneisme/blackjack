@@ -30,7 +30,7 @@ courses:
       <br><br>
       <i>During the training you will spin up one m4.large AWS instances.
       Before you proceed, please check out pricing policy
-      for <a href='https://aws.amazon.com/ec2/pricing/on-demand/' target='_blank'>AWS resources</a>.</i>"
+      for <a href='https://aws.amazon.com/ec2/pricing/on-demand/' target='_blank'>AWS resources</a>.</i>
     infrastructure:
       type: terraform
       id: single_vm_cf
@@ -50,7 +50,7 @@ courses:
       <br><br>
       <i>During the training you will spin up one m4.large AWS instances.
       Before you proceed, please check out pricing policy
-      for <a href='https://aws.amazon.com/ec2/pricing/on-demand/' target='_blank'>AWS resources</a>.</i>"
+      for <a href='https://aws.amazon.com/ec2/pricing/on-demand/' target='_blank'>AWS resources</a>.</i>
     infrastructure:
       type: terraform
       id: ops_intermediate
@@ -68,7 +68,7 @@ courses:
       <br><br>
       <i>During the training you will spin up one m4.large AWS instances.
       Before you proceed, please check out pricing policy
-      for <a href='https://aws.amazon.com/ec2/pricing/on-demand/' target='_blank'>AWS resources</a>.</i>"
+      for <a href='https://aws.amazon.com/ec2/pricing/on-demand/' target='_blank'>AWS resources</a>.</i>
     infrastructure:
       type: terraform
       id: single_vm_cf
