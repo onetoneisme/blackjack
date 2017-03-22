@@ -10,18 +10,18 @@ courses:
     for: operators
     product: "Cloud Foundry"
   levels:
-  # - id: quick_start
-  #   title: Quick Start
-  #   description: Learn how to efficiently manage Cloud Foundry users and resources,
-  #     ensure that your deployments are secure, and create your own buildpacks and service
-  #     brokers.
-  #   infrastructure:
-  #     type: terraform
-  #     id: shared_cf
-  #   labels:
-  #     level: basic
-  #   lessons:
-  #   - 001_quick_start
+#  - id: quick_start
+#    title: Quick Start
+#    description: Learn how to efficiently manage Cloud Foundry users and resources,
+#      ensure that your deployments are secure, and create your own buildpacks and service
+#      brokers.
+#    infrastructure:
+#      type: terraform
+#      id: shared_cf
+#    labels:
+#      level: basic
+#    lessons:
+#    - 001_quick_start
   - id: cf_for_operators_basic
     title: Basic
     description: Learn how to efficiently manage Cloud Foundry users and resources,
@@ -148,9 +148,6 @@ courses:
     labels:
       level: advanced
     lessons:
-    - 001_install_bosh_with_boshinit
-    - 002_install_cloud_foundry
-    - 003_create_bosh_release
-    - 004_explore_bosh_internals
-    - 005_deploy_elk
-    - 006_deploy_concourse
+    - install_bosh_with_bosh_init
+    - install_cloud_foundry
+    - Creating_a_bosh_release
