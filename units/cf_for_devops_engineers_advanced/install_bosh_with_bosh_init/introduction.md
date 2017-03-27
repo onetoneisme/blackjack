@@ -28,6 +28,6 @@ The deployment manifest is a YAML file that defines the components and propertie
 
 ##### In a nutshell, stemcell could be considered as an operating system, release as a package and manifest as the main configuration file. The diagram below shows relation between these terms:
 
-![](https://s3.amazonaws.com/cf-training-resources/inputs.png)
+<img src="https://s3.amazonaws.com/cf-training-resources/inputs.png" height="400">
 
 BOSH as an another complex tool has its own terminology, we recomend to get acquainted with the necessary vocabulary in [BOSH docs](http://bosh.io/docs/terminology.html).
