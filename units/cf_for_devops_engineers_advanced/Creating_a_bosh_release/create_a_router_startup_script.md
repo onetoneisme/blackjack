@@ -1,6 +1,6 @@
 ### Create a router startup script
 
-Create the file `jobs/router/templates/ctl` in a text editor and add the following content to it:
+Create the file `~/greeter-release/jobs/router/templates/ctl` in a text editor and add the following content to it:
 
 ```file=~/greeter-release/jobs/router/templates/ctl
 #!/bin/bash
