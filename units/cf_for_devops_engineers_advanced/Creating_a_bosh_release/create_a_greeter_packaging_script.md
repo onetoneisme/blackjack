@@ -1,6 +1,6 @@
 ### Create a greeter packaging script
 
-Edit the file `packages/greeter/packaging` and add the following content to it:
+Edit the file `~/greeter-release/packages/greeter/packaging` and add the following content to it:
 
 ```file=~/greeter-release/packages/greeter/packaging
 set -e
