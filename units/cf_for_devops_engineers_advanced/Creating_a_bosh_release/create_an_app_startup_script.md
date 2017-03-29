@@ -1,6 +1,6 @@
 ### Create an app startup script
 
-Create the file `jobs/app/templates/ctl` in a text editor and add the following content to it:
+Create the file `~/greeter-release/jobs/app/templates/ctl` in a text editor and add the following content to it:
 
 ```file=~/greeter-release/jobs/app/templates/ctl
 #!/bin/bash
