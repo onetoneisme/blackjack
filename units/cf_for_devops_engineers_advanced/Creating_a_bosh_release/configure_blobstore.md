@@ -1,6 +1,6 @@
 ### Configure the blobstore
 
-Save the following file as `config/final.yml`:
+Save the following file as `~/greeter-release/config/final.yml`:
 
 ```file=~/greeter-release/config/final.yml
 ---
