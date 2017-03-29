@@ -19,7 +19,7 @@ After creating a VPC, we can add one or more subnets in each Availability Zone (
 ```exec
 subnet_id=$(aws ec2 create-subnet --vpc-id $vpc_id --cidr-block 10.0.0.0/24 --query 'Subnet.SubnetId' --output text)
 
-aws ec2  modify-subnet-attribute  --subnet-id $subnet_id  --map-public-ip-on-launch
+aws ec2 modify-subnet-attribute --subnet-id $subnet_id --map-public-ip-on-launch
   
 aws ec2 create-tags --resources $subnet_id --tags Key=Name,Value=training_subnet
   
