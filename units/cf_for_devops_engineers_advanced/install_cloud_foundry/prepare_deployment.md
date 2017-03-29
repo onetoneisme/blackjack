@@ -16,10 +16,10 @@ git submodule init
 git submodule update
 cd ~/deployment/single-vm-cf/cf-release
 ```
-  This repository includes standard `cf-release` repository as a submodule. 
+This repository includes standard `cf-release` repository as a submodule. 
 
-##### 3. Save the following file as `~/deployment/single-vm-cf/cf-release/stub.yml`.
-  ```
+##### 3. Save the following file as `~/deployment/single-vm-cf/cf-release/stub.yml`
+```
 ---
 meta:
   eip: {{source ~/deployment/vars && echo "$cf_eip"}} 
