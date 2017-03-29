@@ -1,6 +1,6 @@
 ### Create a Ruby packaging script
 
-Edit the following file `packages/ruby/packaging` and add the following content to it:
+Edit the following file `~/greeter-release/packages/ruby/packaging` and add the following content to it:
 
 ```file=~/greeter-release/packages/ruby/packaging
 set -e
