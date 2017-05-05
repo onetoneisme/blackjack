@@ -9,7 +9,7 @@ As we are using an Ubuntu jumpbox, you are going to download and install the Deb
 To download the `.deb` package, use `cURL`:
 
 ```exec
-curl -o cf_cli.deb -J -L 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+curl -o cf_cli.deb -J -L 'https://cli.run.pivotal.io/stable?release=debian64&version=6.21.1&source=github-rel'
 ```
 
 This will download the latest CLI version for Debian 64-bit distributions.
