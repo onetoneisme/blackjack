@@ -2,7 +2,7 @@
 
 Install CF-CLI. To download the .deb package, use cURL:
 ```sh
-curl -o cf_cli.deb -J -L 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+curl -o cf_cli.deb -J -L 'https://cli.run.pivotal.io/stable?release=debian64&version=6.21.1&source=github-rel'
 ```
 
 Then, to install it, simply run:
