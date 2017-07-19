@@ -2,7 +2,7 @@
 
 1. Push code to the Cloud Foundry but without starting the application
   ```exec
-  cd ~/go/src/github.com/$USER/cf-postgresql-broker
+  cd ~/go/src/github.com/vcap/cf-postgresql-broker
   cf push postgresql --no-start -m 128M -k 256M -b 'https://github.com/cloudfoundry/go-buildpack#v1.7.16'
   ```
 
