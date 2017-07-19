@@ -10,7 +10,8 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 ```
 2) Install RVM stable with Ruby:
 ```sh
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
+\curl -sSL https://get.rvm.io | bash -s stable
+rvm install ruby
 ```
 3) To start using rvm run `source /home/vcap/.rvm/scripts/rvm`
 
@@ -19,7 +20,7 @@ The UAAC is written in [Ruby](http://www.ruby-lang.org) and distributed as a [Ru
 To install the UAAC, you can do:
 
 ```sh
-gem install cf-uaac
+gem install cf-uaac --no-ri --no-doc
 ```
 
 This will output something like:
