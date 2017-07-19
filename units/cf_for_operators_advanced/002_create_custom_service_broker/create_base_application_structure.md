@@ -2,8 +2,8 @@
 
 1. Create application directory
   ```exec
-  mkdir -p ~/go/src/github.com/$USER/cf-postgresql-broker
-  cd ~/go/src/github.com/$USER/cf-postgresql-broker
+  mkdir -p ~/go/src/github.com/vcap/cf-postgresql-broker
+  cd ~/go/src/github.com/vcap/cf-postgresql-broker
   ```
 
 1. Create the `Procfile` file in the cf-postgresql-broker folder with the following content:
